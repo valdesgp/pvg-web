@@ -80,8 +80,24 @@ router.get('/heroes/:id', async (req, res) => {
 
   // Route for about page.
   router.get('/about', async (req, res) => {
-    res.render("about.ejs")
-  })
+    var perPage = 5
+    var page = req.params.page || 1
+  
+    Face
+        .find({})
+        .skip((perPage * page) - perPage)
+        .limit(perPage)
+        .exec(function(err, heroRouter) {
+            Face.count().exec(function(err, count) {
+                if (err) return next(err)
+                res.render('about.ejs', {
+                    faces: heroRouter,
+                    current: page,
+                    pages: Math.ceil(count / perPage)
+                })
+            })
+        })    
+    });
 
   // Route for contact page.
   router.get('/contact', async (req, res) => {

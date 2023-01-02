@@ -43,35 +43,31 @@
           <div class="w-full mr-4 md:w-3/4">
             <div class="py-2 border-b md:border md:rounded-lg md:px-8">
                
-                <div class="content flex py-1">
-                    <div class="font-semibold text-4xl -my-1 ml-1 text-black"> About:</div>
-                  </div>
-
-                <div class="my-2">
-                  <hr>
-                </div>
-                <p class="font-light text-lg -my-1 ml-2 text-black">I am a full-time developer from Mexico and on my free time I enjoy editing PES.</p>
-                
+              <div class="content flex py-1">
+                <div class="font-semibold text-4xl -my-1 ml-1 text-black"> Face: <span class="font-light text-2xl my-2"> Page <%= current %> / <%= pages %> </span></div>
               </div>
+
+              <div class="font-light text-lg -my-1 ml-2 text-black">Displaying <%= faces.length %> results per page.</div>
+              <div class="my-2">
+                <hr>
+              </div>
+
+
+              <%- include('pagination.ejs') %> 
+
+
+              
+            </div>
           </div>
 
 <!--SIDE BAR // ABOUT-->
-          <div class="ml-4 md:w-1/4">
-            <div class="hidden md:block">
-              <div class="">
-                <a class="flex items-center mb-2 mt-2 text-base font-semibold text-blue-600" href="">
-                    Yegax Faces
-                </a>
-                <ul class="text-justify flex items-center list-disc ml-6 mt-2 text-base font-light text-BLACK">
-                    <li>
-                        The superhero API, is a quantified and programatically accessible data source 
-                        of all superheroes from both the comic universe.
-                    </li>
-                </ul>
+<!--SIDE BAR // ABOUT-->
+<div class="ml-4 md:w-1/4">
+  <div class="hidden md:block">
+      <%- include('sidebar.ejs') %>
+    </div>
+  </div>
 
-              </div>
-              </div>
-            </div>
 
           </div>
         </div>

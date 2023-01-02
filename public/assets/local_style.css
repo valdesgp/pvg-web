@@ -1,0 +1,113 @@
+.bg-color {
+    background-color: rgb(48, 48, 48);
+}
+
+.logo-style {
+    font-size: 30px;
+    color: rgb(48, 48, 48);
+
+    -webkit-user-select: none; /* Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
+  }
+  img {  
+    user-drag: none;  
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+ }
+
+  .gradient-css {
+    font-size: 26px;
+    background: linear-gradient(
+        to right, 
+        hsl(98 100% 62%), 
+        hsl(204 100% 59%)
+      );
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    
+    -webkit-user-select: none; /* Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
+  } 
+
+  .navbar-gradient {
+    background: linear-gradient(
+        to bottom, 
+        rgb(59, 59, 59), 
+        rgb(25, 25, 25)
+      );
+  }
+
+  .logo-color{
+    color: hsl(204 100% 59%);
+  }
+  
+  .mt-1o5
+  {
+    margin-top: 6px;
+  }
+  .mt-1o5b
+  {
+    margin-top: 5px;
+  }
+  th {
+    border:1px solid rgba(185, 185, 185, 0.4);
+    padding-left: 8px;
+    padding-top: 4px;
+  }
+  .share-btn {
+    display: inline-block;
+    color: #ffffff;
+    border: none;
+    padding: 0.1em 0.6em;
+    outline: none;
+    text-align: center;
+    font-size: 0.9em;
+    margin: 0 0.2em;
+  }
+  
+  .share-btn:focus,
+  .share-btn:hover {
+    text-decoration: none;
+    opacity: 0.8;
+  }
+  
+  .share-btn:active {
+    color: #e2e2e2;
+  }
+  
+  form {
+    max-width: 600px;
+    text-align: center;
+    margin: 20px auto;
+  }
+
+  .submitform{
+    padding: 1em;
+    display: block;
+    width: 100%;
+    resize: none;
+    background-color: rgb(0, 112, 240);
+    border-radius: 9px;
+    color: white;
+    font-weight: bold;
+  }
+   
+   input, textarea {
+      padding: 1em;
+      display: block;
+      width: 100%;
+      @include box-shadow(0 1px 1px rgba(black, 0.1));
+      resize: none;
+   }
+    
+
+
+
+

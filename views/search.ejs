@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+<head>
+<title>SuperheroAPI</title>
+<meta name="description" content="A3">
+<meta name="keywords" content="A3">
+
+<link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="/public/assets/tailwind.css" />
+<link rel="stylesheet" type="text/css" href="/public/assets/style.css" />
+<link rel="stylesheet" type="text/css" href="/public/assets/local_style.css" />
+
+</head>
+
+<body>
+<div class="bg-white">
+    <div class="overflow-x-hidden">
+
+    <!-- NAVBAR -->
+    <%- include('navbar.ejs') %>
+
+    <!--HEADER (Path) -->
+    <%- include('header.ejs') %>
+
+    <div class="container pb-1 mx-auto mt-4">
+        <!-- MAIN CONTENT-->
+        <div class="md:flex">
+          <div class="w-full mr-4 md:w-3/4">
+            <div class="py-2 border-b md:border md:rounded-lg md:px-8">
+              <div class="content flex py-1">
+                <div class="font-semibold text-4xl -my-1 ml-1 text-black"> Hero Search: </div>
+              </div>
+              <form class="mt-2" action="/search/heroes/" method="GET">
+                <input type="text" placeholder="Search Restaurant..." name="name">
+                <button><i></i></button>
+            </form>
+              <div class="my-2">
+                <hr>
+              </div>
+              
+            </div>
+          </div>
+
+<!--SIDE BAR // ABOUT-->
+          <div class="ml-4 md:w-1/4">
+            <div class="hidden md:block">
+              <div class="">
+                <a class="flex items-center mb-2 mt-2 text-base font-semibold text-blue-600" href="">
+                    SuperHero API
+                </a>
+                <ul class="text-justify flex items-center list-disc ml-6 mt-2 text-base font-light text-BLACK">
+                    <li>
+                        The superhero API, is a quantified and programatically accessible data source 
+                        of all superheroes from both the comic universe.
+                    </li>
+                </ul>
+
+              </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+    <!--Footer (Path) -->
+    <%- include('footer.ejs') %>
+    </div>
+</div>
+</body>
+</html>

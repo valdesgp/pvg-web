@@ -51,24 +51,10 @@ app.use(heroRouter)
 
 
 app.get('/', async (req, res) => {
-  var perPage = 5
-  var page = req.params.page || 1
-
-  Face
-      .find({})
-      .skip((perPage * page) - perPage)
-      .limit(perPage)
-      .exec(function(err, heroRouter) {
-          Face.count().exec(function(err, count) {
-              if (err) return next(err)
-              res.render('index.ejs', {
-                  faces: heroRouter,
-                  current: page,
-                  pages: Math.ceil(count / perPage)
-              })
-          })
-      })    
-  });
+  res.render("index.ejs", {
+    faces: heroRouter,
+  })
+})
 
   // Route for specifyng hero list page.
   app.get('/:page', async (req, res) => {
@@ -81,7 +67,7 @@ app.get('/', async (req, res) => {
         .exec(function(err, heroRouter) {
             Face.count().exec(function(err, count) {
                 if (err) return next(err)
-                res.render('index.ejs', {
+                res.render('about.ejs', {
                     faces: heroRouter,
                     current: page,
                     pages: Math.ceil(count / perPage)

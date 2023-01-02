@@ -5,7 +5,7 @@
             <% for (var i = 0; i < faces.length; i++) { %>
                 <a href="/heroes/<%= faces[i]._id %>">
                 <table class="rounded-xl w-full text-sm text-left mb-2">
-                    <tr class="font-semibold grid grid-cols-1 list-inside text-gray-700">
+                    <tr class="font-semibold grid grid-cols-1 list-inside">
                         <th class="content flex">
                             <a class="font-semibold text-2xl my-auto ml-2 mb-2 text-blue-600 whitespace-nowrap w-full" href="/heroes/<%= faces[i]._id %>"><u><%= faces[i].name %></u> </a>
                             <div class="flex mr-1 items-center">
@@ -17,7 +17,7 @@
                         </th>
                         <th>
                         <!-- Appearance -->
-                        <ul class="grid grid-cols-2 gap-0 font-normal mb-2 ml-1  text-gray-700">
+                        <ul class="grid grid-cols-2 gap-0 font-normal mb-2 ml-1">
                             <li>
                                 <a href="/heroes/<%= faces[i]._id %>">
                                 <img class="rounded-md object-cover items-end" src="<%= faces[i].images.sm %>"   alt="superhero profile image">

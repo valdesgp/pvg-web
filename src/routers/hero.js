@@ -79,7 +79,7 @@ router.get('/heroes/:id', async (req, res) => {
 })
 
   // Route for about page.
-  router.get('/about', async (req, res) => {
+  router.get('/projects', async (req, res) => {
     var perPage = 5
     var page = req.params.page || 1
   
@@ -90,7 +90,7 @@ router.get('/heroes/:id', async (req, res) => {
         .exec(function(err, heroRouter) {
             Face.count().exec(function(err, count) {
                 if (err) return next(err)
-                res.render('about.ejs', {
+                res.render('projects.ejs', {
                     faces: heroRouter,
                     current: page,
                     pages: Math.ceil(count / perPage)

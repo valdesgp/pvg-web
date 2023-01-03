@@ -31,7 +31,13 @@
         <div class="md:flex">
         <div class="w-full mr-4 md:w-3/4 p-2 glass-bg">
 
-        <h1 id="header-content" class="mb-4 glass-bg text-center">About</h1>
+            <div style="border-color: rgba(255, 255, 255, 0.396);" class="flex items-center justify-between border-b select-none mt-2">
+            </div>
+            <div class="content flex -mt-1">
+                <div class="font-semibold text-4xl mt-1 ml-4"> About: </div>
+            </div>
+            <div style="border-color: rgba(255, 255, 255, 0.396);" class="flex items-center justify-between border-b select-none mb-2">
+            </div>
 
         <div class="flex"> 
         <img src="https://i.postimg.cc/KY2VLwVP/profile-photo.png" class="shadow-img img-a flex-col" alt="developer desk" style="height: 10%; width: 10%;">
@@ -83,12 +89,18 @@
         </a>
         </div>
 
-        <h1 id="header-content" class="mt-5 glass-bg text-center">Skills</h1>
-        <br>
+        <div style="border-color: rgba(255, 255, 255, 0.396);" class="flex items-center justify-between border-b select-none mt-5">
+        </div>
+        <div class="content flex -mt-1">
+            <div class="font-semibold text-4xl mt-1 ml-4"> Skills: </div>
+        </div>
+        <div style="border-color: rgba(255, 255, 255, 0.396);" class="flex items-center justify-between border-b select-none mb-1">
+        </div>
+
         <ul class="list-disc text-sm ml-6 p-shadow">
             <li>Javascript
                 <ul class="list-disc mx-4">
-                    <li>Jquery, Ajax, NextJS, AngularJS, etc.</li>
+                    <li>Jquery, Ajax, NextJS, ExpressJS, Node.Js etc.</li>
                 </ul>
             </li>
             <li>CSS
@@ -98,11 +110,11 @@
             </li>
             <li>HTML</li>
             <li>Java</li>
-            <li>SQL</li>
+            <li>SQL, NoSQL</li>
             <li>etc...</li>
         </ul>
 
-        <div id="resume-dwnld" class="mt-6 icon-bg-dark rounded visible p-2 mb-10 my-1 animate-bounce relative z-0">
+        <div id="resume-dwnld" class="mt-6 icon-bg-dark rounded visible p-2 mt-2 animate-bounce relative z-0">
             <a href="ValdesGarciaPatricio.pdf" target="_blank" rel="noopener noreferrer">
             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-file-earmark-pdf float-left mx-1 my-0.5 " viewBox="0 0 16 16">
                 <path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5v2z"/>
@@ -123,6 +135,7 @@
     <div class="hidden md:block glass-bg ">
         <%- include('sidebar.ejs') %>
       </div>
+      
     </div>
     </div>
     </div>

@@ -1,11 +1,11 @@
 const express = require('express');
 
-const { db } = require('../models/face');
+const { db } = require('../models/project');
 const router = new express.Router()
 
 // models
 const Comment = require(__basedir + '/models/comment')
-const Face = require(__basedir + '/models/face')
+const Project = require(__basedir + '/models/project')
 
 const DEFAULT_HEROES_PER_PAGE = 10
 const DEFAULT_COMMENTS_PER_PAGE = 3
@@ -46,7 +46,7 @@ router.get('/heroes', async (req, res) => {
     limit: parseInt(req.query.limit, DEFAULT_HEROES_PER_PAGE) || DEFAULT_HEROES_PER_PAGE
   }
 
-Face.find()
+Project.find()
   //Sort by "Name" ascending
     .sort({name: 'asc'})
   //Skip count
@@ -57,7 +57,7 @@ Face.find()
         if(err) { res.status(500).json(err); return; };
         //res.json(doc);
         res.render('handlebars/dynamic.hbs', {
-          faces: doc
+          projects: doc
       })
         console.log("Succesfully loaded 'Heroes' sorted and paginated!")
     });
@@ -67,10 +67,9 @@ Face.find()
 router.get('/heroes/:id', async (req, res) => {
   // TODO: fill out the code for the endpoint
 
-  Face.findById(req.params.id, function(err, heroRouter) {
-    // res.json(heroRouter)
+  Project.findById(req.params.id, function(err, projectRouter) {
     res.render("home.ejs", {
-        faces: heroRouter
+        projects: projectRouter
     })
 
     // res.render('home.ejs');
@@ -83,15 +82,15 @@ router.get('/heroes/:id', async (req, res) => {
     var perPage = 5
     var page = req.params.page || 1
   
-    Face
+    Project
         .find({})
         .skip((perPage * page) - perPage)
         .limit(perPage)
-        .exec(function(err, heroRouter) {
-            Face.count().exec(function(err, count) {
+        .exec(function(err, projectRouter) {
+            Project.count().exec(function(err, count) {
                 if (err) return next(err)
                 res.render('projects.ejs', {
-                    faces: heroRouter,
+                    projects: projectRouter,
                     current: page,
                     pages: Math.ceil(count / perPage)
                 })

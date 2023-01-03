@@ -41,18 +41,18 @@ const app = express()
 app.use(express.json({ limit: '50mb' }))
 // CORS
 const cors = require('cors')
-const Face = require('./models/face')
+const Project = require('./models/project')
 app.use(cors())
 
 
 // Routers
-const heroRouter = require(__basedir + '/routers/hero')
-app.use(heroRouter)
+const projectRouter = require(__basedir + '/routers/hero')
+app.use(projectRouter)
 
 
 app.get('/', async (req, res) => {
   res.render("index.ejs", {
-    faces: heroRouter,
+    projects: projectRouter,
   })
 })
 
@@ -60,15 +60,15 @@ app.get('/', async (req, res) => {
   app.get('/:page', async (req, res) => {
     var perPage = 5
     var page = req.params.page || 1
-    Face
+    Project
         .find({})
         .skip((perPage * page) - perPage)
         .limit(perPage)
-        .exec(function(err, heroRouter) {
-            Face.count().exec(function(err, count) {
+        .exec(function(err, projectRouter) {
+            Project.count().exec(function(err, count) {
                 if (err) return next(err)
-                res.render('about.ejs', {
-                    faces: heroRouter,
+                res.render('projects.ejs', {
+                    projects: projectRouter,
                     current: page,
                     pages: Math.ceil(count / perPage)
                 })
@@ -78,29 +78,6 @@ app.get('/', async (req, res) => {
 
 
   
-// BACKUP         
-//  const DEFAULT_HEROES_PER_PAGE = 10
-//  const DEFAULT_COMMENTS_PER_PAGE = 3
- // res.render("demo");
-// const pages = {
-//  page: parseInt(req.query.page, DEFAULT_HEROES_PER_PAGE) || 0,
-//  limit: parseInt(req.query.limit, DEFAULT_HEROES_PER_PAGE) || DEFAULT_HEROES_PER_PAGE
-// }
-// Hero.find()
-//Sort by "Name" ascending
-//  .sort({name: 'asc'})
-//Skip count
-//  .skip(pages.page * pages.limit)
-//Page limit count
-//  .limit(pages.limit)
-//  .exec(function (err, heroRouter) {
-//      if(err) { res.status(500).json(err); return; };
-      //res.json(doc);
-//      res.render('index.ejs', {
-//        heros: heroRouter
-//    })
-//      console.log("Succesfully loaded 'Heroes' sorted and paginated!")
-//  });
 
 // 404 Page
 app.get('*', (req, res) => {

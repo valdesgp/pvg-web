@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-const faceSchema = new mongoose.Schema({
+const projectSchema = new mongoose.Schema({
   original_id: Number,
   name: String,
   biography: {
@@ -27,6 +27,6 @@ const faceSchema = new mongoose.Schema({
   timestamps: {createdAt: true, updatedAt: true},
 })
 
-const Face = mongoose.model('Face', faceSchema)
+const Project = mongoose.model('Project', projectSchema)
 
-module.exports = Face
+module.exports = Project

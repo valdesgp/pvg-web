@@ -578,6 +578,13 @@ h2 {
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(7px);
 }
+.glass-nav-b{
+  background-color: rgba(255, 255, 255, 0.117);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(7px);
+  border: rgba(197, 147, 255, 0);
+}
+
 .glass-nav-a{
   background-color: rgba(255, 255, 255, 0);
   backdrop-filter: blur(10px);

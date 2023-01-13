@@ -57,7 +57,7 @@ app.get('/', async (req, res) => {
 })
 
   // Route for specifyng hero list page.
-  app.get('/:page', async (req, res) => {
+   app.get('projects/:page', async (req, res) => {
     var perPage = 5
     var page = req.params.page || 1
     Project
@@ -75,6 +75,7 @@ app.get('/', async (req, res) => {
             })
         })
       });
+      
 
 
   

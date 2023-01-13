@@ -5,9 +5,7 @@ global.__basedir = __dirname
 // imports
 const express = require('express')
 
-const hbs = require('hbs')
 const ejs = require('ejs');
-const pug = require('pug');
 
 // local imports
 const util = require(__basedir + '/helpers/util')
@@ -27,12 +25,9 @@ console.log(`starting application on port ${port}`)
 // preparing express app
 const app = express()
 
-  // NEW: Set hbs as view engine
-  app.set('view engine', 'pug')
   // NEW: Set ejs as view engine
   app.set('view engine', 'ejs')
-  // NEW: Set hbs as view engine
-  app.set('view engine', 'hbs')
+
   // NEW: expose style folder
   app.use('/public', express.static('public'));
 
@@ -75,10 +70,6 @@ app.get('/', async (req, res) => {
             })
         })
       });
-      
-
-
-  
 
 // 404 Page
 app.get('*', (req, res) => {

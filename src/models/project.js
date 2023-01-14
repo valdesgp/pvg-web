@@ -3,26 +3,28 @@ const mongoose = require('mongoose')
 const projectSchema = new mongoose.Schema({
   original_id: Number,
   name: String,
-  biography: {
-    fullName: String,
-    nationality: String,
-    position: String,
-    poscolor: String
-  },
   images: {
-    sm: String,
-    lg: String
+    thumb1: String,
+    thumb2: String,
+    thumb3: String,
+    thumb4: String,
+    thumb5: String,
   },
-  teams: {
-    club: String,
-    national: String,
-    league: String
+  lang: {
+    a: String,
+    b: String,
+    c: String,
+    d: String,
+    e: String
   },
   links: {
-    download: String,
-    pesmaster: String
+    demo: String,
+    repo: String
   },
-  facetype: String,
+  info: {
+    about: String,
+    desc: String
+  }
 }, {
   timestamps: {createdAt: true, updatedAt: true},
 })

@@ -1,4 +1,6 @@
+<%- include('head.ejs') %>
 
+<body>
 <!--SIDE BAR // MAIN CONTENT-->
       <div class="container pb-1 mx-auto mt-4">
         <!-- MAIN CONTENT-->
@@ -6,15 +8,12 @@
           <div class="w-full mr-4 md:w-3/4">
             <div class="py-2 border-b md:border md:rounded-lg md:px-8">
               <div class="content flex py-1">
-                <div class="font-semibold text-4xl -my-1 ml-2 text-black"><%= projects.name %> <span class="font-light text-3xl my-2">(<%= projects.biography.fullName %>)</span></div>
+                <div class="font-semibold text-4xl -my-1 ml-2 text-black"><%= projects.name %> <span class="font-light text-3xl my-2">(<%= projects.name %>)</span></div>
               </div>
-
-              <img class="rounded-md object-cover mt-2 items-end" src="<%= projects.images.lg %>"   alt="superhero profile image">
-
+              <img class="rounded-md object-cover mt-2 items-end" src="<%= projects.images.thumb1 %>"   alt="superhero profile image">
               <div class="mt-4 mb-3 my-2">
                 <hr>
               </div>
-
               <div class="mt-2 mb-2">
                 <div class="mb-2">
                   <!-- Icon -->
@@ -34,21 +33,21 @@
                   Updated on <span class="text-gray-600"> <%= projects.updatedAt %></span>
               </div>
               </div>
-
             </div>
-
-            
-
           </div>
 
-          
-<!--SIDE BAR // ABOUT-->
-<div class="ml-4 md:w-1/4">
-  <div class="hidden md:block">
-      <%- include('download.ejs') %>
+      
+
+        <!--SIDE BAR // ABOUT-->
+        <div class="ml-4 md:w-1/4">
+          <div class="hidden md:block glass-bg ">
+            <%- include('sidebar.ejs') %>
+              </div>
+            </div>                
+          </div>   
+        </div>
+        <!--Footer (Path) -->
+          <%- include('footer.ejs') %>
     </div>
   </div>
-
-
-              </div>
-            </div>
+</body>

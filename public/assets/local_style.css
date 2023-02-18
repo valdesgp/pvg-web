@@ -128,7 +128,8 @@ user-select: none;
 
 body {
     color: #e2e2e2;
-    background: rgb(21, 21, 21) url('https://i.postimg.cc/p2Wjy2Tf/GRAINY-HUE-GRADIENT.png'); 
+    background: rgb(21, 21, 21) url('https://i.postimg.cc/p2Wjy2Tf/GRAINY-HUE-GRADIENT.png');
+    background-color: rgb(25, 25, 25); 
     -webkit-user-select: none;
     -khtml-user-select: none;
     -moz-user-select: none;

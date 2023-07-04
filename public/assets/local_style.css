@@ -125,9 +125,12 @@ user-select: none;
   font-size: 20px;
 }
 
+.text-cus{
+  font-size: 17px;
+}
 
 body {
-    color: #e2e2e2;
+    color: #ffffff;
     background: rgb(21, 21, 21) url('https://i.postimg.cc/p2Wjy2Tf/GRAINY-HUE-GRADIENT.png');
     background-color: rgb(25, 25, 25); 
     -webkit-user-select: none;
@@ -239,8 +242,8 @@ h2 {
   }
 
   .img-a{
-    max-width: 40px;
-    min-width: 70px;
+    max-width: 90px;
+    min-width: 120px;
     border-radius: 80px;
     margin-right: 7px;
     margin-left: 6px;
@@ -611,13 +614,13 @@ h2 {
   -webkit-backdrop-filter: blur(7px);
 }
 .glass-bg{
-  background-color: rgba(255, 255, 255, 0.124);
+  background-color: rgba(125, 125, 125, 0.5);
   font-size: 27px;
   font-weight: lighter;
   text-shadow: 1px 0px 10px rgba(0, 0, 0, 0.342);
   border-radius: 10px;
   backdrop-filter: blur(22px);
-  -webkit-backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(22px);
   border-width: 2px;
   border-style: outset;
   border-color: rgba(140, 140, 140, 0.078);

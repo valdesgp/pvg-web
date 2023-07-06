@@ -126,7 +126,7 @@ user-select: none;
 }
 
 .text-cus{
-  font-size: 17px;
+  font-size: 19px;
 }
 
 body {
@@ -176,7 +176,16 @@ p {
 
 li {
   text-shadow: 1px 1px 2px rgba(39, 39, 39, 0.398);
+  columns: 1;
+  list-style: square;
 }
+
+ul {
+  columns: 2;
+  -webkit-columns: 2;
+  -moz-columns: 2;
+}
+
 
 h1 {
   text-shadow: 1px 1px 2px rgba(39, 39, 39, 0.398);
@@ -807,7 +816,64 @@ h6{
   color: rgba(28, 28, 28, 0.774);
 }
 
+.bouncing-text {
+  display: flex;
+  font-size: 20px;
+  font-weight: 600;
+  font-family: 'Press Start 2P', cursive; 
+  opacity: 70%;
+}
 
+.b, .u, .c, .d {
+  color: #f0ae4c;
+  margin-left: 0.6px;
+  margin-right: 0.6px;
+}
+.o, .n, .e {
+  color: #f0ae4c;
+  margin-left: 4.5px;
+  margin-right: 2.5px;
+}
+@keyframes bounces {
+  0%   { transform: scale(1,1) translateY(0);}
+  10%  { transform: scale(1.1,.9) translateY(0);}
+  30%  { transform: scale(.9,1.1)   translateY(-9px);}
+  50%  { transform: scale(1.05,.95) translateY(0);}
+  58%  { transform: scale(1,1) translateY(-7px);}
+  65%  { transform: scale(1,1) translateY(0);}
+  100% { transform: scale(1,1) translateY(0);}
+}
+@keyframes color-change {
+  0% { color: rgb(255, 21, 21); }
+  16% { color: rgb(255, 137, 11); }
+  32% { color: rgb(255, 226, 5); }
+  48% { color: rgb(119, 255, 8); }
+  64% { color: rgb(71, 227, 255); }
+  80% { color: rgb(42, 74, 255); }
+  100% { color: rgb(188, 20, 255); }
+}
+
+.b {
+animation: bounces 1.5s ease infinite, color-change 2s infinite;
+}
+.o {
+animation: bounces 2s ease infinite .1s, color-change 2.4s infinite;
+}
+.u {
+animation: bounces 2s ease infinite .2s, color-change 2.8s infinite;
+}
+.n {
+animation: bounces 2s ease infinite .3s, color-change 3.2s infinite;
+}
+.c {
+animation: bounces 2s ease infinite .4s, color-change 3.6s infinite;
+}
+.e {
+animation: bounces 2s ease infinite .5s, color-change 4s infinite;
+}
+.d {
+animation: bounces 2s ease infinite .6s, color-change 4.4s infinite;
+}
 
 
 

@@ -3,11 +3,15 @@
     <div class="container">
         <div class="row">
             <% for (var i = 0; i < projects.length; i++) { %>
+
+                <!--
                 <a href="/heroes/<%= projects[i]._id %>">
+                -->
+                    
                 <table class="rounded-xl w-full text-sm text-left mb-2">
                     <tr class="font-semibold grid grid-cols-1 list-inside">
                         <th class="content flex">
-                            <a class="font-semibold text-2xl my-auto ml-2 mb-2 text-blue-600 whitespace-nowrap w-full" href="/heroes/<%= projects[i]._id %>"><u><%= projects[i].name %></u> </a>
+                            <a class="font-semibold text-2xl my-auto ml-2 mb-2 text-blue-600 whitespace-nowrap w-full"><u><%= projects[i].name %></u> </a>
                             <div class="flex mr-1 items-center">
                                 <div class="ml-3 px-1 text-sm font-semibold bg-blue-600 text-blue-100 rounded-md whitespace-no-wrap"> <%= projects[i].lang.a %> </div>
                                 </div>
@@ -15,13 +19,12 @@
                         <th>
                         <!-- Appearance -->
                         <ul class="grid grid-cols-2 gap-0 font-normal mb-2 ml-1">
-                            <li>
-                                <a href="/heroes/<%= projects[i]._id %>">
+                            <li class="list-none">
                                 <img class="rounded-md object-cover items-end" src="<%= projects[i].images.thumb1 %>"   alt="superhero profile image">
                                 </a>
                             </li>
-                            <li class="ml-6 text-lg">
-                                <p class="mt-3">  League: <span class="text-blue-600"> <%= projects[i].info.about %></span></p>
+                            <li class="ml-6 text-lg list-none">
+                                <p class="mt-3">  About: <span class="text-blue-600"> <%= projects[i].info.about %></span></p>
                                 <p>  Club: <span class="text-blue-600"> <%= projects[i].info.desc%></span></p>
                             </li>
                         </ul>
@@ -39,36 +42,36 @@
                 <ul class="inline-flex items-center -space-x-px">
                     <% if (current == 1) { %>
                         <!--FIRST PAGE BUTTON-->
-                        <li class="disabled"><a class="block px-3 py-2 ml-0 leading-tight text-gray-500 border-gray-300 rounded-l-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
-                            First</a></li>
+                        <p class="disabled"><a class="block px-3 py-2 ml-0 leading-tight text-gray-500 border-gray-300 rounded-l-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
+                            First</a></p>
                     <% } else { %>
-                        <li><a class="block px-3 py-2 ml-0 leading-tight text-gray-500 border-gray-300 rounded-l-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
-                             href="/1">First</a></li>
+                        <p><a class="block px-3 py-2 ml-0 leading-tight text-gray-500 border-gray-300 rounded-l-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+                             href="/1">First</a></p>
                     <% } %>
                     <% var i = (Number(current) > 5 ? Number(current) - 4 : 1) %>
                     <% if (i !== 1) { %>
-                        <li class="disabled px-3 py-2 leading-tight text-gray-500 border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"><a>...</a></li>
+                        <p class="disabled px-3 py-2 leading-tight text-gray-500 border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"><a>...</a></p>
                     <% } %>
                     <% for (; i <= (Number(current) + 4) && i <= pages; i++) { %>
                         <% if (i == current) { %>
                             <!--ACTIVE PAGE-->
-                            <li class="active px-2 py-2 leading-tight text-gray-500 border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
-                                <a><%= i %></a></li>
+                            <p class="active px-2 py-2 leading-tight text-gray-500 border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
+                                <a><%= i %></a></p>
                         <% } else { %>
                             <!--REST OF BUTTONS-->
-                            <li><a class="px-2 py-2 leading-tight text-gray-500 border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white" 
+                            <p><a class="px-2 py-2 leading-tight text-gray-500 border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white" 
                                 href="/<%= i %>"><%= i %></a></ti>
                         <% } %>
                         <% if (i == Number(current) + 4 && i < pages) { %>
-                            <li class="disabled px-3 py-2 leading-tight text-gray-500  border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"><a>...</a></li>
+                            <p class="disabled px-3 py-2 leading-tight text-gray-500  border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"><a>...</a></p>
                         <% } %>
                     <% } %>
                     <% if (current == pages) { %>
                         <!--LAST PAGE-->
-                        <li class="disabled px-3 py-2 leading-tight text-gray-500  border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
+                        <p class="disabled px-3 py-2 leading-tight text-gray-500  border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
                             <a>Last</a></li>
                     <% } else { %>
-                        <li><a class="block px-3 py-2 leading-tight text-gray-500  border border-gray-300 rounded-r-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white" 
+                        <p><a class="block px-3 py-2 leading-tight text-gray-500  border border-gray-300 rounded-r-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white" 
                             href="/<%= pages %>">Last</a></li>
                     <% } %>
                     </ul>

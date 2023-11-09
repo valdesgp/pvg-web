@@ -79,7 +79,7 @@ router.get('/heroes/:id', async (req, res) => {
 
   // Route for about page.
   router.get('/projects', async (req, res) => {
-    var perPage = 5
+    var perPage = 10
     var page = req.params.page || 1
   
     Project
@@ -97,6 +97,8 @@ router.get('/heroes/:id', async (req, res) => {
             })
         })    
     });
+
+
 
   // Route for contact page.
   router.get('/contact', async (req, res) => {

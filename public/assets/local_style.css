@@ -130,8 +130,10 @@ user-select: none;
 }
 
 body {
-    color: #ffffff;
+    color: #ffffff; 
+    /* 
     background: rgb(21, 21, 21) url('https://i.postimg.cc/p2Wjy2Tf/GRAINY-HUE-GRADIENT.png');
+    BG IMAGE */
     background-color: rgb(25, 25, 25); 
     -webkit-user-select: none;
     -khtml-user-select: none;

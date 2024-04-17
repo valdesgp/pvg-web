@@ -2,7 +2,7 @@
   "name": "assignment2-superheroes",
   "version": "1.0.0",
   "engines": {
-    "node": ">=15.13.0"
+    "node": ">=16.13.1"
   },
   "description": "In this assignment, you will be learning to use MongoDB and Mongoose while creating REST API endpoints using Express. Please read the PDF instructions on eClass to understand what is needed to complete the assignment.",
   "main": "src/app.js",

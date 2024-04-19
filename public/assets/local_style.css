@@ -36,6 +36,23 @@
     user-select: none; /* Standard */
   } 
 
+  .gradient-css-b {
+    font-size: 35px;
+    font-weight: 900;
+    background: linear-gradient(
+        to right, 
+        rgb(255, 219, 61), 
+        rgb(155, 42, 255)
+      );
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    
+    -webkit-user-select: none; /* Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
+  } 
+
   .navbar-gradient {
     background: linear-gradient(
         to bottom, 
@@ -640,6 +657,7 @@ h2 {
   border-style: outset;
   border-color: rgba(140, 140, 140, 0.078);
 }
+
 .glass-btns{
   background-color: rgba(255, 255, 255, 0.083);
   transition: 0.5s;

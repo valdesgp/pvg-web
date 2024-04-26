@@ -408,7 +408,7 @@ h2 {
   padding: 27px;
   width: 600px;
   height: 143px;
-  z-index: 40; 
+  z-index: 10; 
   position: fixed;
   bottom: 68px;
   right: -460px;
@@ -489,7 +489,7 @@ h2 {
   box-shadow: inset 400px 0 0 0 rgb(45, 181, 32);
 }
 .form-submit-dark{
-  color: rgba(28, 34, 46, 0.946);
+  color: rgba(28, 34, 46, 0.947);
   background-color: rgb(255, 210, 63);
 }
 .form-submit-dark:hover {

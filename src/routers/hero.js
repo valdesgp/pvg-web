@@ -100,6 +100,11 @@ router.get('/heroes/:id', async (req, res) => {
 
 
 
+  // Route for about page.
+  router.get('/about', async (req, res) => {
+    res.render("index.ejs")
+  })
+
   // Route for contact page.
   router.get('/contact', async (req, res) => {
     res.render("contact.ejs")

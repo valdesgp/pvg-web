@@ -872,6 +872,7 @@ animation: bounces 2s ease infinite .5s, color-change 4s infinite;
 animation: bounces 2s ease infinite .6s, color-change 4.4s infinite;
 }
 
+
 .talkbubble {
   font-size: 20px;
   font-weight: 800;
@@ -896,4 +897,26 @@ animation: bounces 2s ease infinite .6s, color-change 4.4s infinite;
   border-top: 13px solid transparent;
   border-left: 20px solid rgb(255, 255, 255);
   border-bottom: 10px solid transparent;
+}
+
+.hover-tilt {
+  animation-name: tiltout;
+  transform: rotate(0deg);
+  animation-duration: 0.3s;
+}
+
+.hover-tilt:hover {
+  transform: rotate(14deg);
+  animation-name: tiltin;
+  animation-duration: 0.3s;
+}
+
+@keyframes tiltin {
+  0%   {transform: rotate(0deg);}
+  100%   {transform: rotate(14deg);}
+}
+
+@keyframes tiltout {
+  0%   {transform: rotate(14deg);}
+  100%   {transform: rotate(0deg);}
 }

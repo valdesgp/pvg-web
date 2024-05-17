@@ -20,38 +20,7 @@
     -ms-user-select: none;
  }
 
-  .gradient-css {
-    font-size: 26px;
-    background: linear-gradient(
-        to right, 
-        rgb(255, 219, 61), 
-        rgb(155, 42, 255)
-      );
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    
-    -webkit-user-select: none; /* Safari */        
-    -moz-user-select: none; /* Firefox */
-    -ms-user-select: none; /* IE10+/Edge */
-    user-select: none; /* Standard */
-  } 
 
-  .gradient-css-b {
-    font-size: 35px;
-    font-weight: 900;
-    background: linear-gradient(
-        to right, 
-        rgb(255, 219, 61), 
-        rgb(155, 42, 255)
-      );
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    
-    -webkit-user-select: none; /* Safari */        
-    -moz-user-select: none; /* Firefox */
-    -ms-user-select: none; /* IE10+/Edge */
-    user-select: none; /* Standard */
-  } 
 
   .navbar-gradient {
     background: linear-gradient(
@@ -152,7 +121,9 @@ body {
     background: rgb(21, 21, 21) url('https://i.postimg.cc/p2Wjy2Tf/GRAINY-HUE-GRADIENT.png');
     BG IMAGE */
     background-color: rgb(25, 25, 25); 
+     /*
     background: rgb(21, 21, 21) url('https://i.postimg.cc/B6zdRtyM/image-2024-03-18-185814125.jpg') no-repeat center center fixed;
+    */
     -webkit-user-select: none;
     -khtml-user-select: none;
     -moz-user-select: none;
@@ -901,5 +872,28 @@ animation: bounces 2s ease infinite .5s, color-change 4s infinite;
 animation: bounces 2s ease infinite .6s, color-change 4.4s infinite;
 }
 
-
-
+.talkbubble {
+  font-size: 20px;
+  font-weight: 800;
+  padding-left: 20px;
+  padding-top: 5px;
+  color: black;
+  width: 80px;
+  height: 39px;
+  background: rgb(255, 255, 255);
+  position: relative;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+.talkbubble:before {
+  content: "";
+  position: absolute;
+  right: 68%;
+  top: 25px;
+  width: 0;
+  height: 0;
+  border-top: 13px solid transparent;
+  border-left: 20px solid rgb(255, 255, 255);
+  border-bottom: 10px solid transparent;
+}

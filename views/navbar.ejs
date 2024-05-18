@@ -1,47 +1,37 @@
 
-
-<nav class="fixed top-0 w-full z-40 glass-nav">
-  
-    <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between h-20">
-        <div class="flex items-center">
-
-            <div class="cursor-default flex items-start">
-
-                <a href="/" class="talkbubble hover-tilt"> PVG </a>
-            </div>
-
-            
-          <div class="hidden md:block">
-            <div class="flex items-center ml-10">
-                <!--lg:block-->
-              <input type="text" class="hidden px-4 py-1 font-light text-sm text-white placeholder-white bg-gray-700 rounded-lg" placeholder="Search or jump to...">
-
-              <a href="/projects" class="px-3 py-2 ml-4 text-lg font-light hover-tilt text-white rounded-md"> 
-                Projects
-              </a>
-
-              <a href="/about" class=" active:bg-yellow-300 px-3 py-2 ml-6  text-lg font-light hover-tilt text-white rounded-md"> 
-                About
-              </a>
-
-              <a href="/contact" class="px-3 py-2 ml-6 text-lg font-light hover-tilt text-white rounded-md "> 
-                Contact
-              </a>
-            
-            </div>
-          </div>
-        </div>
-        <div class="flex -mr-2 md:hidden">
-          <button class="inline-flex items-center justify-center p-2 rounded-md hover:text-white hover:bg-gray-700 ">
-            <svg class="block w-6 h-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-          </button>
+<nav class=" font-main fixed top-0 w-full z-40 glass-nav">
+  <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-20">
+      <div class="flex items-center">
+        <div class="cursor-default flex items-start">
+          <a href="/" class="talkbubble hover-tilt"> PVG </a>
         </div>
       </div>
+      <div class="flex items-center ml-auto mr-24 hidden md:flex">
+        <input type="text" class="hidden px-4 py-1 font-light text-sm placeholder-white bg-gray-700 rounded-lg" placeholder="Search or jump to...">
+
+        <a href="/projects" class="px-3 py-2 text-lg font-light hover-tilt rounded-md"> 
+          Projects
+        </a>
+
+        <a href="/about" class="active:bg-yellow-300 px-3 py-2 ml-6 text-lg font-light hover-tilt rounded-md"> 
+          About
+        </a>
+
+        <a href="/contact" class="px-3 py-2 ml-6 text-lg font-light hover-tilt rounded-md"> 
+          Contact
+        </a>
+      </div>
+      <div class="flex -mr-2 md:hidden">
+        <button class="inline-flex items-center justify-center p-2 rounded-md hover:text-white hover:bg-gray-700">
+          <svg class="block w-6 h-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
     </div>
-  </nav>
+  </div>
+</nav>
 
   
             <!-- Contact Button -->

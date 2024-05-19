@@ -119,26 +119,6 @@ user-select: none;
   font-size: 19px;
 }
 
-body {
-    color: #ffffff; 
-    /* 
-    background: rgb(21, 21, 21) url('https://i.postimg.cc/p2Wjy2Tf/GRAINY-HUE-GRADIENT.png');
-    BG IMAGE */
-    background-color: rgb(25, 25, 25); 
-     /*
-    background: rgb(21, 21, 21) url('https://i.postimg.cc/B6zdRtyM/image-2024-03-18-185814125.jpg') no-repeat center center fixed;
-    */
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    -o-user-select: none;
-    user-select: none;  
-
-    background-size: cover;
-
-
-}
 
 .backdrop-light{
   transition: 1s;
@@ -630,18 +610,7 @@ h2 {
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(7px);
 }
-.glass-bg{
-  background-color: rgba(125, 125, 125, 0.5);
-  font-size: 27px;
-  font-weight: lighter;
-  text-shadow: 1px 0px 10px rgba(0, 0, 0, 0.342);
-  border-radius: 10px;
-  backdrop-filter: blur(22px);
-  -webkit-backdrop-filter: blur(22px);
-  border-width: 2px;
-  border-style: outset;
-  border-color: rgba(140, 140, 140, 0.078);
-}
+
 
 .glass-btns{
   background-color: rgba(255, 255, 255, 0.083);
@@ -908,7 +877,7 @@ animation: bounces 2s ease infinite .6s, color-change 4.4s infinite;
   height: 0;
   border-top: 13px solid transparent;
   border-left: 20px solid rgb(255, 255, 255);
-  border-bottom: 10px solid transparent;
+  border-bottom: 10px solid transparent
 }
 
 .talkbubble-b {
@@ -960,6 +929,58 @@ animation: bounces 2s ease infinite .6s, color-change 4.4s infinite;
 }
 
 .profile-pic {
+
   width: 200px;
-  filter: sepia(0%) saturate(10000%) hue-rotate(0deg); /* Recolor the image to yellow */
+  filter: invert(100%) sepia(0%) saturate(10000%) hue-rotate(0deg); /* Recolor the image to yellow */
 }
+
+body {
+  color: #000000; 
+  /* 
+  background: rgb(21, 21, 21) url('https://i.postimg.cc/p2Wjy2Tf/GRAINY-HUE-GRADIENT.png');
+  BG IMAGE */
+  background-color: rgb(214, 214, 214); 
+   /*
+     font-family: "PT Mono", monospace;
+  background: rgb(21, 21, 21) url('https://i.postimg.cc/B6zdRtyM/image-2024-03-18-185814125.jpg') no-repeat center center fixed;
+  */
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;  
+
+  background-size: cover;
+}
+
+.border-b{
+  border-color: rgb(0, 0, 0);
+  border-style: solid;
+}
+.border-t{
+  border-color: rgb(0, 0, 0);
+}
+
+.glass-bg{
+  background-color: rgba(125, 125, 125, 0);
+  font-size: 27px;
+  font-weight: lighter;
+  border-radius: 10px;
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px)
+}
+  /* 
+.glass-bg{
+  background-color: rgba(125, 125, 125, 0.5);
+  font-size: 27px;
+  font-weight: lighter;
+  text-shadow: 1px 0px 10px rgba(0, 0, 0, 0.342);
+  border-radius: 10px;
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+  border-width: 2px;
+  border-style: outset;
+  border-color: rgba(140, 140, 140, 0.078);
+}
+*/

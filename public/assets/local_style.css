@@ -936,7 +936,7 @@ animation: bounces 2s ease infinite .6s, color-change 4.4s infinite;
   z-index: 1;
   margin-top: -255px; /* Move the second image up to overlay */
 
-  animation: fadebulb 4s infinite; /* Apply the fade animation */
+  /*animation: fadebulb 4s infinite;  Apply the fade animation */
 }
 
 @keyframes fadebulb {

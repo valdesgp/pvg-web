@@ -595,9 +595,7 @@ h2 {
   background-color: rgba(130, 130, 130, 0.193);
 }
 .glass-nav{
-  background-color: rgba(255, 255, 255, 0.117);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(7px);
+  background-color: rgb(214, 214, 214);
   font-size: 24px;
 }
 .glass-nav-b{

@@ -23,7 +23,11 @@ const projectSchema = new mongoose.Schema({
   },
   info: {
     about: String,
-    desc: String
+    desc: String,
+    desc1: String,
+    desc2: String,
+    desc3: String,
+    desc4: String
   }
 }, {
   timestamps: {createdAt: true, updatedAt: true},

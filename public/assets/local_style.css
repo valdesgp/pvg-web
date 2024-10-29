@@ -1054,3 +1054,27 @@ body {
   margin-top: 10px;
   font-style: italic;
 }
+
+.year-button {
+  padding: 5px 10px;
+  margin: 2px;
+  border-radius: 6px;
+  color: #161616;
+  border: 1px solid #d1d5db; /* Light gray border */
+  background-color: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.year-button:hover {
+  background-color: #f3f4f6; /* Light gray on hover */
+}
+
+.year-button.active {
+  background-color: #640076;
+  color: #ffffff;
+  border: 1px solid #640076;
+  box-shadow: 0px 2px 5px rgba(100, 0, 118, 0.3); /* Slightly stronger shadow when active */
+}

@@ -1122,8 +1122,8 @@ body {
 }
 
 .year-button.active {
-  background-color: #640076;
+  background-color: #252525;
   color: #ffffff;
-  border: 1px solid #640076;
-  box-shadow: 0px 2px 5px rgba(100, 0, 118, 0.3); /* Slightly stronger shadow when active */
+  border: 1px solid #252525;
+  box-shadow: 0px 2px 5px #25252562; /* Slightly stronger shadow when active */
 }

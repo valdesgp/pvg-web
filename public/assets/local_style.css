@@ -868,26 +868,23 @@ animation: bounces 2s ease infinite .6s, color-change 4.4s infinite;
 }
 
 .hover-tilt {
-  animation-name: tiltout;
   transform: rotate(0deg);
-  animation-duration: 0.3s;
+  transition: transform 0.3s;
 }
 
 .hover-tilt:hover {
-  transform: rotate(14deg);
-  animation-name: tiltin;
-  animation-duration: 0.3s;
+  transform: rotate(8deg);
 }
 
-@keyframes tiltin {
-  0%   {transform: rotate(0deg);}
-  100%   {transform: rotate(14deg);}
+.hover-slide {
+  transform: translateX(0px);
+  transition: transform 0.3s;
 }
 
-@keyframes tiltout {
-  0%   {transform: rotate(14deg);}
-  100%   {transform: rotate(0deg);}
+.hover-slide:hover {
+  transform: translateX(30px);
 }
+
 
 .profile-pic {
   width: 200px;
@@ -1033,7 +1030,7 @@ padding-bottom: 6px;
 }
 
 body {
-  color: #000000; 
+  color: #2D2D2D; 
   /* 
   background: rgb(21, 21, 21) url('https://i.postimg.cc/p2Wjy2Tf/GRAINY-HUE-GRADIENT.png');
   BG IMAGE */

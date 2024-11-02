@@ -886,10 +886,63 @@ animation: bounces 2s ease infinite .6s, color-change 4.4s infinite;
 }
 
 
-.profile-pic {
-  width: 200px;
-  filter: invert(100%) sepia(0%) saturate(10000%) hue-rotate(0deg); /* Recolor the image to yellow */
+.profile-pic-container {
+  width: 220px; /* Container size */
+  padding: 10px; /* Space for the border effect */
+  display: inline-block;
+  position: relative; /* For positioning the animated border */
+  overflow: hidden; /* Ensures the border doesn't overflow the container */
 }
+
+.profile-pic {
+  width: 100%;
+  filter: invert(100%) sepia(0%) saturate(10000%) hue-rotate(0deg);
+  border-radius: 50%; /* Make the image circular */
+  position: relative; /* Ensure the image is in front */
+  z-index: 3; /* Bring the image to the front */
+}
+
+/* Thicker ring border effect with 1/5 invisible */
+.profile-pic-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%; /* Make the border circular */
+  background: conic-gradient(
+    transparent 0%,
+    transparent 20%, /* 1/5 of the ring invisible */
+    #32CD32 20%,     /* Start of the ring with green color */
+    #32CD32 100%     /* End of the ring */
+  ); /* Creates a ring pattern */
+  animation: spin-border 5s linear infinite; /* Spin effect */
+  z-index: 1; /* Ensure it stays below the profile image */
+}
+
+/* White circle behind the image */
+.profile-pic-container::after {
+  content: '';
+  position: absolute;
+  top: 5%; /* Adjust to center within the container */
+  left: 5%; /* Adjust to center within the container */
+  width: 90%; /* Make the white circle bigger */
+  height: 90%; /* Make the white circle bigger */
+  border-radius: 50%; /* Make the circle circular */
+  background-color: rgb(214, 214, 214);  /* White background */
+  z-index: 2; /* Place above the animated border and below the image */
+}
+
+@keyframes spin-border {
+  0% {
+    transform: rotate(0deg); /* Start at 0 degrees */
+  }
+  100% {
+    transform: rotate(360deg); /* Complete one full rotation */
+  }
+}
+
 
 .profile-card {
   border-collapse: collapse;

@@ -43,6 +43,22 @@
                                 <p class="text-md font-thin mb-3 ml-6"> <%= projects[i].info.desc2%></p>
                                 <p class="text-md font-thin mb-3 ml-6"> <%= projects[i].info.desc3%></p>
                                 <p class="text-md font-thin mb-3 ml-6"> <%= projects[i].info.desc4%></p>
+                                
+                                <div class="grid grid-cols-2 gap-0">
+                                    <div class="list-none">
+                                        <img class="w-full h-60 object-cover rounded-tl-xl" src="<%= projects[i].images.thumb1 %>" alt="superhero profile image">
+                                    </div>
+                                    <div class="list-none">
+                                        <img class="w-full h-60 object-cover rounded-tr-xl" src="<%= projects[i].images.thumb1 %>" alt="superhero profile image">
+                                    </div>
+                                    <div class="list-none">
+                                        <img class="w-full h-60 object-cover rounded-bl-xl" src="<%= projects[i].images.thumb1 %>" alt="superhero profile image">
+                                    </div>
+                                    <div class="list-none">
+                                        <img class="w-full h-60 object-cover rounded-br-xl" src="<%= projects[i].images.thumb1 %>" alt="superhero profile image">
+                                    </div>
+                                </div>
+                                
 
                                 <div class="mt-12 mb-2 flex space-x-4">
                                     <a href="<%= projects[i].links.demo %>" target="_blank" rel="noopener noreferrer" class="connect-button-c flex items-center justify-center bg-blue-700 text-white rounded px-4 py-2">

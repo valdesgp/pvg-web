@@ -759,7 +759,6 @@ h6{
   display: flex;
   font-size: 20px;
   font-weight: 600;
-  font-family: 'Press Start 2P', cursive; 
   opacity: 70%;
 }
 
@@ -1108,7 +1107,6 @@ body {
   BG IMAGE */
   background-color: rgb(214, 214, 214); 
    /*
-     font-family: "PT Mono", monospace;
   background: rgb(21, 21, 21) url('https://i.postimg.cc/B6zdRtyM/image-2024-03-18-185814125.jpg') no-repeat center center fixed;
   */
   -webkit-user-select: none;

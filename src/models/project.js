@@ -9,6 +9,7 @@ const projectSchema = new mongoose.Schema({
     thumb3: String,
     thumb4: String,
     thumb5: String,
+    thumb6: String
   },
   lang: {
     a: String,
@@ -27,7 +28,8 @@ const projectSchema = new mongoose.Schema({
     desc1: String,
     desc2: String,
     desc3: String,
-    desc4: String
+    desc4: String,
+    desc5: String
   }
 }, {
   timestamps: {createdAt: true, updatedAt: true},

@@ -9,7 +9,8 @@ const projectSchema = new mongoose.Schema({
     thumb3: String,
     thumb4: String,
     thumb5: String,
-    thumb6: String
+    thumb6: String,
+    thumb7: String
   },
   lang: {
     a: String,

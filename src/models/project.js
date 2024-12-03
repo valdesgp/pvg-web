@@ -28,7 +28,7 @@ const projectSchema = new mongoose.Schema({
     desc: String,
     desc1: String,
     desc2: String,
-    desc3: String,
+    desc3: Strings,
     desc4: String,
     desc5: String
   }

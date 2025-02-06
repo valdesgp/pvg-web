@@ -31,6 +31,10 @@ const projectSchema = new mongoose.Schema({
     desc3: String,
     desc4: String,
     desc5: String
+  },
+  attribs: {
+    type: String,
+    typeb: String
   }
 }, {
   timestamps: {createdAt: true, updatedAt: true},

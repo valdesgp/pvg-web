@@ -73,9 +73,14 @@
 
       <!-- Year Buttons to switch between years -->
       <tr>
-        <th colspan="2" class="text-center mt-2">
+        <th class="text-center mt-2">
+          <a class="year-button" onclick="showSlide('2025')">2025</a>
           <a class="year-button active" onclick="showSlide('2024')">2024</a>
           <a class="year-button" onclick="showSlide('2023')">2023</a>
+        </th>
+      </tr>
+      <tr>
+        <th>
           <a class="year-button" onclick="showSlide('2022')">2022</a>
           <a class="year-button" onclick="showSlide('2021')">2021</a>
         </th>
@@ -90,10 +95,16 @@
       </tr>
 
       <!-- Year-Specific Slides with Contribution Stats -->
+      <tr id="slide-2025" class="slide hidden">
+        <th colspan="2">
+          <img src="/public/imgs/gitstats-25.jpg" alt="git-stats-2025">
+          <p class="text-lg ml-1 mt-2 font-thin">2025: <i>34 Contributions</i></p>
+        </th>
+      </tr>
       <tr id="slide-2024" class="slide">
         <th colspan="2">
           <img src="/public/imgs/gitstats-24.jpg" alt="git-stats-2024">
-          <p class="text-lg ml-1 mt-2 font-thin">2024: <i>134 Contributions (so far)</i></p>
+          <p class="text-lg ml-1 mt-2 font-thin">2024: <i>156 Contributions</i></p>
         </th>
       </tr>
       <tr id="slide-2023" class="slide hidden">

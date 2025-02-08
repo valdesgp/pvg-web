@@ -1042,6 +1042,7 @@ padding-bottom: 6px;
   filter: invert(100%) sepia(0%) saturate(10000%) hue-rotate(0deg); /* Recolor the image to yellow */
   position: relative;
   z-index: 2;
+  animation: fadebulb 2.0s infinite; /* Apply the fade animation */
 }
 .bulb-pic-b {
   width: 240px;
@@ -1050,47 +1051,27 @@ padding-bottom: 6px;
   z-index: 1;
   margin-top: -255px; /* Move the second image up to overlay */
 
-  /*animation: fadebulb 4s infinite;  Apply the fade animation */
 }
 
 @keyframes fadebulb {
-  0%, 100% {
-    opacity: 1;
-}
-5% {
-    opacity: 0.9;
-}
-10% {
-    opacity: 0.7;
-}
-15% {
-    opacity: 0.4;
-}
-20% {
+  0% {
     opacity: 0;
-}
-30% {
+  }
+  25% {
     opacity: 0.8;
-}
-40% {
-    opacity: 0.6;
-}
-50% {
+  }
+  50% {
     opacity: 1;
-}
-60% {
-    opacity: 0.5;
-}
-70% {
+  }
+  75% {
+    opacity: 0.8;
+  }
+  100% {
     opacity: 0;
+  }
 }
-80% {
-    opacity: 0.9;
-}
-90% {
-    opacity: 0.2;
-}
-}
+
+
 
 .home-pic {
   filter: invert(100%) sepia(0%) saturate(10000%) hue-rotate(0deg); /* Recolor the image to yellow */

@@ -17,7 +17,9 @@ const projectSchema = new mongoose.Schema({
     b: String,
     c: String,
     d: String,
-    e: String
+    e: String,
+    f: String,
+    g: String
   },
   links: {
     demo: String,

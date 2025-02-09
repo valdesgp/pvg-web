@@ -1090,13 +1090,14 @@ body {
    /*
   background: rgb(21, 21, 21) url('https://i.postimg.cc/B6zdRtyM/image-2024-03-18-185814125.jpg') no-repeat center center fixed;
   */
+     /*
   -webkit-user-select: none;
   -khtml-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   -o-user-select: none;
   user-select: none;  
-
+  */
   background-size: cover;
   
 }
@@ -1176,7 +1177,24 @@ body {
   box-shadow: 0px 2px 5px #25252562; /* Slightly stronger shadow when active */
 }
 
-.navbar-message{
-  background-color: rgba(68, 0, 145, 0.657);
+@keyframes lightSlide {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
+.navbar-message {
+  background: linear-gradient(90deg, 
+    rgba(68, 0, 145, 0.657), 
+    rgba(68, 0, 145, 0.657), 
+    rgba(119, 0, 255, 0.657), 
+    rgba(68, 0, 145, 0.657), 
+    rgba(68, 0, 145, 0.657));
+  background-size: 200% 100%;
+  animation: lightSlide 4s infinite linear;
   font-size: 18px;
 }
+

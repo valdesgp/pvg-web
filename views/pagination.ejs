@@ -8,7 +8,7 @@
                 <table class="rounded-xl w-full text-sm mt-6 text-left mb-2">
                     <tr class="font-semibold grid grid-cols-1 list-inside">
                         <th class="content flex">
-                            <a class="font-semibold text-3xl my-auto whitespace-nowrap w-full"><%= projects[i].name %> :</a>
+                            <a class="font-semibold text-3xl my-auto whitespace-nowrap mb-2 w-full"><%= projects[i].name %> :</a>
 
 
                              <!-- Desktop Icons Langs -->
@@ -21,7 +21,7 @@
                         
                         <th>
                             
-                            <a href="<%= projects[i].attribs.link %>" target="_blank" rel="noopener noreferrer" class="mt-1 text-lg font-normal floa underline text-blue-600 whitespace-no-wrap"> <%= projects[i].attribs.link %> </a>
+                            <a href="<%= projects[i].attribs.link %>" target="_blank" rel="noopener noreferrer" class="mt-1 text-lg font-normal underline text-blue-600 whitespace-no-wrap"> <%= projects[i].attribs.link %> </a>
 
                         <!-- Appearance -->
                         <ul class="grid grid-cols-1 gap-0 font-normal">
@@ -40,7 +40,7 @@
                             </div>
 
                             <!-- Desktop Icons Langs -->
-                            <div class="hidden sm:hidden md:hidden lg:flex mr-1 items-center text-gray-800 mt-2 mb-2">
+                            <div class="hidden sm:hidden md:hidden lg:flex mr-1 items-center text-gray-800 mt-3 mb-2">
                                 <p class="text-xl mb-1 mr-2"> Tools: </p>
                                 <div class="px-1 text-lg font-semibold bg-orange-400  rounded-md whitespace-no-wrap"> <%= projects[i].lang.a %> </div>
                                 <div class="ml-3 px-1 text-lg font-semibold bg-orange-400  rounded-md whitespace-no-wrap"> <%= projects[i].lang.b %> </div>
@@ -57,7 +57,7 @@
                             
                             <li class="list-none">
                                 <a href="<%= projects[i].links.demo %>" target="_blank" rel="noopener noreferrer">
-                                <img class="rounded-2xl items-end w-full  p-2 object-cover" src="<%= projects[i].images.thumb1 %>" loading="lazy"  alt="superhero profile image"> 
+                                <img class="rounded-2xl items-end w-full object-cover" src="<%= projects[i].images.thumb1 %>" loading="lazy"  alt="superhero profile image"> 
                                 </a>
                             </li>
 
@@ -67,7 +67,7 @@
                                 <p class="text-md font-thin mb-3 ml-6"> <%= projects[i].info.desc1%></p>
                                 <p class="text-md font-thin mb-3 ml-6"> <%= projects[i].info.desc2%></p>
                                 <p class="text-md font-thin mb-3 ml-6"> <%= projects[i].info.desc3%></p>
-                                <p class="text-md font-thin mb-6 ml-6"> <%= projects[i].info.desc4%></p>
+                                <p class="text-md font-thin mb-3 ml-6"> <%= projects[i].info.desc4%></p>
                                 <p class="text-md font-thin mb-6 ml-6"> <%= projects[i].info.desc5%></p>
                                 
 <!-- Img Gallery -->

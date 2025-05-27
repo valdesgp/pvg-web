@@ -1,0 +1,55 @@
+
+<nav>
+    <div class="container">
+        <div class="row">
+            
+            <% for (var i = 0; i < 11; i++) { %>
+                    
+            <table class="rounded-xl w-full text-sm text-left">
+            <tr class="font-semibold grid grid-cols-1 list-inside">
+    <!-- Images Grid -->
+    <div id="imageGrid" class="grid grid-cols-2 gap-2">
+        <div class="list-none">
+            <img class="w-full h-60 object-cover" src="<%= projects[i].images.thumb2 %>" loading="lazy" alt="">
+        </div>
+        <div class="list-none">
+            <img class="w-full h-60 object-cover" src="<%= projects[i].images.thumb3 %>" loading="lazy" alt="">
+        </div>
+        <div class="list-none">
+            <img class="w-full h-60 object-cover" src="<%= projects[i].images.thumb4 %>" loading="lazy" alt=""/>
+        </div>
+        <div class="list-none">
+            <img class="w-full h-60 object-cover" src="<%= projects[i].images.thumb5 %>" loading="lazy" alt="">
+        </div>
+        <div class="list-none">
+            <img class="w-full h-60 object-cover" src="<%= projects[i].images.thumb6 %>" loading="lazy" alt="">
+        </div>
+        <div class="list-none">
+            <img class="w-full h-60 object-cover" src="<%= projects[i].images.thumb7 %>" loading="lazy" alt="">
+        </div>
+    </div>
+
+                    </tr>
+                </table>
+                </a>
+            <% } %>
+        </div>
+
+
+    </div>
+</nav>
+
+<script>
+    function toggleMinimize() {
+        const grid = document.getElementById('imageGrid');
+        const toggleButton = document.getElementById('toggleButton');
+        
+        if (grid.style.display === "none") {
+            grid.style.display = "grid"; // Show the grid
+            toggleButton.innerHTML = "Image Gallery v"; // Update text to "v"
+        } else {
+            grid.style.display = "none"; // Hide the grid
+            toggleButton.innerHTML = "Image Gallery >"; // Update text to ">"
+        }
+    }
+</script>

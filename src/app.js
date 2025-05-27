@@ -71,6 +71,26 @@ app.get('/', async (req, res) => {
         })
       });
 
+        // Route for specifyng hero list page.
+   app.get('gallery/:page', async (req, res) => {
+    var perPage = 5
+    var page = req.params.page || 1
+    Project
+        .find({})
+        .skip((perPage * page) - perPage)
+        .limit(perPage)
+        .exec(function(err, projectRouter) {
+            Project.count().exec(function(err, count) {
+                if (err) return next(err)
+                res.render('gallery.ejs', {
+                    projects: projectRouter,
+                    current: page,
+                    pages: Math.ceil(count / perPage)
+                })
+            })
+        })
+      });
+
 // 404 Page
 app.get('*', (req, res) => {
   res.render("404.ejs")

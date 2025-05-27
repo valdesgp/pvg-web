@@ -99,6 +99,28 @@ router.get('/heroes/:id', async (req, res) => {
     });
 
 
+      // Route for about page.
+  router.get('/gallery', async (req, res) => {
+    var perPage = 11
+    var page = req.params.page || 1
+  
+    Project
+        .find({})
+        .skip((perPage * page) - perPage)
+        .limit(perPage)
+        .exec(function(err, projectRouter) {
+            Project.count().exec(function(err, count) {
+                if (err) return next(err)
+                res.render('gallery.ejs', {
+                    projects: projectRouter,
+                    current: page,
+                    pages: Math.ceil(count / perPage)
+                })
+            })
+        })    
+    });
+
+
 
   // Route for about page.
   router.get('/about', async (req, res) => {
@@ -109,6 +131,7 @@ router.get('/heroes/:id', async (req, res) => {
   router.get('/contact', async (req, res) => {
     res.render("contact.ejs")
   })
+
 
 
 module.exports = router

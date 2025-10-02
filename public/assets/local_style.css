@@ -1198,3 +1198,44 @@ body {
   font-size: 18px;
 }
 
+.sidebar {
+  background: linear-gradient(to bottom, rgb(114, 179, 184) 0%, rgb(106, 166, 171) 40%, rgb(91, 141, 144) 100%);
+  padding: 100px;
+  z-index: 10;
+  color: #ffffff;
+  width: 500px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  opacity: 0;
+  visibility: hidden;
+  animation: slideIn 0.3s forwards;
+  transition: opacity 0.3s, visibility 0s 0.3s, left 0.3s ease;
+}
+.sidebar a {
+  text-decoration: none; /* Remove underline */
+  color: #ffffff;
+  font-size:50px;
+}
+
+/* For mobile navbar hidden */
+.mobile-navbar-hide {
+  visibility: hidden;
+  opacity: 0;
+  left: -250px;
+}
+.mobile-navbar {
+  display: block; /* Muestra el menú */
+}
+.videoad-posfix{
+  margin-bottom: -150px;
+}
+.slideshow-container {
+  position: relative;
+  max-width: 100%;
+}
+

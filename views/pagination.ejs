@@ -10,7 +10,7 @@
               </a>             
                     
               <!-- Desktop Icons Langs -->
-              <div class="flex lg:flex mr-1 items-center text-gray-800">
+              <div class="hidden lg:flex sm:hidden md:hidden mr-1 items-center text-gray-800">
                 <div class="ml-3 px-1 text-lg font-semibold bg-blue-400 rounded-md whitespace-no-wrap">
                   <%= projects[i].attribs.types %>
                 </div>
@@ -23,11 +23,11 @@
               <!-- Appearance -->
               <ul class="grid grid-cols-1 gap-0 font-normal">
                 <!-- Tools -->
-                <div class="flex flex-wrap items-center gap-2 text-gray-800 mt-3 mb-2">
+                <div class="flex flex-wrap items-center gap-2 text-gray-800 mt-3 mb-4">
                     <p class="w-full md:w-auto text-base md:text-lg font-medium mr-2">Tools:</p>
                          <% Object.values(projects[i].lang).forEach(function(tool) { %>
                          <% if (tool) { %>
-                          <span class="px-1 py-1 text-sm md:text-base font-semibold bg-orange-400 rounded-md">
+                          <span class="px-2 py-1 text-sm md:text-base font-semibold bg-orange-400 rounded-md">
                          <%= tool %>
                          </span>
                          <% } %>
@@ -58,7 +58,7 @@
 
                   <div class="relative"></div>
 
-                  <div class="mt-12 mb-2 flex space-x-4">
+                  <div class="mt-12 mb-2 flex space-x-2 mr-16 lg:mr-0 md:mr-16 sm:mr-16 ml-1 lg:ml-0 md:ml-0 sm:ml-1">
                     <a href="<%= projects[i].links.demo %>"
                        target="_blank"
                        rel="noopener noreferrer"

@@ -27,31 +27,52 @@
     
         <div class="container pb-1 mx-auto mt-4">
             <!-- MAIN CONTENT-->
-            <div class="md:flex">
+            <div class="flex">
               <div class="w-full mr-4 lg:w-3/4 md:w-full glass-bg ">
-              <div class="font-main mb-2">
+                
+              <!-- Desktop -->
+              <div class="font-main mb-2 hidden md:hidden lg:block">
                 <div class="container-bulb">
                <!-- Profile Picture Container -->
-                 <th class="profile-pic-container mt-2 mx-auto">
-                   <img style="width: 170px;" src="/public/imgs/profile-illustration.png" alt="profile image" class="profile-pic mx-auto">
+                 <th class="profile-pic-container mt-2">
+                   <img src="/public/imgs/profile-illustration.png" alt="profile image" class="profile-pic">
                 </th>
                 </div>
-                  <p style="font-size: 42px;" class="homepage-text-b">
+                  <p style="font-size: 80px;" class="homepage-text-b">
                      Hi, I’m Patricio 👋
                   </p>
-                  <p style="font-size: 22px;" class="font- homepage-text-b">
+                  <p style="font-size: 36px;" class="font- homepage-text-b">
                     Here you can find some of my work!
                  </p>
     
                   <p class="text-sms float-right mr-8 mt-4">
                       <b></b>
                   </p>
-                  </div>
+              </div>
+
+                <!-- Mobile -->
+              <div class="font-main mb-10 block ml-4 lg:hidden md:block sm:block">
+                <div class="container-bulb">
+               <!-- Profile Picture Container -->
+                 <th class="profile-pic-container mt-2 mx-auto">
+                   <img style="width: 170px;" src="/public/imgs/profile-illustration.png" alt="profile image" class="profile-pic mx-auto">
+                </th>
                 </div>
+                  <p style="font-size: 38px;" class="text-center">
+                     Hi, I’m Patricio 👋
+                  </p>
+                  <p style="font-size: 22px;" class="text-center">
+                    Here you can find some of my work!
+                 </p>
+    
+                  </p>
+              </div>
+
+            </div>
     
             <!--SIDE BAR // ABOUT-->
-            <div class="ml-4 lg:w-1/4">
-              <div class="hidden lg:block glass-bg ">
+            <div class="hidden lg:block md:hidden sm:hidden  ml-4 lg:w-1/4">
+              <div class="glass-bg ">
                   <%- include('sidebar.ejs') %>
                 </div>
               </div>

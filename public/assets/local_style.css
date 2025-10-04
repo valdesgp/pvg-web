@@ -1105,6 +1105,7 @@ body {
 .border-b{
   border-color: rgb(30, 30, 30);
   border-style: solid;
+  opacity: 50%;
 }
 .border-t{
   border-color: rgb(30, 30, 30);

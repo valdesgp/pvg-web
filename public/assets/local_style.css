@@ -1015,13 +1015,7 @@ padding-bottom: 6px;
   color: white;
   border: none;
   padding: 4px;
-padding-left: 87px;
-padding-right: 87px;
-padding-bottom: 6px;
-  border-radius: 5px;
   cursor: pointer;
-  font-size: 20px;
-  font-weight: normal;
   width: 56%; /* Make the button full-width */
 }
 

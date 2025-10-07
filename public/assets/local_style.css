@@ -1102,6 +1102,7 @@ body {
 }
 .border-t{
   border-color: rgb(30, 30, 30);
+  opacity: 50% ;
 }
 
 .glass-bg{

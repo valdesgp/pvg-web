@@ -8,6 +8,7 @@ const Comment = require(__basedir + '/models/comment')
 const Project = require(__basedir + '/models/project')
 
 const DEFAULT_HEROES_PER_PAGE = 10
+const DEFAULT_HEROES_PER_PAGE_B = 2
 const DEFAULT_COMMENTS_PER_PAGE = 3
 
 /**
@@ -46,6 +47,11 @@ router.get('/heroes', async (req, res) => {
     limit: parseInt(req.query.limit, DEFAULT_HEROES_PER_PAGE) || DEFAULT_HEROES_PER_PAGE
   }
 
+    const pagesb = {
+    pageb: parseInt(req.query.page, DEFAULT_HEROES_PER_PAGE_B) || 0,
+    limitb: parseInt(req.query.limit, DEFAULT_HEROES_PER_PAGE_B) || DEFAULT_HEROES_PER_PAGE_B
+  }
+
 Project.find()
   //Sort by "Name" ascending
     .sort({name: 'asc'})
@@ -76,6 +82,28 @@ router.get('/heroes/:id', async (req, res) => {
     console.log("Succesfully loaded a single 'Hero' specified by its ID!")
   });
 })
+
+
+  // Route for about page.
+  router.get('/', async (req, res) => {
+    var perPageb = 11
+    var pageb = req.params.page || 1
+  
+    Project
+        .find({})
+        .skip((perPageb * pageb) - perPageb)
+        .limit(perPageb)
+        .exec(function(err, projectRouter) {
+            Project.count().exec(function(err, count) {
+                if (err) return next(err)
+                res.render('homepage.ejs', {
+                    projects: projectRouter,
+                    current: pageb,
+                    pages: Math.ceil(count / perPageb)
+                })
+            })
+        })    
+    });
 
   // Route for about page.
   router.get('/projects', async (req, res) => {

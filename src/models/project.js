@@ -3,6 +3,7 @@ const mongoose = require('mongoose')
 const projectSchema = new mongoose.Schema({
   original_id: Number,
   name: String,
+  company: String,
   images: {
     thumb1: String,
     thumb2: String,
@@ -33,12 +34,22 @@ const projectSchema = new mongoose.Schema({
     desc2: String,
     desc3: String,
     desc4: String,
-    desc5: String
+    desc5: String,
+    desc6: String,
+    desc7: String
   },
   attribs: {
     types: String,
     typesb: String,
     link: String
+  },
+  role: {
+    rolename: String,
+    roledesc: String
+  },
+  timeline: {
+    duration: String,
+    period: String
   }
 }, {
   timestamps: {createdAt: true, updatedAt: true},

@@ -45,11 +45,28 @@ const projectRouter = require(__basedir + '/routers/hero')
 app.use(projectRouter)
 
 
-app.get('/', async (req, res) => {
-  res.render("homepage.ejs", {
-    projects: projectRouter,
-  })
-})
+
+
+
+              // Route for specifyng hero list page.
+   app.get('/', async (req, res) => {
+    var perPage = 0
+    var page = req.params.page || 0
+    Project
+        .find({})
+        .skip((perPage * page) - perPage)
+        .limit(perPage)
+        .exec(function(err, projectRouter) {
+            Project.count().exec(function(err, count) {
+                if (err) return next(err)
+                res.render('homepage.ejs', {
+                    projects: projectRouter,
+                    current: page,
+                    pages: Math.ceil(count / perPage)
+                })
+            })
+        })
+      });
 
   // Route for specifyng hero list page.
    app.get('projects/:page', async (req, res) => {
@@ -90,6 +107,8 @@ app.get('/', async (req, res) => {
             })
         })
       });
+
+
 
 // 404 Page
 app.get('*', (req, res) => {

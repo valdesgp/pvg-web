@@ -1,6 +1,6 @@
 <nav>
   <div class="container">
-    <div class="row">
+    <div class="grid grid-cols-2">
       <% for (var i = 0; i < 11; i++) { %>
         <table class="rounded-xl w-full text-sm mt-6 text-left mb-2">
           <tr class="font-semibold grid grid-cols-1 list-inside">
@@ -8,16 +8,7 @@
               <a class="font-semibold text-3xl -mb-2 my-auto whitespace-nowrap w-full">
                 <%= projects[i].name %> :
               </a>             
-                    
-              <!-- Desktop Icons Langs -->
-              <div class="hidden lg:flex sm:hidden md:hidden mr-1 items-center text-gray-800">
-                <div class="ml-3 px-1 text-lg font-semibold bg-blue-400 rounded-md whitespace-no-wrap">
-                  <%= projects[i].attribs.types %>
-                </div>
-                <div class="ml-3 px-1 text-lg font-semibold bg-blue-400 rounded-md whitespace-no-wrap">
-                  <%= projects[i].attribs.typesb %>
-                </div>
-              </div>
+
             </th>
             <th>
               <!-- Appearance -->
@@ -62,14 +53,12 @@
   <div>
     <p class="text-lg font-semibold mb-2">Role & Responsibilities</p>
     <p class="mb-2 italic"><%= projects[i].role.rolename %></p>
-    <p class="mb-2 ml-6"><%= projects[i].role.roledesc %></p>
   </div>
 
   <!-- Timeline & Duration -->
   <div>
     <p class="text-lg font-semibold mb-2">Timeline & Duration</p>
         <p class="mb-2 ml-6"><%= projects[i].timeline.period %></p>
-    <p class="mb-2 ml-6"><%= projects[i].timeline.duration %></p>
   </div>
 </div>
 
@@ -77,27 +66,8 @@
 
 
 
-                  <div class="mb-3">
-                    <a>
-                       <p class="text-lg mr-16 font-semibold">Process & Development</p>
-                    </a>
-                  </div>
+  
 
-                  <p class="mb-3 ml-6"><%= projects[i].info.desc1 %></p>
-                  <p class="mb-3 ml-6"><%= projects[i].info.desc2 %></p>
-                  <p class="mb-3 ml-6"><%= projects[i].info.desc3 %></p>
-                  <p class="mb-4 ml-6"><%= projects[i].info.desc4 %></p>
-
-                  <div class="mb-3 mt-2">
-                    <a>
-                       <p class="text-lg mr-16 font-semibold">Results & Impact</p>
-                    </a>
-                  </div>
-
-                  <p class="mb-3 ml-6"><%= projects[i].info.desc %></p>
-                  <p class="mb-3 ml-6"><%= projects[i].info.desc5 %></p>
-                  <p class="mb-3 ml-6"><%= projects[i].info.desc6 %></p>
-                  <p class="mb-6 ml-6"><%= projects[i].info.desc7 %></p>
 
                   <div class="relative"></div>
 

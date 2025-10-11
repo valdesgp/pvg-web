@@ -5,9 +5,16 @@
         <table class="rounded-xl w-full text-sm mt-6 text-left mb-2">
           <tr class="font-semibold grid grid-cols-1 list-inside">
             <th class="content flex">
-              <a class="font-semibold text-3xl -mb-2 my-auto whitespace-nowrap w-full">
-                <%= projects[i].name %> :
-              </a>             
+
+              <div class="w-full flex flex-col">
+  <a class="font-semibold text-3xl my-auto whitespace-nowrap w-full">
+    <%= projects[i].name %>
+  </a>
+  <a class="font-thin text-3xl italic mt-2 my-auto whitespace-nowrap w-full">
+    <%= projects[i].company %>
+  </a>
+</div>
+
                     
               <!-- Desktop Icons Langs -->
               <div class="hidden lg:flex sm:hidden md:hidden mr-1 items-center text-gray-800">

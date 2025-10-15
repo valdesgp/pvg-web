@@ -79,13 +79,32 @@ router.get('/heroes/:id', async (req, res) => {
 })
 
 
+// Homepage route - show only first 2 projects by lowest original_id
+router.get('/', async (req, res, next) => {
+  try {
+    const projects = await Project.find({})
+      .sort({ original_id: 1 }) // lowest ID first
+      .limit(2); // only 2 projects
+
+    res.render('homepage.ejs', {
+      projects,
+      current: 1,
+      pages: 1
+    });
+  } catch (err) {
+    next(err);
+  }
+});
+
+
+
 // Route for projects page
 router.get('/projects', async (req, res, next) => {
   const perPage = 11;
   const page = req.params.page || 1;
 
   Project.find({})
-     .sort({ original_id: 1 })
+    .sort({ original_id: 1 })
     .skip((perPage * page) - perPage)
     .limit(perPage)
     .exec((err, projectRouter) => {

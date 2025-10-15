@@ -46,8 +46,6 @@ app.use(projectRouter)
 
 
 
-
-
               // Route for specifyng hero list page.
    app.get('/', async (req, res) => {
     var perPage = 0

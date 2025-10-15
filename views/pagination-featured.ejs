@@ -1,14 +1,20 @@
 <nav>
   <div class="container">
-    <div class="grid grid-cols-2">
+    <div class="grid gap-2 grid-cols-2">
 <% for (var i = 0; i < projects.length; i++) { %>
   <% if (!projects[i]) continue; %>
         <table class="rounded-xl w-full text-sm mt-6 text-left mb-2">
-          <tr class="font-semibold grid grid-cols-1 list-inside">
-            <th class="content flex">
-              <a class="font-light text-3xl -mb-2 my-auto whitespace-nowrap w-full">
-                <%= projects[i].name %> :
-              </a>             
+          <tr class=" grid grid-cols-1 list-inside">
+            <th class="content flex">   
+
+              <div class="w-full flex flex-col">
+                <a class="font-light  text-3xl my-auto whitespace-nowrap w-full">
+                  <%= projects[i].name %>
+                </a>
+                <a class="font-thin text-2xl mt-2 my-auto whitespace-nowrap w-full">
+                   <%= projects[i].company %>
+                </a>
+              </div>
 
             </th>
             <th>
@@ -16,7 +22,7 @@
               <ul class="grid grid-cols-1 mr-2 gap-0 font-normal">
                 <!-- Tools -->
                 <div class="flex flex-wrap items-center gap-2 text-gray-800 mt-3 mb-4">
-                    <p class="w-full md:w-auto text-base md:text-lg font-medium mr-2">Tools:</p>
+                    <p class="w-full md:w-auto text-base md:text-lg font-lig mr-2">Tools:</p>
                          <% Object.values(projects[i].lang).forEach(function(tool) { %>
                          <% if (tool) { %>
                           <span class="px-2 py-1 text-sm md:text-base font-normal bg-orange-400 rounded-md">
@@ -39,16 +45,16 @@
 
 
 
-<div class="grid grid-cols-2 gap-4 mt-2 text-lg">
+<div class="grid grid-cols-2 gap-4 mt-4 text-lg">
   <!-- Role & Responsibilities -->
   <div>
-    <p class="font-normal mb-2">Role & Responsibilities</p>
+    <p class="font-normal mb-2">Role & Responsibilities:</p>
     <p class="mb-2 italic font-light"><%= projects[i].role.rolename %></p>
   </div>
 
   <!-- Timeline & Duration -->
   <div>
-    <p class="font-normal mb-2">Timeline & Duration</p>
+    <p class="font-normal mb-2">Timeline & Duration:</p>
         <p class="mb-2 font-light"><%= projects[i].timeline.period %></p>
   </div>
 </div>
@@ -86,13 +92,10 @@
                     </a>
                   </div>
 
-                  <p style="font-size:13px; opacity:70%;" class="text-center mb-4 lg:text-left">
-                    (Some demos/repositories are currently unavailable)
-                  </p>
                 </li>
               </ul>
 
-              <div class="flex items-center justify-between px-10 mt-2 border-b select-none md:mt-4"></div>
+
             </th>
           </tr>
         </table>

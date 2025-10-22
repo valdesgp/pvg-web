@@ -68,7 +68,7 @@ app.use(projectRouter)
 
   // Route for specifyng hero list page.
    app.get('projects/:page', async (req, res) => {
-    var perPage = 5
+    var perPage = 4
     var page = req.params.page || 1
     Project
         .find({})

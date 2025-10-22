@@ -100,25 +100,44 @@ router.get('/', async (req, res, next) => {
 
 // Route for projects page
 router.get('/projects', async (req, res, next) => {
-  const perPage = 4;
-  const page = parseInt(req.query.page) || 1; // <- use query, not params
+  try {
+    let perPage = req.query.perPage || 5;
+    const page = parseInt(req.query.page) || 1;
 
-  Project.find({})
-    .sort({ original_id: 1 })
-    .skip((perPage * (page - 1)))
-    .limit(perPage)
-    .exec((err, projectRouter) => {
-      if (err) return next(err);
-      Project.countDocuments().exec((err, count) => {
-        if (err) return next(err);
-        res.render('projects.ejs', {
-          projects: projectRouter,
-          current: page,
-          pages: Math.ceil(count / perPage)
-        });
+    if (perPage === 'all') {
+      const projects = await Project.find({}).sort({ original_id: 1 });
+      const count = projects.length;
+
+      return res.render('projects.ejs', {
+        projects,
+        current: 1,
+        pages: 1,
+        perPage: 'all',
+        count
       });
+    } else {
+      perPage = parseInt(perPage);
+    }
+
+    const count = await Project.countDocuments({});
+    const projects = await Project.find({})
+      .sort({ original_id: 1 })
+      .skip((page - 1) * perPage)
+      .limit(perPage);
+
+    res.render('projects.ejs', {
+      projects,
+      current: page,
+      pages: Math.ceil(count / perPage),
+      perPage,
+      count
     });
+  } catch (err) {
+    next(err);
+  }
 });
+
+
 
 // Route for projects page with pagination
 router.get('/projects/:page?', async (req, res, next) => {

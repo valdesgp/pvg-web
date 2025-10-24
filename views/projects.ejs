@@ -40,26 +40,27 @@
 
 
 <div class="flex items-center justify-between px-4 pb-1">
-  <div class="font-light text-2xl flex items-center space-x-3">
+  <div class="font-light lg:text-2xl text-xl flex items-center space-x-3">
     <span>
       Displaying <%= perPage %> results per page 
-      <span class="text-2xl">(Total Projects: <%= count %>)</span>
+      <span class="lg:text-2xl text-xl">(Total Projects: <%= count %>)</span>
     </span>
-
-    <form method="GET" action="/projects" class="flex items-center space-x-2">
-      <input type="hidden" name="page" value="1" />
-      <label for="perPage" class="text-lg font-light text-gray-700">Show:</label>
-      <select id="perPage" name="perPage"
-              class="border border-gray-300 rounded-md px-2 py-1 text-lg font-light focus:outline-none focus:ring-2 focus:ring-blue-200"
-              onchange="this.form.submit()">
-        <option value="3" <%= perPage == 3 ? 'selected' : '' %>>3</option>
-        <option value="5" <%= perPage == 5 ? 'selected' : '' %>>5</option>
-        <option value="10" <%= perPage == 10 ? 'selected' : '' %>>10</option>
-        <option value="all" <%= perPage === 'all' ? 'selected' : '' %>>All</option>
-      </select>
-    </form>
   </div>
+
+  <form method="GET" action="/projects" class="flex mr-1 items-center space-x-2">
+    <input type="hidden" name="page" value="1" />
+    <label for="perPage" class="text-lg font-light text-gray-700">Show:</label>
+    <select id="perPage" name="perPage"
+            class="border border-gray-300 rounded-md px-2 py-1 text-lg font-light focus:outline-none focus:ring-2 focus:ring-blue-200"
+            onchange="this.form.submit()">
+      <option value="3" <%= perPage == 3 ? 'selected' : '' %>>3</option>
+      <option value="5" <%= perPage == 5 ? 'selected' : '' %>>5</option>
+      <option value="10" <%= perPage == 10 ? 'selected' : '' %>>10</option>
+      <option value="all" <%= perPage === 'all' ? 'selected' : '' %>>All</option>
+    </select>
+  </form>
 </div>
+
 
 
                 <div class="flex items-center justify-between border-b select-none mb-2">

@@ -60,6 +60,81 @@
               <!-- Mobile Header Text -->
               <p style="font-size: 46px;" class="text-center">Hi, I’m Patricio 👋</p>
               <p style="font-size: 21px;" class="text-center font-thin -mt-1">a <i>UX/UI Designer</i> & <i>Front-End Developer</i></p>
+
+                               <!-- Top Border -->
+                  <th class="rounded-t-xl">
+                    <div class="lg:flex hidden items-center justify-between mt-12 -mr-5 lg:mr-0 border-b select-none"></div>
+                  </th>
+
+                  <!-- Header Row -->
+                  <div class="flex justify-between items-center mt-16 ml-3">
+                    <p style="font-size: 32px;" class="font-light">Who I've worked with</p>
+                    <a href="/about" class="underline text-blue-600" style="font-size: 32px;">Visit About Page</a>
+                  </div>
+
+                  <!-- Bottom Border -->
+                  <th class="rounded-t-xl">
+                    <div class="lg:flex hidden items-center justify-between mt-4 -mr-5 lg:mr-0 border-b select-none"></div>
+                  </th>
+
+<!-- Two Identical Logo + Text Blocks in 2-Column Grid, Centered -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-10 justify-center items-center">
+
+  <!-- Block 1 -->
+  <div class="flex items-center gap-5 ml-6 justify-center">
+    <a target="_blank" rel="noopener noreferrer" class="flex-shrink-0">
+      <img src="/public/imgs/empwrdfutures_logo.jpg"
+           alt="Empowered Futures Logo"
+           class="w-24 h-24 sm:w-32 sm:h-32 rounded-xl object-cover aspect-square">
+    </a>
+    <div class="grid grid-rows-3">
+      <p style="font-size: 32px;" class="font-light">Empowered Futures</p>
+      <p style="font-size: 20px;" class="font-thin whitespace-nowrap mt-2">Non-profit Organization</p>
+      <p style="font-size: 20px;" class="font-light whitespace-nowrap italic">Calgary, Alberta</p>
+    </div>
+  </div>
+
+  <!-- Block 2 -->
+  <div class="flex items-center gap-5 justify-center">
+    <a target="_blank" rel="noopener noreferrer" class="flex-shrink-0">
+      <img src="/public/imgs/telus_digital_logo.jpg"
+           alt="TELUS Digital Logo"
+           class="w-24 h-24 sm:w-32 sm:h-32 rounded-xl object-cover aspect-square">
+    </a>
+    <div class="grid grid-rows-3">
+      <p style="font-size: 32px;" class="font-light">TELUS Digital</p>
+      <p style="font-size: 20px;" class="font-thin whitespace-nowrap mt-2">IT Services and IT Consulting</p>
+      <p style="font-size: 20px;" class="font-light whitespace-nowrap italic">Vancouver, British Columbia</p>
+    </div>
+  </div>
+</div>
+
+
+                  <!-- Top Border -->
+                  <th class="rounded-t-xl">
+                    <div class="lg:flex hidden items-center justify-between mt-16 -mr-5 lg:mr-0 border-b select-none"></div>
+                  </th>
+
+                  <!-- Header Row -->
+                  <div class="flex justify-between items-center mt-14 ml-3">
+                    <p style="font-size: 32px;" class="font-light">Featured Projects</p>
+                    <a href="/projects" class="underline text-blue-600" style="font-size: 32px;">Visit Projects Page</a>
+                  </div>
+
+                  <!-- Bottom Border -->
+                  <th class="rounded-t-xl">
+                    <div class="lg:flex hidden items-center justify-between mt-4 mb-2 -mr-5 lg:mr-0 border-b select-none"></div>
+                  </th>
+
+                  <!-- Pagination Include -->
+                  <%- include('pagination-featured.ejs') %>
+
+                  
+
+                  <!-- Bottom Border -->
+                  <th class="rounded-t-xl">
+                    <div class="lg:flex hidden items-center justify-between mt-10 -mr-5 lg:mr-0 border-b select-none"></div>
+                  </th>
             </div>
 
             <!-- Featured Projects (Desktop) -->
@@ -148,8 +223,7 @@
 
                                     <!-- Header Row -->
                   <div class="flex justify-between items-center mt-3 ml-3">
-                    <p style="font-size: 32px;" class="font-light">Freelance Clients</p>
-                    <a href="/about" class="underline text-blue-600" style="font-size: 32px;">Visit About Page</a>
+                    <p style="font-size: 32px;" class="font-light">Freelances Clients</p>
                   </div>
 
                   <!-- Bottom Border -->

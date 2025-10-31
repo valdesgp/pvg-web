@@ -48,94 +48,113 @@
               </div>
             </div>
 
-            <!-- Mobile Header -->
-            <div class="font-main mb-10 mt-8 block ml-4 lg:hidden md:block sm:block">
-              <div class="container-bulb">
-                <!-- Profile Picture -->
-                <th class="profile-pic-container mt-2 mx-auto">
-                  <img style="width: 170px;" src="/public/imgs/profile-illustration.png" alt="profile image" class="profile-pic mx-auto">
-                </th>
-              </div>
 
-              <!-- Mobile Header Text -->
-              <p style="font-size: 46px;" class="text-center">Hi, I’m Patricio 👋</p>
-              <p style="font-size: 21px;" class="text-center font-thin -mt-1">a <i>UX/UI Designer</i> & <i>Front-End Developer</i></p>
 
-                               <!-- Top Border -->
-                  <th class="rounded-t-xl">
-                    <div class="lg:flex hidden items-center justify-between mt-12 -mr-5 lg:mr-0 border-b select-none"></div>
-                  </th>
 
-                  <!-- Header Row -->
-                  <div class="flex justify-between items-center mt-16 ml-3">
-                    <p style="font-size: 32px;" class="font-light">Who I've worked with</p>
-                    <a href="/about" class="underline text-blue-600" style="font-size: 32px;">Visit About Page</a>
-                  </div>
 
-                  <!-- Bottom Border -->
-                  <th class="rounded-t-xl">
-                    <div class="lg:flex hidden items-center justify-between mt-4 -mr-5 lg:mr-0 border-b select-none"></div>
-                  </th>
 
-<!-- Two Identical Logo + Text Blocks in 2-Column Grid, Centered -->
-<div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-10 justify-center items-center">
-
-  <!-- Block 1 -->
-  <div class="flex items-center gap-5 ml-6 justify-center">
-    <a target="_blank" rel="noopener noreferrer" class="flex-shrink-0">
-      <img src="/public/imgs/empwrdfutures_logo.jpg"
-           alt="Empowered Futures Logo"
-           class="w-24 h-24 sm:w-32 sm:h-32 rounded-xl object-cover aspect-square">
-    </a>
-    <div class="grid grid-rows-3">
-      <p style="font-size: 32px;" class="font-light">Empowered Futures</p>
-      <p style="font-size: 20px;" class="font-thin whitespace-nowrap mt-2">Non-profit Organization</p>
-      <p style="font-size: 20px;" class="font-light whitespace-nowrap italic">Calgary, Alberta</p>
+<!-- Mobile Header -->
+<div class="font-main mb-10 mt-8 block px-4 lg:hidden">
+  <div class="container-bulb">
+    <!-- Profile Picture -->
+    <div class="profile-pic-container mt-2 mx-auto flex justify-center">
+      <img
+        src="/public/imgs/profile-illustration.png"
+        alt="profile image"
+        class="profile-pic w-36 sm:w-40 md:w-44 rounded-full object-contain"
+      >
     </div>
   </div>
 
-  <!-- Block 2 -->
-  <div class="flex items-center gap-5 justify-center">
-    <a target="_blank" rel="noopener noreferrer" class="flex-shrink-0">
-      <img src="/public/imgs/telus_digital_logo.jpg"
-           alt="TELUS Digital Logo"
-           class="w-24 h-24 sm:w-32 sm:h-32 rounded-xl object-cover aspect-square">
-    </a>
-    <div class="grid grid-rows-3">
-      <p style="font-size: 32px;" class="font-light">TELUS Digital</p>
-      <p style="font-size: 20px;" class="font-thin whitespace-nowrap mt-2">IT Services and IT Consulting</p>
-      <p style="font-size: 20px;" class="font-light whitespace-nowrap italic">Vancouver, British Columbia</p>
-    </div>
+  <!-- Mobile Header Text -->
+  <div class="text-center mt-6">
+    <p class="text-4xl sm:text-5xl font-light">Hi, I’m Patricio 👋</p>
+    <p class="text-lg sm:text-xl font-thin -mt-1">
+      a <i>UX/UI Designer</i> & <i>Front-End Developer</i>
+    </p>
   </div>
+
+  <!-- Header Divider -->
+  <div class="border-b border-gray-300 mt-10"></div>
+
+  <!-- “Who I’ve Worked With” Section -->
+  <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center mt-3 px-2">
+    <p class="text-2xl sm:text-3xl font-light text-center sm:text-left mb-0">
+      Who I've worked with
+    </p>
+  </div>
+
+  <div class="border-b border-gray-300 mt-4"></div>
+
+  <!-- Two Logo + Text Blocks -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 mt-10 justify-center items-center">
+  
+    <!-- Block 1 -->
+    <div class="flex flex-col xs:flex-row items-center gap-4 justify-center text-center sm:text-left">
+      <a target="_blank" rel="noopener noreferrer" class="flex-shrink-0">
+        <img
+          src="/public/imgs/empwrdfutures_logo.jpg"
+          alt="Empowered Futures Logo"
+          class="w-24 h-24 sm:w-32 sm:h-32 rounded-xl object-cover aspect-square"
+        >
+      </a>
+      <div class="grid grid-rows-3">
+        <p class="text-2xl sm:text-3xl font-light">Empowered Futures</p>
+        <p class="text-lg sm:text-xl font-thin mt-1">Non-profit Organization</p>
+        <p class="text-lg sm:text-xl font-light italic">Calgary, Alberta</p>
+      </div>
+    </div>
+
+    <!-- Block 2 -->
+    <div class="flex flex-col xs:flex-row items-center gap-4 justify-center text-center sm:text-left">
+      <a target="_blank" rel="noopener noreferrer" class="flex-shrink-0">
+        <img
+          src="/public/imgs/telus_digital_logo.jpg"
+          alt="TELUS Digital Logo"
+          class="w-24 h-24 sm:w-32 sm:h-32 rounded-xl object-cover aspect-square"
+        >
+      </a>
+      <div class="grid grid-rows-3">
+        <p class="text-2xl sm:text-3xl font-light">TELUS Digital</p>
+        <p class="text-lg sm:text-xl font-thin mt-1">IT Services and IT Consulting</p>
+        <p class="text-lg sm:text-xl font-light italic">Vancouver, British Columbia</p>
+      </div>
+    </div>
+        <a href="/about" class="underline text-blue-600 text-2xl sm:text-3xl text-center sm:text-right">
+      Visit About Page
+    </a>
+  </div>
+
+
+  
+  <div class="border-b border-gray-300 mt-6"></div>
+
+  <!-- “Featured Projects” Section -->
+  <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center mt-3 px-2">
+    <p class="text-2xl sm:text-3xl font-light text-center sm:text-left sm:mb-0">
+      Featured Projects
+    </p>
+  </div>
+
+  <div class="border-b border-gray-300 mt-4 mb-4"></div>
+
+  <!-- Pagination Include -->
+  <%- include('pagination-featured.ejs') %>
+
+  <div class="text-center">
+        <a href="/projects" class="underline text-blue-600 text-2xl sm:text-2xl text-center sm:text-right">
+      Visit Projects Page
+    </a>
+  </div>
+
+  
+  <div class="border-b border-gray-300 mt-10"></div>
 </div>
 
 
-                  <!-- Top Border -->
-                  <th class="rounded-t-xl">
-                    <div class="lg:flex hidden items-center justify-between mt-16 -mr-5 lg:mr-0 border-b select-none"></div>
-                  </th>
 
-                  <!-- Header Row -->
-                  <div class="flex justify-between items-center mt-14 ml-3">
-                    <p style="font-size: 32px;" class="font-light">Featured Projects</p>
-                    <a href="/projects" class="underline text-blue-600" style="font-size: 32px;">Visit Projects Page</a>
-                  </div>
 
-                  <!-- Bottom Border -->
-                  <th class="rounded-t-xl">
-                    <div class="lg:flex hidden items-center justify-between mt-4 mb-2 -mr-5 lg:mr-0 border-b select-none"></div>
-                  </th>
 
-                  <!-- Pagination Include -->
-                  <%- include('pagination-featured.ejs') %>
-
-                  
-
-                  <!-- Bottom Border -->
-                  <th class="rounded-t-xl">
-                    <div class="lg:flex hidden items-center justify-between mt-10 -mr-5 lg:mr-0 border-b select-none"></div>
-                  </th>
-            </div>
 
             <!-- Featured Projects (Desktop) -->
             <div class="font-main hidden md:hidden mt-12 lg:block">

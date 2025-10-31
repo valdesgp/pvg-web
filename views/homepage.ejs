@@ -81,7 +81,7 @@
 
   <!-- “Who I’ve Worked With” Section -->
   <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center mt-3 px-2">
-    <p class="text-2xl sm:text-3xl font-light text-center sm:text-left mb-0">
+    <p class="text-2xl sm:text-3xl font-normal text-center sm:text-left mb-0">
       Who I've worked with
     </p>
   </div>
@@ -101,8 +101,8 @@
         >
       </a>
       <div class="grid grid-rows-3">
-        <p class="text-2xl sm:text-3xl font-light">Empowered Futures</p>
-        <p class="text-lg sm:text-xl font-thin mt-1">Non-profit Organization</p>
+        <p class="text-2xl sm:text-3xl font-semibold">Empowered Futures</p>
+        <p class="text-lg sm:text-xl font-normal mt-1">Non-profit Organization</p>
         <p class="text-lg sm:text-xl font-light italic">Calgary, Alberta</p>
       </div>
     </div>
@@ -117,8 +117,8 @@
         >
       </a>
       <div class="grid grid-rows-3">
-        <p class="text-2xl sm:text-3xl font-light">TELUS Digital</p>
-        <p class="text-lg sm:text-xl font-thin mt-1">IT Services and IT Consulting</p>
+        <p class="text-2xl sm:text-3xl font-semibold">TELUS Digital</p>
+        <p class="text-lg sm:text-xl font-normal mt-1">IT Services and IT Consulting</p>
         <p class="text-lg sm:text-xl font-light italic">Vancouver, British Columbia</p>
       </div>
     </div>
@@ -215,11 +215,11 @@
     <div class="flex flex-col text-center sm:text-left w-full">
 
             <!-- GitHub Contributions -->
-      <p class="text-xl font-thin mb-2"><b>GitHub Contributions:</b></p>
+      <p class="text-xl font-normal mb-2"><b>GitHub Contributions:</b></p>
 
 
       <!-- Year Buttons -->
-      <div class="flex flex-wrap justify-center sm:justify-start gap-3 mb-3">
+      <div class="flex flex-wrap font-normal justify-center sm:justify-start gap-3 mb-3">
         <a class="year-button" onclick="showSlide('2025')">2025</a>
         <a class="year-button active" onclick="showSlide('2024')">2024</a>
         <a class="year-button" onclick="showSlide('2023')">2023</a>
@@ -230,62 +230,63 @@
       <!-- Year Slides -->
       <div id="slide-2025" class="slide hidden">
         <img src="/public/imgs/gitstats-25.jpg" alt="git-stats-2025" class="mx-auto rounded-md">
-        <p class="text-lg mt-2 font-thin">2025: <i>141 Contributions</i></p>
+        <p class="text-lg mt-2 font-normal">2025: <i>141 Contributions</i></p>
       </div>
 
       <div id="slide-2024" class="slide">
         <img src="/public/imgs/gitstats-24.jpg" alt="git-stats-2024" class="mx-auto rounded-md">
-        <p class="text-lg mt-2 font-thin">2024: <i>223 Contributions</i></p>
+        <p class="text-lg mt-2 font-normal">2024: <i>223 Contributions</i></p>
       </div>
 
       <div id="slide-2023" class="slide hidden">
         <img src="/public/imgs/gitstats-23.jpg" alt="git-stats-2023" class="mx-auto rounded-md">
-        <p class="text-lg mt-2 font-thin">2023: <i>65 Contributions</i></p>
+        <p class="text-lg mt-2 font-normal">2023: <i>65 Contributions</i></p>
       </div>
 
       <div id="slide-2022" class="slide hidden">
         <img src="/public/imgs/gitstats-22.jpg" alt="git-stats-2022" class="mx-auto rounded-md">
-        <p class="text-lg mt-2 font-thin">2022: <i>117 Contributions</i></p>
+        <p class="text-lg mt-2 font-normal">2022: <i>117 Contributions</i></p>
       </div>
 
       <div id="slide-2021" class="slide hidden">
         <img src="/public/imgs/gitstats-21.jpg" alt="git-stats-2021" class="mx-auto rounded-md">
-        <p class="text-lg mt-2 font-thin">2021: <i>109 Contributions</i></p>
+        <p class="text-lg mt-2 font-normal">2021: <i>109 Contributions</i></p>
       </div>
 
       <!-- Totals -->
-      <p class="text-lg mt-3 font-thin">Total Contributions: <i>655</i></p>
-      <p class="text-sm text-center sm:text-left mb-3 font-thin">(Last Update: <i>9/23/25</i>)</p>
+      <p class="text-lg mt-3 font-normal">Total Contributions: <i>655</i></p>
+      <p class="text-sm text-center sm:text-left mb-3 font-normal">(Last Update: <i>9/23/25</i>)</p>
     </div>
 
-    <!-- Visit GitHub Button -->
-    <div class="mt-4 sm:mt-0 flex justify-center sm:justify-end w-full sm:w-auto">
-      <a
-        href="https://github.com/valdesgp"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="flex items-center justify-center connect-button-c transition text-white rounded-md px-5 py-2 font-thin"
-      >
-        Visit
-        <!-- GitHub Icon -->
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="ml-2" viewBox="0 0 16 16">
-          <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 
-          2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 
-          0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 
-          1.08.58 1.23.82.72 1.21 1.87.87 
-          2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 
-          0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 
-          0 0 .67-.21 2.2.82.64-.18 1.32-.27 
-          2-.27.68 0 1.36.09 2 .27 1.53-1.04 
-          2.2-.82 2.2-.82.44 1.1.16 1.92.08 
-          2.12.51.56.82 1.27.82 2.15 0 
-          3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 
-          1.48 0 1.07-.01 1.93-.01 2.2 0 
-          .21.15.46.55.38A7.95 7.95 0 008 
-          16c4.42 0 8-3.58 8-8s-3.58-8-8-8z"/>
-        </svg>
-      </a>
-    </div>
+<!-- Visit GitHub Button -->
+<div class="mt-4 sm:mt-0 flex justify-center sm:justify-end w-full sm:w-auto">
+  <a
+    href="https://github.com/valdesgp"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="flex items-center justify-center bg-blue-700 hover:bg-blue-800 transition text-white rounded px-8 py-2.5 font-thin tracking-wide w-full sm:w-40"
+  >
+    Visit
+    <!-- GitHub Icon -->
+    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="ml-2" viewBox="0 0 16 16">
+      <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 
+      2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 
+      0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 
+      1.08.58 1.23.82.72 1.21 1.87.87 
+      2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 
+      0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 
+      0 0 .67-.21 2.2.82.64-.18 1.32-.27 
+      2-.27.68 0 1.36.09 2 .27 1.53-1.04 
+      2.2-.82 2.2-.82.44 1.1.16 1.92.08 
+      2.12.51.56.82 1.27.82 2.15 0 
+      3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 
+      1.48 0 1.07-.01 1.93-.01 2.2 0 
+      .21.15.46.55.38A7.95 7.95 0 008 
+      16c4.42 0 8-3.58 8-8s-3.58-8-8-8z"/>
+    </svg>
+  </a>
+</div>
+
   </div>
 </div>
 

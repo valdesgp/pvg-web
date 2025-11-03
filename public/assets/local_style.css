@@ -1022,6 +1022,17 @@ padding-bottom: 6px;
   background-color: #696969; /* Darker LinkedIn Blue */
 }
 
+.connect-button-d {
+  background-color: #2b3137; /* LinkedIn Blue */
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.connect-button-d:hover {
+  background-color: #696969; /* Darker LinkedIn Blue */
+}
+
 .container-bulb {
   width: 240px;
   height: auto;

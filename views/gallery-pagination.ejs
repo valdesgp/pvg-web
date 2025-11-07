@@ -11,27 +11,20 @@
           <tr class="font-semibold grid grid-cols-1 list-inside">
 
             <!-- Image Grid for Project Thumbnails -->
-            <div id="imageGrid" class="grid grid-cols-2 mt-3 gap-3">
+            <div id="imageGrid" class="grid grid-cols-2 mt-3 gap-3 auto-rows-auto grid-flow-row-dense">
 
-              <!-- Thumbnail Image 4 -->
-              <div class="list-none">
-                <img class="w-full h-60 object-cover" src="<%= projects[i].images.thumb4 %>" loading="lazy" alt=""/>
-              </div>
-
-              <!-- Thumbnail Image 5 -->
-              <div class="list-none">
-                <img class="w-full h-60 object-cover" src="<%= projects[i].images.thumb5 %>" loading="lazy" alt="">
-              </div>
-
-              <!-- Thumbnail Image 6 -->
-              <div class="list-none">
-                <img class="w-full h-60 object-cover" src="<%= projects[i].images.thumb6 %>" loading="lazy" alt="">
-              </div>
-
-              <!-- Thumbnail Image 7 -->
-              <div class="list-none">
-                <img class="w-full h-60 object-cover" src="<%= projects[i].images.thumb7 %>" loading="lazy" alt="">
-              </div>
+              <% for (var key in projects[i].gallery) { %>
+                <% if (projects[i].gallery[key] && projects[i].gallery[key].link) { %>
+                  <div class="list-none break-inside-avoid rounded-xl overflow-hidden">
+                    <img
+                      class="w-full object-cover transition-transform duration-200 hover:scale-105"
+                      src="<%= projects[i].gallery[key].link %>"
+                      loading="lazy"
+                      alt=""
+                    />
+                  </div>
+                <% } %>
+              <% } %>
 
             </div> <!-- End of Image Grid -->
 
@@ -44,18 +37,3 @@
   </div>
 </nav>
 
-<!-- JavaScript Function to Toggle Image Grid Visibility -->
-<script>
-  function toggleMinimize() {
-    const grid = document.getElementById('imageGrid');
-    const toggleButton = document.getElementById('toggleButton');
-
-    if (grid.style.display === "none") {
-      grid.style.display = "grid"; // Show the grid
-      toggleButton.innerHTML = "Image Gallery v"; // Update button text
-    } else {
-      grid.style.display = "none"; // Hide the grid
-      toggleButton.innerHTML = "Image Gallery >"; // Update button text
-    }
-  }
-</script>

@@ -50,6 +50,83 @@ const projectSchema = new mongoose.Schema({
   timeline: {
     duration: String,
     period: String
+  },
+  gallery: {
+    img1: {
+    link: String,
+    date: String,
+    project: String
+    },
+    img2: {
+    link: String,
+    date: String,
+    project: String
+    },
+    img3: {
+    link: String,
+    date: String,
+    project: String
+    },
+    img4: {
+    link: String,
+    date: String,
+    project: String
+    },
+    img5: {
+    link: String,
+    date: String,
+    project: String
+    },
+    img6: {
+    link: String,
+    date: String,
+    project: String
+    },
+    img7: {
+    link: String,
+    date: String,
+    project: String
+    },
+    img8: {
+    link: String,
+    date: String,
+    project: String
+    },
+    img9: {
+    link: String,
+    date: String,
+    project: String
+    },
+    img10: {
+    link: String,
+    date: String,
+    project: String
+    },
+    img11: {
+    link: String,
+    date: String,
+    project: String
+    },
+    img12: {
+    link: String,
+    date: String,
+    project: String
+    },
+    img13: {
+    link: String,
+    date: String,
+    project: String
+    },
+    img14: {
+    link: String,
+    date: String,
+    project: String
+    },
+    img15: {
+    link: String,
+    date: String,
+    project: String
+    }
   }
 }, {
   timestamps: {createdAt: true, updatedAt: true},

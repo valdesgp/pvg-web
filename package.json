@@ -4,7 +4,7 @@
   "engines": {
     "node": ">=16.13.1"
   },
-  "description": "In this assignment, you will be learning to use MongoDB and Mongoose while creating REST API endpoints using Express. Please read the PDF instructions on eClass to understand what is needed to complete the assignment.",
+  "description": "Using MongoDB and Mongoose while creating REST API endpoints using Express.",
   "main": "src/app.js",
   "scripts": {
     "dev": "nodemon src/app.js -e js,hbs",

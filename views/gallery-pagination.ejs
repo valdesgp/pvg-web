@@ -7,7 +7,7 @@
       <% for (var i = 0; i < 11; i++) { %>
 
         <!-- Image Table for Each Project -->
-        <table class="rounded-xl w-full text-sm text-left">
+        <table class=" w-full text-sm text-left">
           <tr class="font-semibold grid grid-cols-1 list-inside">
 
             <!-- Image Grid for Project Thumbnails -->
@@ -16,9 +16,9 @@
               <% for (var key in projects[i].gallery) { %>
                 <% const img = projects[i].gallery[key]; %>
                 <% if (img && img.link) { %>
-                  <div class="list-none break-inside-avoid rounded-xl border-2 border-gray-500 border-opacity-25 p-2">
+                  <div class="list-none break-inside-avoid rounded-xl border border-gray-600 border-opacity-25 p-2">
                     <!-- Image -->
-                    <div class="overflow-hidden rounded-xl">
+                    <div class="overflow-hidden">
                       <img
                         class="w-full object-cover transition-transform duration-200 hover:scale-105"
                         src="<%= img.link %>"

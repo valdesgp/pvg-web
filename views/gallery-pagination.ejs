@@ -11,12 +11,12 @@
           <tr class="font-semibold grid grid-cols-1 list-inside">
 
             <!-- Image Grid for Project Thumbnails -->
-            <div id="imageGrid" class="grid grid-cols-2 mt-3 gap-3 auto-rows-auto grid-flow-row-dense">
+            <div id="imageGrid" class="grid grid-cols-2 mt-3 mb-28 gap-3 auto-rows-auto grid-flow-row-dense">
 
               <% for (var key in projects[i].gallery) { %>
                 <% const img = projects[i].gallery[key]; %>
                 <% if (img && img.link) { %>
-                  <div class="list-none break-inside-avoid rounded-xl">
+                  <div class="list-none break-inside-avoid rounded-xl border-2 border-gray-500 border-opacity-25 p-2">
                     <!-- Image -->
                     <div class="overflow-hidden rounded-xl">
                       <img
@@ -29,9 +29,9 @@
 
                     <!-- Project name (left) and date (right) -->
                     <% if (img.project || img.date) { %>
-                      <div class="mt-1 flex justify-between text-[11px] text-gray-500 leading-tight">
+                      <div class="mt-1 flex justify-between font-light text-2xl leading-tight">
                         <span><%= img.project || '' %></span>
-                        <span class="text-gray-400"><%= img.date || '' %></span>
+                        <span><%= img.date || '' %></span>
                       </div>
                     <% } %>
                   </div>

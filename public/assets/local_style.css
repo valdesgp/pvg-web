@@ -362,11 +362,10 @@ h2 {
   color: rgba(255, 255, 255, 0.8);
   border-radius: 100px;
   box-shadow: 3px 3px 16px rgba(19, 19, 19, 0.823);
-
   border-width: 2px;
   border-style: outset;
   border-color: rgba(142, 44, 255, 0.093);
-    transition: 0.8s;
+  transition: 0.8s;
   animation: 2s messageanimB 0.2s linear infinite;
 }
 @keyframes messageanimB {

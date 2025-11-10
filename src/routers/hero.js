@@ -164,26 +164,63 @@ router.get('/projects/:page?', async (req, res, next) => {
 
 
 
-      // Route for about page.
-  router.get('/gallery', async (req, res) => {
-    var perPage = 11
-    var page = req.params.page || 1
-  
-    Project
-        .find({})
-        .skip((perPage * page) - perPage)
-        .limit(perPage)
-        .exec(function(err, projectRouter) {
-            Project.count().exec(function(err, count) {
-                if (err) return next(err)
-                res.render('gallery.ejs', {
-                    projects: projectRouter,
-                    current: page,
-                    pages: Math.ceil(count / perPage)
-                })
-            })
-        })    
+// Gallery page with pagination and per-page selector
+router.get('/gallery', async (req, res, next) => {
+  try {
+    let perPage = req.query.perPage || 10; // default 4 images per page
+    const page = parseInt(req.query.page) || 1;
+
+    if (perPage === 'all') {
+      const projects = await Project.find({}).sort({ original_id: 1 });
+      const count = projects.reduce((sum, project) => sum + Object.keys(project.gallery).length, 0);
+
+      return res.render('gallery.ejs', {
+        projects,
+        current: 1,
+        pages: 1,
+        perPage: 'all',
+        count
+      });
+    } else {
+      perPage = parseInt(perPage);
+    }
+
+    // Get all projects
+    const projects = await Project.find({}).sort({ original_id: 1 });
+
+    // Flatten all gallery images into a single array with project reference
+    let allImages = [];
+    projects.forEach(project => {
+      Object.values(project.gallery).forEach(img => {
+        if (img && img.link) {
+          allImages.push({
+            link: img.link,
+            project: img.project || '',
+            date: img.date || ''
+          });
+        }
+      });
     });
+
+    const count = allImages.length;
+
+    // Pagination
+    const start = (page - 1) * perPage;
+    const end = start + perPage;
+    const paginatedImages = allImages.slice(start, end);
+
+    res.render('gallery.ejs', {
+      projects: paginatedImages, // pass flattened images to your template
+      current: page,
+      pages: Math.ceil(count / perPage),
+      perPage,
+      count
+    });
+  } catch (err) {
+    next(err);
+  }
+});
+
 
 
 

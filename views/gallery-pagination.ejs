@@ -1,50 +1,74 @@
-<!-- Main Navigation Wrapper -->
-<nav>
-  <div class="container">
-    <div class="row">
+<%- include('head.ejs') %>
 
-      <!-- Loop through first 11 project items -->
-      <% for (var i = 0; i < 11; i++) { %>
-
-        <!-- Image Table for Each Project -->
-        <table class=" w-full text-sm text-left">
-          <tr class="font-semibold grid grid-cols-1 list-inside">
-
-            <!-- Image Grid for Project Thumbnails -->
-            <div id="imageGrid" class="grid grid-cols-2 mt-3 mb-28 gap-3 auto-rows-auto grid-flow-row-dense">
-
-              <% for (var key in projects[i].gallery) { %>
-                <% const img = projects[i].gallery[key]; %>
-                <% if (img && img.link) { %>
-                  <div class="list-none break-inside-avoid rounded-xl border border-gray-600 border-opacity-25 p-2">
-                    <!-- Image -->
-                    <div class="overflow-hidden">
-                      <img
-                        class="w-full object-cover transition-transform duration-200 hover:scale-105"
-                        src="<%= img.link %>"
-                        loading="lazy"
-                        alt=""
-                      />
-                    </div>
-
-                    <!-- Project name (left) and date (right) -->
-                    <% if (img.project || img.date) { %>
-                      <div class="mt-1 flex justify-between font-light text-2xl leading-tight">
-                        <span><%= img.project || '' %></span>
-                        <span><%= img.date || '' %></span>
-                      </div>
-                    <% } %>
-                  </div>
-                <% } %>
-              <% } %>
-
-            </div> <!-- End of Image Grid -->
-
-          </tr>
-        </table>
-
-      <% } %> <!-- End of Project Loop -->
-
-    </div>
+<!-- Pagination / perPage selector -->
+<div class="flex items-center justify-between px-4 pb-1">
+  <div class="font-light lg:text-2xl text-xl flex items-center space-x-3">
+    <span>
+      Displaying <%= perPage %> results per page 
+      <span class="lg:text-2xl text-xl">(Total Images: <%= count %>)</span>
+    </span>
   </div>
-</nav>
+
+  <form method="GET" action="/gallery" class="flex mr-1 items-center space-x-2">
+    <input type="hidden" name="page" value="1" />
+    <label for="perPage" class="text-lg font-light text-gray-700">Show:</label>
+    <select id="perPage" name="perPage"
+            class="border border-gray-300 rounded-md px-2 py-1 text-lg font-light focus:outline-none focus:ring-2 focus:ring-blue-200"
+            onchange="this.form.submit()">
+      <option value="10" <%= perPage == 10 ? 'selected' : '' %>>10</option>
+      <option value="20" <%= perPage == 20 ? 'selected' : '' %>>20</option>
+      <option value="30" <%= perPage == 30 ? 'selected' : '' %>>30</option>
+      <option value="all" <%= perPage === 'all' ? 'selected' : '' %>>All</option>
+    </select>
+  </form>
+</div>
+
+<div class="flex items-center justify-between border-b select-none mb-2"></div>
+
+<!-- Main gallery grid (responsive) -->
+<div class="container mx-auto px-4">
+  <!-- Grid wrapper OUTSIDE the loop -->
+  <div id="imageGrid" class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-3 mb-28">
+    
+    <% for (var i = 0; i < projects.length; i++) { %>
+      <% const img = projects[i]; %>
+      
+      <!-- Individual image card -->
+      <div class="break-inside-avoid rounded-lg border border-gray-600 border-opacity-25 p-2">
+        <div class="overflow-hidden rounded-lg">
+          <img class="w-full object-cover transition-transform duration-200 hover:scale-105"
+               src="<%= img.link %>"
+               loading="lazy"
+               alt="<%= img.project || 'Gallery image' %>" />
+        </div>
+
+        <% if (img.project || img.date) { %>
+          <div class="mt-2 flex justify-between font-light text-lg leading-tight">
+            <span><%= img.project || '' %></span>
+            <span><%= img.date || '' %></span>
+          </div>
+        <% } %>
+      </div>
+      
+    <% } %>
+    
+  </div>
+</div>
+
+
+
+<!-- Pagination links -->
+<div class="flex justify-center mt-6 items-center space-x-2">
+  <a href="/gallery?page=<%= current > 1 ? current - 1 : 1 %>&perPage=<%= perPage %>" 
+     class="px-3 py-2 border rounded-md border-black border-opacity-25">Prev</a>
+
+  <% for(let i = 1; i <= pages; i++) { %>
+    <a href="/gallery?page=<%= i %>&perPage=<%= perPage %>" 
+       class="px-4 py-2 border rounded-md font-medium <%= i === current ? 'bg-black bg-opacity-75 text-white' : 'border-black border-opacity-25' %>">
+      <%= i %>
+    </a>
+  <% } %>
+
+  <a href="/gallery?page=<%= current < pages ? current + 1 : pages %>&perPage=<%= perPage %>" 
+     class="px-3 py-2 border rounded-md border-black border-opacity-25">Next</a>
+</div>

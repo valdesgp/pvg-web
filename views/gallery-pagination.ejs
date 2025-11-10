@@ -9,18 +9,36 @@
     </span>
   </div>
 
-  <form method="GET" action="/gallery" class="flex mr-1 items-center space-x-2">
-    <input type="hidden" name="page" value="1" />
-    <label for="perPage" class="text-lg font-light text-gray-700">Show:</label>
-    <select id="perPage" name="perPage"
-            class="border border-gray-300 rounded-md px-2 py-1 text-lg font-light focus:outline-none focus:ring-2 focus:ring-blue-200"
-            onchange="this.form.submit()">
-      <option value="10" <%= perPage == 10 ? 'selected' : '' %>>10</option>
-      <option value="20" <%= perPage == 20 ? 'selected' : '' %>>20</option>
-      <option value="30" <%= perPage == 30 ? 'selected' : '' %>>30</option>
-      <option value="all" <%= perPage === 'all' ? 'selected' : '' %>>All</option>
-    </select>
-  </form>
+  <div class="flex items-center space-x-4">
+    <!-- Column selector -->
+    <form method="GET" action="/gallery" class="flex items-center space-x-2">
+      <input type="hidden" name="page" value="<%= current %>" />
+      <input type="hidden" name="perPage" value="<%= perPage %>" />
+      <label for="columns" class="text-lg font-light text-gray-700">Columns:</label>
+      <select id="columns" name="columns"
+              class="border border-gray-300 rounded-md px-2 py-1 text-lg font-light focus:outline-none focus:ring-2 focus:ring-blue-200"
+              onchange="this.form.submit()">
+        <option value="1" <%= (typeof columns !== 'undefined' && columns == 1) ? 'selected' : '' %>>1</option>
+        <option value="2" <%= (!columns || columns == 2) ? 'selected' : '' %>>2</option>
+        <option value="3" <%= (typeof columns !== 'undefined' && columns == 3) ? 'selected' : '' %>>3</option>
+      </select>
+    </form>
+
+    <!-- Per page selector -->
+    <form method="GET" action="/gallery" class="flex items-center space-x-2">
+      <input type="hidden" name="page" value="1" />
+      <input type="hidden" name="columns" value="<%= typeof columns !== 'undefined' ? columns : 2 %>" />
+      <label for="perPage" class="text-lg font-light text-gray-700">Show:</label>
+      <select id="perPage" name="perPage"
+              class="border border-gray-300 rounded-md px-2 py-1 text-lg font-light focus:outline-none focus:ring-2 focus:ring-blue-200"
+              onchange="this.form.submit()">
+        <option value="2" <%= perPage == 2 ? 'selected' : '' %>>2</option>
+        <option value="6" <%= perPage == 6 ? 'selected' : '' %>>6</option>
+        <option value="10" <%= perPage == 10 ? 'selected' : '' %>>10</option>
+        <option value="100" <%= perPage == 100 ? 'selected' : '' %>>All</option>
+      </select>
+    </form>
+  </div>
 </div>
 
 <div class="flex items-center justify-between border-b select-none mb-2"></div>
@@ -28,24 +46,39 @@
 <!-- Main gallery grid (responsive) -->
 <div class="container mx-auto px-4">
   <!-- Grid wrapper OUTSIDE the loop -->
-  <div id="imageGrid" class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-3 mb-28">
+  <% 
+    let gridClass = 'grid gap-4 mt-3 mb-28 ';
+    const cols = typeof columns !== 'undefined' ? parseInt(columns) : 2;
+    if (cols === 1) {
+      gridClass += 'grid-cols-1';
+    } else if (cols === 3) {
+      gridClass += 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3';
+    } else {
+      gridClass += 'grid-cols-1 lg:grid-cols-2';
+    }
+  %>
+  <div id="imageGrid" class="<%= gridClass %>">
     
     <% for (var i = 0; i < projects.length; i++) { %>
       <% const img = projects[i]; %>
       
       <!-- Individual image card -->
-      <div class="break-inside-avoid  border rounded-md border-gray-600 border-opacity-0 p-2">
+      <div class="break-inside-avoid border rounded-md shadow-md border-gray-500 border-opacity-25 p-3">
         <div class="overflow-hidden">
-          <img class="w-full object-cover transition-transform duration-200 hover:scale-105"
+          <img oncontextmenu="return false" class="w-full object-cover transition-transform duration-200 hover:scale-105"
                src="<%= img.link %>"
                loading="lazy"
                alt="<%= img.project || 'Gallery image' %>" />
         </div>
-
+        <% if (img.desc) { %>
+          <div class="mt-2 flex justify-between font-light text-xl leading-tight">
+            <span class="font-normal"><%= img.desc || '' %></span>
+          </div>
+        <% } %>
         <% if (img.project || img.date) { %>
-          <div class="mt-2 flex justify-between font-light text-lg leading-tight">
-            <span><%= img.project || '' %></span>
-            <span><%= img.date || '' %></span>
+          <div class="mt-2 flex justify-between font-light mb-2 text-xl leading-tight">
+            <a class="font-thin" href="/projects"><span class="font-thin"><%= img.project || '' %></span></a>
+            <a class="font-thin" href="/projects"><span class="font-thin italic"><%= img.date || '' %></span></a>
           </div>
         <% } %>
       </div>
@@ -55,20 +88,18 @@
   </div>
 </div>
 
-
-
 <!-- Pagination links -->
 <div class="flex justify-center mt-6 items-center space-x-2">
-  <a href="/gallery?page=<%= current > 1 ? current - 1 : 1 %>&perPage=<%= perPage %>" 
+  <a href="/gallery?page=<%= current > 1 ? current - 1 : 1 %>&perPage=<%= perPage %>&columns=<%= typeof columns !== 'undefined' ? columns : 2 %>" 
      class="px-3 py-2 border rounded-md border-black border-opacity-25">Prev</a>
 
   <% for(let i = 1; i <= pages; i++) { %>
-    <a href="/gallery?page=<%= i %>&perPage=<%= perPage %>" 
+    <a href="/gallery?page=<%= i %>&perPage=<%= perPage %>&columns=<%= typeof columns !== 'undefined' ? columns : 2 %>" 
        class="px-4 py-2 border rounded-md font-medium <%= i === current ? 'bg-black bg-opacity-75 text-white' : 'border-black border-opacity-25' %>">
       <%= i %>
     </a>
   <% } %>
 
-  <a href="/gallery?page=<%= current < pages ? current + 1 : pages %>&perPage=<%= perPage %>" 
+  <a href="/gallery?page=<%= current < pages ? current + 1 : pages %>&perPage=<%= perPage %>&columns=<%= typeof columns !== 'undefined' ? columns : 2 %>" 
      class="px-3 py-2 border rounded-md border-black border-opacity-25">Next</a>
 </div>

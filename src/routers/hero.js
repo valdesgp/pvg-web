@@ -164,11 +164,11 @@ router.get('/projects/:page?', async (req, res, next) => {
 
 
 
-// Gallery page with pagination and per-page selector
 router.get('/gallery', async (req, res, next) => {
   try {
-    let perPage = req.query.perPage || 10; // default 4 images per page
+    let perPage = req.query.perPage || 6;
     const page = parseInt(req.query.page) || 1;
+    const columns = req.query.columns || 2; // Get columns from query
 
     if (perPage === 'all') {
       const projects = await Project.find({}).sort({ original_id: 1 });
@@ -179,16 +179,15 @@ router.get('/gallery', async (req, res, next) => {
         current: 1,
         pages: 1,
         perPage: 'all',
-        count
+        count,
+        columns // Pass columns to template
       });
     } else {
       perPage = parseInt(perPage);
     }
 
-    // Get all projects
     const projects = await Project.find({}).sort({ original_id: 1 });
 
-    // Flatten all gallery images into a single array with project reference
     let allImages = [];
     projects.forEach(project => {
       Object.values(project.gallery).forEach(img => {
@@ -196,25 +195,25 @@ router.get('/gallery', async (req, res, next) => {
           allImages.push({
             link: img.link,
             project: img.project || '',
-            date: img.date || ''
+            date: img.date || '',
+            desc: img.desc || ''
           });
         }
       });
     });
 
     const count = allImages.length;
-
-    // Pagination
     const start = (page - 1) * perPage;
     const end = start + perPage;
     const paginatedImages = allImages.slice(start, end);
 
     res.render('gallery.ejs', {
-      projects: paginatedImages, // pass flattened images to your template
+      projects: paginatedImages,
       current: page,
       pages: Math.ceil(count / perPage),
       perPage,
-      count
+      count,
+      columns // Pass columns to template
     });
   } catch (err) {
     next(err);

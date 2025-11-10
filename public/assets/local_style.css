@@ -348,10 +348,6 @@ h2 {
 		animation: textclip 6.8s linear infinite;
 }
 
-.bg-purple-main{
-    background-color: rgba(68, 0, 145, 0.657);
-}
-
 .message-button{
   padding: 27px;
   width: 600px;

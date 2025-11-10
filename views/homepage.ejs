@@ -130,7 +130,30 @@
   <!-- Header Divider -->
 <div class="border-b border-gray-300 mt-10"></div>
 
-<!-- “Who I’ve Worked With” / LinkedIn Section -->
+
+  <!-- “Featured Projects” Section -->
+  <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center mt-3 px-2">
+    <p class="text-2xl sm:text-3xl font-light text-center sm:text-left">
+      Featured Projects
+    </p>
+  </div>
+
+  <div class="border-b border-gray-300 mt-4 mb-2"></div>
+
+  <!-- Pagination Include -->
+  <%- include('pagination-featured.ejs') %>
+
+  <div class="text-right">
+        <a href="/projects" class="underline text-blue-600 text-xl sm:text-2xl">
+      Visit Projects Page
+    </a>
+  </div>
+
+  
+<!-- Header Divider -->
+<div class="border-b border-gray-300 mt-10"></div>
+
+<!-- LinkedIn Section -->
 <div class="flex flex-col justify-between items-center mt-6 px-4">
 
   <!-- LinkedIn Profile Card -->
@@ -180,28 +203,7 @@
     </div>
   </div>
 </div>
-  
-  <div class="border-b border-gray-300 mt-6"></div>
 
-  <!-- “Featured Projects” Section -->
-  <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center mt-3 px-2">
-    <p class="text-2xl sm:text-3xl font-light text-center sm:text-left">
-      Featured Projects
-    </p>
-  </div>
-
-  <div class="border-b border-gray-300 mt-4 mb-2"></div>
-
-  <!-- Pagination Include -->
-  <%- include('pagination-featured.ejs') %>
-
-  <div class="text-right">
-        <a href="/projects" class="underline text-blue-600 text-xl sm:text-2xl">
-      Visit Projects Page
-    </a>
-  </div>
-
-  
 <!-- Header Divider -->
 <div class="border-b border-gray-300 mt-10"></div>
 

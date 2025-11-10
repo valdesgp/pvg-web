@@ -55,77 +55,92 @@ const projectSchema = new mongoose.Schema({
     img1: {
     link: String,
     date: String,
-    project: String
+    project: String,
+    title: String
     },
     img2: {
     link: String,
     date: String,
-    project: String
+    project: String,
+    title: String
     },
     img3: {
     link: String,
     date: String,
-    project: String
+    project: String,
+    title: String
     },
     img4: {
     link: String,
     date: String,
-    project: String
+    project: String,
+    title: String
     },
     img5: {
     link: String,
     date: String,
-    project: String
+    project: String,
+    title: String
     },
     img6: {
     link: String,
     date: String,
-    project: String
+    project: String,
+    title: String
     },
     img7: {
     link: String,
     date: String,
-    project: String
+    project: String,
+    title: String
     },
     img8: {
     link: String,
     date: String,
-    project: String
+    project: String,
+    title: String
     },
     img9: {
     link: String,
     date: String,
-    project: String
+    project: String,
+    title: String
     },
     img10: {
     link: String,
     date: String,
-    project: String
+    project: String,
+    title: String
     },
     img11: {
     link: String,
     date: String,
-    project: String
+    project: String,
+    title: String
     },
     img12: {
     link: String,
     date: String,
-    project: String
+    project: String,
+    title: String
     },
     img13: {
     link: String,
     date: String,
-    project: String
+    project: String,
+    title: String
     },
     img14: {
     link: String,
     date: String,
-    project: String
+    project: String,
+    title: String
     },
     img15: {
     link: String,
     date: String,
-    project: String
+    project: String,
+    title: String
     }
   }
 }, {

@@ -10,7 +10,22 @@
   </div>
 
   <div class="flex items-center space-x-4">
-    <!-- Column selector -->
+    <!-- Per page selector -->
+    <form method="GET" action="/gallery" class="flex items-center space-x-2">
+      <input type="hidden" name="page" value="1" />
+      <input type="hidden" name="columns" value="<%= typeof columns !== 'undefined' ? columns : 2 %>" />
+      <label for="perPage" class="text-lg font-light text-gray-700">Results per page:</label>
+      <select id="perPage" name="perPage"
+              class="border border-gray-300 rounded-md px-2 py-1 text-lg font-light focus:outline-none focus:ring-2 focus:ring-blue-200"
+              onchange="this.form.submit()">
+        <option value="2" <%= perPage == 2 ? 'selected' : '' %>>2</option>
+        <option value="6" <%= perPage == 6 ? 'selected' : '' %>>6</option>
+        <option value="10" <%= perPage == 10 ? 'selected' : '' %>>10</option>
+        <option value="100" <%= perPage == 100 ? 'selected' : '' %>>All</option>
+      </select>
+    </form>
+
+     <!-- Column selector -->
     <form method="GET" action="/gallery" class="flex items-center space-x-2">
       <input type="hidden" name="page" value="<%= current %>" />
       <input type="hidden" name="perPage" value="<%= perPage %>" />
@@ -21,21 +36,6 @@
         <option value="1" <%= (typeof columns !== 'undefined' && columns == 1) ? 'selected' : '' %>>1</option>
         <option value="2" <%= (!columns || columns == 2) ? 'selected' : '' %>>2</option>
         <option value="3" <%= (typeof columns !== 'undefined' && columns == 3) ? 'selected' : '' %>>3</option>
-      </select>
-    </form>
-
-    <!-- Per page selector -->
-    <form method="GET" action="/gallery" class="flex items-center space-x-2">
-      <input type="hidden" name="page" value="1" />
-      <input type="hidden" name="columns" value="<%= typeof columns !== 'undefined' ? columns : 2 %>" />
-      <label for="perPage" class="text-lg font-light text-gray-700">Show:</label>
-      <select id="perPage" name="perPage"
-              class="border border-gray-300 rounded-md px-2 py-1 text-lg font-light focus:outline-none focus:ring-2 focus:ring-blue-200"
-              onchange="this.form.submit()">
-        <option value="2" <%= perPage == 2 ? 'selected' : '' %>>2</option>
-        <option value="6" <%= perPage == 6 ? 'selected' : '' %>>6</option>
-        <option value="10" <%= perPage == 10 ? 'selected' : '' %>>10</option>
-        <option value="100" <%= perPage == 100 ? 'selected' : '' %>>All</option>
       </select>
     </form>
   </div>

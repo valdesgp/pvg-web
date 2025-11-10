@@ -10,22 +10,7 @@
   </div>
 
   <div class="flex items-center space-x-4">
-    <!-- Per page selector -->
-    <form method="GET" action="/gallery" class="flex items-center space-x-2">
-      <input type="hidden" name="page" value="1" />
-      <input type="hidden" name="columns" value="<%= typeof columns !== 'undefined' ? columns : 2 %>" />
-      <label for="perPage" class="text-lg font-light text-gray-700">Results per page:</label>
-      <select id="perPage" name="perPage"
-              class="border border-gray-300 rounded-md px-2 py-1 text-lg font-light focus:outline-none focus:ring-2 focus:ring-blue-200"
-              onchange="this.form.submit()">
-        <option value="2" <%= perPage == 2 ? 'selected' : '' %>>2</option>
-        <option value="6" <%= perPage == 6 ? 'selected' : '' %>>6</option>
-        <option value="10" <%= perPage == 10 ? 'selected' : '' %>>10</option>
-        <option value="100" <%= perPage == 100 ? 'selected' : '' %>>All</option>
-      </select>
-    </form>
-
-     <!-- Column selector -->
+    <!-- Column selector -->
     <form method="GET" action="/gallery" class="flex items-center space-x-2">
       <input type="hidden" name="page" value="<%= current %>" />
       <input type="hidden" name="perPage" value="<%= perPage %>" />
@@ -36,6 +21,21 @@
         <option value="1" <%= (typeof columns !== 'undefined' && columns == 1) ? 'selected' : '' %>>1</option>
         <option value="2" <%= (!columns || columns == 2) ? 'selected' : '' %>>2</option>
         <option value="3" <%= (typeof columns !== 'undefined' && columns == 3) ? 'selected' : '' %>>3</option>
+      </select>
+    </form>
+
+    <!-- Per page selector -->
+    <form method="GET" action="/gallery" class="flex items-center space-x-2">
+      <input type="hidden" name="page" value="1" />
+      <input type="hidden" name="columns" value="<%= typeof columns !== 'undefined' ? columns : 2 %>" />
+      <label for="perPage" class="text-lg font-light text-gray-700">Show:</label>
+      <select id="perPage" name="perPage"
+              class="border border-gray-300 rounded-md px-2 py-1 text-lg font-light focus:outline-none focus:ring-2 focus:ring-blue-200"
+              onchange="this.form.submit()">
+        <option value="10" <%= perPage == 10 ? 'selected' : '' %>>10</option>
+        <option value="20" <%= perPage == 20 ? 'selected' : '' %>>20</option>
+        <option value="30" <%= perPage == 30 ? 'selected' : '' %>>30</option>
+        <option value="all" <%= perPage === 'all' ? 'selected' : '' %>>All</option>
       </select>
     </form>
   </div>
@@ -63,20 +63,21 @@
       <% const img = projects[i]; %>
       
       <!-- Individual image card -->
-      <div class="break-inside-avoid border rounded-md shadow-md border-gray-500 border-opacity-25 p-3">
+      <div class="break-inside-avoid rounded-xl mt-5 gallery-box-shadow border-solid transition-all overflow-hidden">
         <div class="overflow-hidden">
-          <img oncontextmenu="return false" class="w-full object-cover transition-transform duration-200 hover:scale-105"
+          <img oncontextmenu="return false" class="w-full object-cover"
                src="<%= img.link %>"
                loading="lazy"
                alt="<%= img.project || 'Gallery image' %>" />
         </div>
+        <div class="flex items-center justify-between border-b border-opacity-25 select-none mb-2"></div>
         <% if (img.desc) { %>
-          <div class="mt-2 flex justify-between font-light text-xl leading-tight">
+          <div class="mt-2 flex pl-4 pr-4 justify-between font-light text-xl leading-tight">
             <span class="font-normal"><%= img.desc || '' %></span>
           </div>
         <% } %>
         <% if (img.project || img.date) { %>
-          <div class="mt-2 flex justify-between font-light mb-2 text-xl leading-tight">
+          <div class="mt-2 flex pl-4 pr-4 pb-3 justify-between font-light text-xl leading-tight">
             <a class="font-thin" href="/projects"><span class="font-thin"><%= img.project || '' %></span></a>
             <a class="font-thin" href="/projects"><span class="font-thin italic"><%= img.date || '' %></span></a>
           </div>

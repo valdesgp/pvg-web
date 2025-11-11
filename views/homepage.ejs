@@ -418,7 +418,47 @@
 
                   <!-- Pagination Include -->
                   <%- include('pagination-featured.ejs') %>
- 
+
+                  
+                  <!-- Top Border -->
+                  <th class="rounded-t-xl">
+                    <div class="lg:flex hidden items-center justify-between mt-16 -mr-5 lg:mr-0 border-b select-none"></div>
+                  </th>
+
+                  <!-- Header Row -->
+                  <div class="flex justify-between items-center mt-3 ml-3">
+                    <p style="font-size: 32px;" class="font-light">Featured Designs</p>
+                    <a href="/gallery" class="underline text-blue-600" style="font-size: 32px;">Visit Gallery Page</a>
+                  </div>
+
+                  <!-- Bottom Border -->
+                  <th class="rounded-t-xl">
+                    <div class="lg:flex hidden items-center justify-between mt-4 mb-2 -mr-5 lg:mr-0 border-b select-none"></div>
+                  </th>
+
+                              <!-- Include pagination file -->
+ <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10">
+  <% homepageImages.forEach(function(img) { %>
+    <div class="rounded-xl overflow-hidden shadow-lg">
+      <img src="<%= img.link %>" 
+           alt="<%= img.desc || 'image' %>" 
+           class="w-full h-auto object-cover" />
+
+      <% if (img.desc) { %>
+        <div class="px-4 py-2 text-lg font-light">
+          <%= img.desc %>
+        </div>
+      <% } %>
+
+      <% if (img.project || img.date) { %>
+        <div class="px-4 pb-3 flex justify-between text-base font-light">
+          <span><%= img.project %></span>
+          <span class="italic"><%= img.date %></span>
+        </div>
+      <% } %>
+    </div>
+  <% }) %>
+</div>
                   <!-- Spacer -->
                   <p class="text-sms mt-4"><b></b></p>
                 </div>

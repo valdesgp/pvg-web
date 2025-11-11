@@ -79,22 +79,42 @@ router.get('/heroes/:id', async (req, res) => {
 })
 
 
-// Homepage route - show only first 2 projects by lowest original_id
 router.get('/', async (req, res, next) => {
   try {
-    const projects = await Project.find({})
-      .sort({ original_id: 1 }) // lowest ID first
-      .limit(2); // only 2 projects
+    const allProjects = await Project.find({}).sort({ original_id: 1 });
+
+    let homepageImages = [];
+
+    for (const project of allProjects) {
+      if (!project.gallery) continue;
+
+      for (const img of Object.values(project.gallery)) {
+        if (img && img.link) {
+          homepageImages.push({
+            link: img.link,
+            project: img.project || "",
+            date: img.date || "",
+            desc: img.desc || ""
+          });
+          if (homepageImages.length === 2) break;
+        }
+      }
+
+      if (homepageImages.length === 2) break;
+    }
 
     res.render('homepage.ejs', {
-      projects,
+      projects: allProjects.slice(0, 2),
+      homepageImages,
       current: 1,
-      pages: 1
+      pages: 1,
     });
   } catch (err) {
     next(err);
   }
 });
+
+
 
 
 

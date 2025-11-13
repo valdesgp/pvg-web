@@ -950,7 +950,6 @@ animation: bounces 2s ease infinite .6s, color-change 4.4s infinite;
   font-size: 20px;
   font-weight: bold;
   width: 100%; /* Make the button full-width */
-  margin-right: -20px;
 }
 
 .profile-header {
@@ -979,6 +978,7 @@ animation: bounces 2s ease infinite .6s, color-change 4.4s infinite;
   background-color: #0073b1; /* LinkedIn Blue */
   color: white;
   border: none;
+  margin-left: 2px;
   padding: 4px;
 
 padding-bottom: 6px;
@@ -1163,8 +1163,8 @@ body {
 }
 
 .year-button {
-  padding: 3px 7px;
-  margin: 2px;
+  padding: 3px 2px;
+  margin: 3px; 
   border-radius: 6px;
   color: #161616;
   border: 1px solid #d1d5db; /* Light gray border */

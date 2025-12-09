@@ -1256,6 +1256,8 @@ body {
 }
 
 .gallery-box-shadow{
-box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgb(9, 30, 66, 0.03) 0px 0px 0px 1px;
-}
+    border-color: rgba(30, 30, 30, 0.15);
+  border-style: solid;
+  border-width: 1px;
 
+}

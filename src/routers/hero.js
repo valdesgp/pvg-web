@@ -121,7 +121,7 @@ router.get('/', async (req, res, next) => {
 // Route for projects page
 router.get('/projects', async (req, res, next) => {
   try {
-    let perPage = req.query.perPage || 5;
+    let perPage = req.query.perPage || 4;
     const page = parseInt(req.query.page) || 1;
 
     if (perPage === 'all') {
@@ -158,10 +158,23 @@ router.get('/projects', async (req, res, next) => {
 });
 
 
+// GET /heroes/:id --> gets a hero by id
+router.get('/projects/:id', async (req, res) => {
+  // TODO: fill out the code for the endpoint
+
+  Project.findById(req.params.id, function(err, projectRouter) {
+    res.render("project-page.ejs", {
+        projects: projectRouter
+    })
+
+    // res.render('home.ejs');
+    console.log("Succesfully loaded a single 'Hero' specified by its ID!")
+  });
+})
 
 // Route for projects page with pagination
 router.get('/projects/:page?', async (req, res, next) => {
-  const perPage = 4; // set 5 per page
+  const perPage = 4; // set 4 per page
   const page = parseInt(req.params.page) || 1;
 
   Project.find({})

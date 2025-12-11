@@ -1,7 +1,10 @@
+
+
+
 <%- include('head.ejs') %>
 
 
-<body oncontextmenu="return false";>
+<body>
     <div>
         <div class="overflow-x-hidden">
     
@@ -17,24 +20,29 @@
               </span>
               <a href="/" class="text-xl font-medium text-blue-700 cursor-pointer hover:underline">PVG</a>
               <span class="mx-1 text-xl font-medium">/</span>
-              <div class="text-xl font-semibold text-blue-700 cursor-pointer hover:underline"> About </div>
+              <a href="/projects" class="text-xl font-medium text-blue-700 cursor-pointer hover:underline">Projects</a>
+              <span class="mx-1 text-xl font-medium">/</span>
+              <div class="text-xl font-semibold text-blue-700 cursor-pointer hover:underline"> <%= projects.name %> </div>
             </div>
           </div>
           
-          <div class="flex items-center justify-between px-10 mt-6 -mx-10 border-b select-none md:mt-4">
+          <div class="flex items-center justify-between mt-6 -mx-10 border-b select-none md:mt-4">
         </div>
     
     
-        <div class="container pb-1 mx-auto mt-4">
+        <div class="container pb-1 mx-auto">
             <!-- MAIN CONTENT-->
             <div class="md:flex">
-              <div class="w-full mr-4 md:w-3/4 glass-bg ">
-                <%- include('about.ejs') %>
+              <div class="w-full mr-4 lg:w-3/4 md:w-full glass-bg ">
+                <div class="md:flex md:flex-row-reverse items-center mt-8">
+    <!--SIDE BAR // MAIN CONTENT-->
+    <%- include('body.ejs') %>
+              </div>
               </div>
     
             <!--SIDE BAR // ABOUT-->
-            <div class="ml-4 md:w-1/4">
-              <div class="hidden md:block glass-bg ">
+            <div class="ml-4 lg:w-1/4">
+              <div class="hidden lg:block glass-bg ">
                   <%- include('sidebar.ejs') %>
                 </div>
               </div>
@@ -46,7 +54,4 @@
         <%- include('footer.ejs') %>
         </div>
     </div>
-
-
-    
     </body>

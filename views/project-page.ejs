@@ -34,23 +34,24 @@
 
         <div class="w-full mt-5 ml-2">         
 
-          <a href="/projects" class="">
-            <div class="flex ml-3 mt-3 items-center">
+        </div>  
+
+            <!-- MAIN CONTENT-->
+            <div class="md:flex">
+              
+              <div class="w-full mr-4 lg:w-3/4 md:w-full glass-bg ">
+                
+          <a href="/projects">
+            <div class="flex ml-3 mt-3 items-center ">
 <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-arrow-90deg-left" viewBox="0 0 16 16">
   <path fill-rule="evenodd" d="M1.146 4.854a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 4H12.5A2.5 2.5 0 0 1 15 6.5v8a.5.5 0 0 1-1 0v-8A1.5 1.5 0 0 0 12.5 5H2.707l3.147 3.146a.5.5 0 1 1-.708.708z"/>
 </svg>
               </span>
-          <a class="font-light text-3xl ml-2 whitespace-nowrap w-full">
+          <a href="/projects" class="font-light text-3xl ml-2  whitespace-nowrap">
           Return
           </a>
             </div>
           </a>
-
-
-        </div>  
-            <!-- MAIN CONTENT-->
-            <div class="md:flex">
-              <div class="w-full mr-4 lg:w-3/4 md:w-full glass-bg ">
                 <div class="md:flex md:flex-row-reverse items-center mt-4">
     <!--SIDE BAR // MAIN CONTENT-->
 
@@ -60,6 +61,8 @@
           <tr class="font-semibold grid grid-cols-1 list-inside">
             <th class="content flex">
 
+
+              
               <div class="w-full flex flex-col">
   <a class="font-semibold text-3xl my-auto whitespace-nowrap w-full">
     <%= projects.name %>
@@ -197,7 +200,7 @@
               </div>
     
             <!--SIDE BAR // ABOUT-->
-            <div class="ml-4 lg:w-1/4">
+            <div class="ml-4 -mt-1 lg:w-1/4">
               <div class="hidden lg:block glass-bg ">
                   <%- include('sidebar.ejs') %>
                 </div>

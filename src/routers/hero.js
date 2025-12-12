@@ -74,7 +74,7 @@ router.get('/heroes/:id', async (req, res) => {
     })
 
     // res.render('home.ejs');
-    console.log("Succesfully loaded a single 'Hero' specified by its ID!")
+    console.log("Succesfully loaded a single 'Project' specified by its ID!")
   });
 })
 
@@ -168,7 +168,7 @@ router.get('/projects/:id', async (req, res) => {
     })
 
     // res.render('home.ejs');
-    console.log("Succesfully loaded a single 'Hero' specified by its ID!")
+    console.log("Succesfully loaded a single 'Project' specified by its ID!")
   });
 })
 

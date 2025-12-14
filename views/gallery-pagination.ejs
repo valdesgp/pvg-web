@@ -1,7 +1,7 @@
 <%- include('head.ejs') %>
 
 <!-- Pagination / perPage selector -->
-<div class="lg:flex items-center justify-between grid grid-rows-2 px-4 -mt-3 -mb-1">
+<div class="lg:flex items-center justify-between grid grid-rows-2 px-4 -mt-3 -mb-1 ">
   <div class="font-light text-xl mb-1 flex items-center space-x-3">
     <span>
       Displaying <%= perPage %> results per page 
@@ -44,7 +44,7 @@
 <div class="flex items-center justify-between border-b select-none mb-2"></div>
 
 <!-- Main gallery grid (responsive) -->
-<div class="container mx-auto px-4">
+<div class="container mx-auto px-4 font-main">
   <!-- Grid wrapper OUTSIDE the loop -->
   <% 
     let gridClass = 'grid gap-4 mt-3 mb-28 ';

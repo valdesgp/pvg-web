@@ -1,11 +1,12 @@
-<nav>
+<%- include('head.ejs') %>
+<body>
   <div class="container">
     <!-- Responsive 2-column layout on large screens -->
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
       <% for (var i = 0; i < projects.length; i++) { %>
         <% if (!projects[i]) continue; %>
 
-<div class="rounded-2xl gallery-box-shadow p-6 w-full text-sm mt-6 text-left h-full">
+<div class="rounded-2xl gallery-box-shadow p-6 w-full text-sm mt-6 text-left h-full font-main">
           <tr class="grid grid-cols-1 list-inside">
             <th class="content flex">   
               <div class="w-full flex flex-col">
@@ -26,7 +27,7 @@
                   <p class="w-full md:w-auto text-base md:text-lg mr-2">Tools:</p>
                   <% Object.values(projects[i].lang).forEach(function(tool) { %>
                     <% if (tool) { %>
-                      <span class="px-2 py-1 text-sm md:text-base font-semibold bg-orange-400 rounded-md">
+                      <span class="px-2 py-1 text-sm md:text-base font-normal bg-orange-400 rounded-md">
                         <%= tool %>
                       </span>
                     <% } %>
@@ -76,4 +77,4 @@
     </div>
   </div>
   
-</nav>
+</body>

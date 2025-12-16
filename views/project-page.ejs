@@ -85,18 +85,18 @@
               <!-- Appearance -->
               <ul class="grid grid-cols-1 mr-2 gap-0 font-normal">
                 <!-- Tools -->
-                <div class="flex flex-wrap items-center gap-2 text-gray-800 mt-3 mb-4">
+                <div class=" flex flex-wrap items-center gap-2 text-gray-800 mt-3 mb-4">
                     <p class="w-full md:w-auto text-base md:text-lg font-medium mr-2">Tools:</p>
                          <% Object.values(projects.lang).forEach(function(tool) { %>
                          <% if (tool) { %>
-                          <span class="px-2 py-1 text-sm md:text-base font-normal bg-orange-400 rounded-md">
+                          <span class="font-main px-2 py-1 text-sm md:text-base font-normal bg-orange-400 rounded-md">
                          <%= tool %>
                          </span>
                          <% } %>
                     <% }) %>
                 </div>
                 <li class="list-none">
-                  <a href="<%= projects.links.demo %>" target="_blank" rel="noopener noreferrer">
+                  <a target="_blank" rel="noopener noreferrer">
                     <img class="rounded-2xl items-end w-full object-cover"
                          src="<%= projects.images.thumb1 %>"
                          loading="lazy"
@@ -117,7 +117,9 @@
                   </p>
 
 
-<div class="grid grid-cols-2 gap-4 mb-4">
+                  
+
+<div class="grid grid-cols-2 gap-4 mb-4 ">
   <!-- Role & Responsibilities -->
   <div>
     <p class="text-lg font-semibold mb-2">Role & Responsibilities</p>
@@ -132,6 +134,26 @@
     <p class="mb-2 ml-6"><%= projects.timeline.duration %></p>
   </div>
 </div>
+
+<% if (projects.images.thumb8 || projects.images.thumb9) { %>
+  <div class="grid grid-cols-2 gap-3 mb-4 mt-4 mx-auto">
+
+    <% if (projects.images.thumb8) { %>
+      <video loop muted autoplay class="rounded-2xl">
+        <source src="<%= projects.images.thumb8 %>">
+      </video>
+    <% } %>
+
+    <% if (projects.images.thumb9) { %>
+      <video loop muted autoplay class="rounded-2xl">
+        <source src="<%= projects.images.thumb9 %>">
+      </video>
+    <% } %>
+
+  </div>
+<% } %>
+
+
                   <div class="mb-3">
                     <a>
                        <p class="text-lg mr-16 font-semibold">Process & Development</p>
@@ -142,6 +164,29 @@
                   <p class="mb-3 ml-6"><%= projects.info.desc2 %></p>
                   <p class="mb-3 ml-6"><%= projects.info.desc3 %></p>
                   <p class="mb-4 ml-6"><%= projects.info.desc4 %></p>
+
+
+<% if (projects.images.thumb10 || projects.images.thumb11) { %>
+  <div class="grid grid-cols-2 gap-3 ml-12 mb-4 mt-4 mx-auto">
+    
+    <% if (projects.images.thumb10) { %>
+      <video loop muted autoplay class="rounded-2xl">
+        <source src="<%= projects.images.thumb10 %>">
+      </video>
+    <% } %>
+
+    <% if (projects.images.thumb11) { %>
+      <video loop muted autoplay class="rounded-2xl">
+        <source src="<%= projects.images.thumb11 %>">
+      </video>
+    <% } %>
+
+  </div>
+<% } %>
+
+
+
+
 
                   <div class="mb-3 mt-2">
                     <a>
@@ -154,9 +199,24 @@
                   <p class="mb-3 ml-6"><%= projects.info.desc6 %></p>
                   <p class="mb-6 ml-6"><%= projects.info.desc7 %></p>
 
+                  <div class="grid grid-cols-2 gap-3">
+                  <a target="_blank" rel="noopener noreferrer">
+                    <img class="rounded-2xl items-end w-full object-cover"
+                         src="<%= projects.images.thumb2 %>"
+                         loading="lazy"
+                         alt="superhero profile image"> 
+                  </a>
+                  <a target="_blank" rel="noopener noreferrer">
+                    <img class="rounded-2xl items-end w-full object-cover"
+                         src="<%= projects.images.thumb3 %>"
+                         loading="lazy"
+                         alt="superhero profile image"> 
+                  </a>
+                </div>
+
                   <div class="relative"></div>
 
-                  <div class="mt-4 mb-2 flex space-x-2 text-base lg:text-2xl sm:text-base md:text-base mr-3">
+                  <div class="mt-4 mb-2 flex space-x-3 text-center mx-auto text-base lg:text-2xl sm:text-base md:text-base">
                     <a href="<%= projects.links.demo %>"
                        target="_blank"
                        rel="noopener noreferrer"

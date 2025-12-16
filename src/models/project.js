@@ -11,7 +11,11 @@ const projectSchema = new mongoose.Schema({
     thumb4: String,
     thumb5: String,
     thumb6: String,
-    thumb7: String
+    thumb7: String,
+    thumb8: String,
+    thumb9: String,
+    thumb10: String,
+    thumb11: String
   },
   lang: {
     a: String,

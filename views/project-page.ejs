@@ -40,18 +40,28 @@
             <div class="md:flex">
               
               <div class="w-full mr-4 lg:w-3/4 md:w-full glass-bg ">
-                
-          <a href="/projects">
-            <div class="flex ml-3 mt-3 items-center ">
-<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-arrow-90deg-left" viewBox="0 0 16 16">
-  <path fill-rule="evenodd" d="M1.146 4.854a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 4H12.5A2.5 2.5 0 0 1 15 6.5v8a.5.5 0 0 1-1 0v-8A1.5 1.5 0 0 0 12.5 5H2.707l3.147 3.146a.5.5 0 1 1-.708.708z"/>
-</svg>
+              
+          <div class="grid grid-cols-3 "> 
+
+          <div class="text-left float-left">
+            <a href="/projects">
+            <div class="flex ml-3 mt-3 items-center">
+             <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-arrow-90deg-left" viewBox="0 0 16 16">
+               <path fill-rule="evenodd" d="M1.146 4.854a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 4H12.5A2.5 2.5 0 0 1 15 6.5v8a.5.5 0 0 1-1 0v-8A1.5 1.5 0 0 0 12.5 5H2.707l3.147 3.146a.5.5 0 1 1-.708.708z"/>
+             </svg>
               </span>
-          <a href="/projects" class="font-light text-3xl ml-2  whitespace-nowrap">
-          Return
-          </a>
+              <a href="/projects" class="font-light text-3xl ml-2  whitespace-nowrap">
+                Return
+               </a>
             </div>
-          </a>
+            </a>
+          </div>
+
+          
+</div>
+
+
+  <div class="border-b border-gray-300 mt-4"></div>
                 <div class="md:flex md:flex-row-reverse items-center mt-4">
     <!--SIDE BAR // MAIN CONTENT-->
 
@@ -62,7 +72,6 @@
             <th class="content flex">
 
 
-              
               <div class="w-full flex flex-col">
   <a class="font-semibold text-3xl my-auto whitespace-nowrap w-full">
     <%= projects.name %>
@@ -80,8 +89,10 @@
                   <%= projects.attribs.typesb %>
                 </div>
               </div>
+
             </th>
             <th>
+              
               <!-- Appearance -->
               <ul class="grid grid-cols-1 mr-2 gap-0 font-normal">
                 <!-- Tools -->
@@ -104,11 +115,13 @@
                   </a>
                 </li>
 
-                  <div class="mb-3 ml-2 mt-6">
+                  <div class="mb-1 ml-2 mt-6">
                     <a>
                        <p class="text-lg mr-16 font-semibold">Project Overview </p>
                     </a>
                   </div>
+                    <div class="border-b border-gray-300 mb-3"></div>
+                    
 
                 <li class="ml-2 text-lg font-normal list-none">
                   <p class="text-md ml-6 mb-4">
@@ -116,49 +129,86 @@
                     <%= projects.info.about %>
                   </p>
 
+<% if (projects.images.video1.link || projects.images.video2.link) { %>
+  <div class="grid grid-cols-2 gap-3 mb-8 mt-4 mx-auto">
 
+    <% if (projects.images.video1.link) { %>
+      <div>
+        <video loop muted autoplay class="rounded-2xl">
+          <source src="<%= projects.images.video1.link %>">
+        </video>
+        <p class="text-lg font-normal mb-1 ml-3 mt-3"><%= projects.images.video1.desc %></p>
+      </div>
+    <% } %>
+
+    <% if (projects.images.video2.link) { %>
+      <div>
+      <video loop muted autoplay class="rounded-2xl">
+        <source src="<%= projects.images.video2.link %>">
+      </video>
+        <p class="text-lg font-normal mb-1  ml-3 mt-3"><%= projects.images.video2.desc %></p>
+      </div>
+    <% } %>
+
+  </div>
+<% } %>
                   
 
 <div class="grid grid-cols-2 gap-4 mb-4 ">
   <!-- Role & Responsibilities -->
   <div>
-    <p class="text-lg font-semibold mb-2">Role & Responsibilities</p>
+    <p class="text-lg font-semibold mb-1">Role & Responsibilities</p>
+                        <div class="border-b border-gray-300 mb-3"></div>
     <p class="mb-2 italic"><%= projects.role.rolename %></p>
     <p class="mb-2 ml-6"><%= projects.role.roledesc %></p>
   </div>
 
   <!-- Timeline & Duration -->
   <div>
-    <p class="text-lg font-semibold mb-2">Timeline & Duration</p>
+    <p class="text-lg font-semibold mb-1">Timeline & Duration</p>
+                        <div class="border-b border-gray-300 mb-3"></div>
         <p class="mb-2 ml-6"><%= projects.timeline.period %></p>
     <p class="mb-2 ml-6"><%= projects.timeline.duration %></p>
   </div>
 </div>
 
-<% if (projects.images.thumb8 || projects.images.thumb9) { %>
-  <div class="grid grid-cols-2 gap-3 mb-4 mt-4 mx-auto">
 
-    <% if (projects.images.thumb8) { %>
-      <video loop muted autoplay class="rounded-2xl">
-        <source src="<%= projects.images.thumb8 %>">
-      </video>
+
+
+
+                  <div class="mb-1">
+                    <a>
+                       <p class="text-lg mr-16 font-semibold">Process & Development</p>                        
+                    </a>
+                  </div>
+                  <div class="border-b border-gray-300 mb-3"></div>
+
+<% if (projects.images.thumb4 || projects.images.thumb5) { %>
+  <div class="grid grid-cols-2 gap-3 mb-8">
+
+    <% if (projects.images.thumb4) { %>
+      <a target="_blank" rel="noopener noreferrer">
+        <img
+          class="rounded-2xl items-end w-full object-cover"
+          src="<%= projects.images.thumb4 %>"
+          loading="lazy"
+        >
+      </a>
     <% } %>
 
-    <% if (projects.images.thumb9) { %>
-      <video loop muted autoplay class="rounded-2xl">
-        <source src="<%= projects.images.thumb9 %>">
-      </video>
+    <% if (projects.images.thumb5) { %>
+      <a target="_blank" rel="noopener noreferrer">
+        <img
+          class="rounded-2xl items-end w-full object-cover"
+          src="<%= projects.images.thumb5 %>"
+          loading="lazy"
+        >
+      </a>
     <% } %>
 
   </div>
 <% } %>
 
-
-                  <div class="mb-3">
-                    <a>
-                       <p class="text-lg mr-16 font-semibold">Process & Development</p>
-                    </a>
-                  </div>
 
                   <p class="mb-3 ml-6"><%= projects.info.desc1 %></p>
                   <p class="mb-3 ml-6"><%= projects.info.desc2 %></p>
@@ -166,53 +216,70 @@
                   <p class="mb-4 ml-6"><%= projects.info.desc4 %></p>
 
 
-<% if (projects.images.thumb10 || projects.images.thumb11) { %>
-  <div class="grid grid-cols-2 gap-3 ml-12 mb-4 mt-4 mx-auto">
+                  <div class="mb-1 mt-2">
+                    <a>
+                       <p class="text-lg mr-16 font-semibold">Results & Impact</p>
+                    </a>
+                  </div>
+                  <div class="border-b border-gray-300 mb-3"></div>
+
+
+<% if (projects.images.video3.link || projects.images.video4.link) { %>
+  <div class="grid grid-cols-2 gap-3 ml-0 lg:ml-12 mb-8 mt-8 mx-auto">
     
-    <% if (projects.images.thumb10) { %>
-      <video loop muted autoplay class="rounded-2xl">
-        <source src="<%= projects.images.thumb10 %>">
-      </video>
+    <% if (projects.images.video3.link) { %>
+      <div>
+        <video loop muted autoplay class="rounded-2xl">
+          <source src="<%= projects.images.video3.link %>">
+        </video>
+        <p class="text-lg font-normal mb-1  ml-3 mt-3"><%= projects.images.video3.desc %></p>
+      </div>
     <% } %>
 
-    <% if (projects.images.thumb11) { %>
-      <video loop muted autoplay class="rounded-2xl">
-        <source src="<%= projects.images.thumb11 %>">
-      </video>
+    <% if (projects.images.video4.link) { %>
+      <div>
+        <video loop muted autoplay class="rounded-2xl">
+          <source src="<%= projects.images.video4.link %>">
+        </video>
+        <p class="text-lg font-normal mb-1  ml-3 mt-3"><%= projects.images.video4.desc %></p>
+      </div>
     <% } %>
 
   </div>
 <% } %>
 
-
-
-
-
-                  <div class="mb-3 mt-2">
-                    <a>
-                       <p class="text-lg mr-16 font-semibold">Results & Impact</p>
-                    </a>
-                  </div>
-
                   <p class="mb-3 ml-6"><%= projects.info.desc %></p>
                   <p class="mb-3 ml-6"><%= projects.info.desc5 %></p>
                   <p class="mb-3 ml-6"><%= projects.info.desc6 %></p>
                   <p class="mb-6 ml-6"><%= projects.info.desc7 %></p>
+                  
 
-                  <div class="grid grid-cols-2 gap-3">
-                  <a target="_blank" rel="noopener noreferrer">
-                    <img class="rounded-2xl items-end w-full object-cover"
-                         src="<%= projects.images.thumb2 %>"
-                         loading="lazy"
-                         alt="superhero profile image"> 
-                  </a>
-                  <a target="_blank" rel="noopener noreferrer">
-                    <img class="rounded-2xl items-end w-full object-cover"
-                         src="<%= projects.images.thumb3 %>"
-                         loading="lazy"
-                         alt="superhero profile image"> 
-                  </a>
-                </div>
+<% if (projects.images.thumb2 || projects.images.thumb3) { %>
+  <div class="grid grid-cols-2 gap-3 mb-8">
+
+    <% if (projects.images.thumb2) { %>
+      <a target="_blank" rel="noopener noreferrer">
+        <img
+          class="rounded-2xl items-end w-full object-cover"
+          src="<%= projects.images.thumb2 %>"
+          loading="lazy"
+        >
+      </a>
+    <% } %>
+
+    <% if (projects.images.thumb3) { %>
+      <a target="_blank" rel="noopener noreferrer">
+        <img
+          class="rounded-2xl items-end w-full object-cover"
+          src="<%= projects.images.thumb3 %>"
+          loading="lazy"
+        >
+      </a>
+    <% } %>
+
+  </div>
+<% } %>
+
 
                   <div class="relative"></div>
 
@@ -246,7 +313,9 @@
                 </li>
               </ul>
               
+              
               <div class="flex items-center justify-between px-10 mt-2 border-b select-none md:mt-4"></div>
+              
             </th>
           </tr>
         </table>

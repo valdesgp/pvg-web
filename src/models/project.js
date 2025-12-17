@@ -12,10 +12,23 @@ const projectSchema = new mongoose.Schema({
     thumb5: String,
     thumb6: String,
     thumb7: String,
-    thumb8: String,
-    thumb9: String,
-    thumb10: String,
-    thumb11: String
+    video1: {
+        link: String,
+        desc: String
+    },
+    video2: {
+        link: String,
+        desc: String
+    },
+    video3: {
+        link: String,
+        desc: String
+    },
+    video4: {
+        link: String,
+        desc: String
+    }
+
   },
   lang: {
     a: String,

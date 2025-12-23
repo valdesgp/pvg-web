@@ -4,6 +4,7 @@ const projectSchema = new mongoose.Schema({
   original_id: Number,
   name: String,
   company: String,
+  sector: String,
   images: {
     thumb1: String,
     thumb2: String,
@@ -28,7 +29,6 @@ const projectSchema = new mongoose.Schema({
         link: String,
         desc: String
     }
-
   },
   lang: {
     a: String,
@@ -38,7 +38,8 @@ const projectSchema = new mongoose.Schema({
     e: String,
     f: String,
     g: String,
-    h: String
+    h: String,
+    i: String
   },
   links: {
     demo: String,
@@ -46,6 +47,8 @@ const projectSchema = new mongoose.Schema({
   },
   info: {
     about: String,
+    about2: String,
+    challenge: String,
     desc: String,
     desc1: String,
     desc2: String,

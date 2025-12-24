@@ -48,6 +48,7 @@ const projectSchema = new mongoose.Schema({
   info: {
     about: String,
     about2: String,
+    about3: String,
     challenge: String,
     desc: String,
     desc1: String,
@@ -69,7 +70,8 @@ const projectSchema = new mongoose.Schema({
   },
   timeline: {
     duration: String,
-    period: String
+    period: String,
+    timeframe: String
   },
   gallery: {
     img1: {

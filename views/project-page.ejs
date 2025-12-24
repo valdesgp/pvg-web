@@ -150,6 +150,15 @@
 
   <div class="border-b border-gray-300"></div>
 
+    <div class="grid grid-cols-2 py-2">
+    <p class="text-xl font-semibold">Timeframe</p>
+    <p class="text-xl">
+      <%= projects.timeline.timeframe %>
+    </p>
+  </div>
+
+  <div class="border-b border-gray-300"></div>
+
 </div>
 <% } %>
 
@@ -162,71 +171,19 @@
                   
 
                 <li class="ml-2 font-normal list-none">
-                  <p class="text-xl  ml-6 mb-4">
-                    <span class="font-semibold"><%= projects.name %></span> 
+                  <p class="text-xl font-semibold  ml-6 mb-4">
+                    <span class="font-semibold"><%= projects.company %></span> 
                     <%= projects.info.about %>
                   </p>
                   <p class="text-xl  ml-6 mb-4">
                     <%= projects.info.about2 %>
                   </p>
+                   <p class="text-xl  ml-6 mb-4">
+                    <%= projects.info.about3 %>
+                  </p>
 
-<% if (projects.images.video1.link || projects.images.video2.link) { %>
-  <div class="grid grid-cols-1 gap-3 mb-8 mt-6 mx-auto">
 
-    <% if (projects.images.video1.link) { %>
-      <div>
-        <video loop muted autoplay class="rounded-2xl">
-          <source src="<%= projects.images.video1.link %>">
-        </video>
-        <p class="text-xl font-normal mb-1 ml-3 mt-3"><%= projects.images.video1.desc %></p>
-      </div>
-    <% } %>
-
-    
-
-  </div>
-<% } %>
-
-<% if (projects.images.video3.link || projects.images.video4.link) { %>
-  <div class="grid grid-cols-2 gap-3 ml-0 lg:ml-20 mb-8 mt-8 mx-auto">
-    
-    <% if (projects.images.video3.link) { %>
-      <div>
-        <video loop muted autoplay class="rounded-2xl">
-          <source src="<%= projects.images.video3.link %>">
-        </video>
-        <p class="text-xl font-normal mb-1  ml-3 mt-3"><%= projects.images.video3.desc %></p>
-      </div>
-    <% } %>
-
-    <% if (projects.images.video4.link) { %>
-      <div>
-        <video loop muted autoplay class="rounded-2xl">
-          <source src="<%= projects.images.video4.link %>">
-        </video>
-        <p class="text-xl font-normal mb-1  ml-3 mt-3"><%= projects.images.video4.desc %></p>
-      </div>
-    <% } %>
-
-  </div>
-<% } %>
-         
-
-<% if (projects.images.video1.link || projects.images.video2.link) { %>
-  <div class="grid grid-cols-1 gap-3 mb-8 mt-4 mx-auto hidden">
-
-     <% if (projects.images.video2.link) { %>
-      <div>
-      <video loop muted autoplay class="rounded-2xl">
-        <source src="<%= projects.images.video2.link %>">
-      </video>
-        <p class="text-lg font-normal mb-1  ml-3 mt-3"><%= projects.images.video2.desc %></p>
-      </div>
-    <% } %>
-  </div>
-<% } %>
-
-<div class="grid grid-cols-2 gap-4 mb-4 ">
+<div class="grid grid-cols-2 gap-4 mb-4 mt-8">
   <!-- Role & Responsibilities -->
   <div class="text-xl ">
     <p class="text-xl font-semibold mb-1">Role & Responsibilities</p>
@@ -304,6 +261,61 @@
                   <p class="mb-6 ml-6"><%= projects.info.desc7 %></p>
               </div>
                   
+              <% if (projects.images.video1.link || projects.images.video2.link) { %>
+  <div class="grid grid-cols-1 gap-3 mb-8 mt-6 mx-auto">
+
+    <% if (projects.images.video1.link) { %>
+      <div>
+        <video loop muted autoplay class="rounded-2xl">
+          <source src="<%= projects.images.video1.link %>">
+        </video>
+        <p class="text-xl font-normal mb-1 ml-3 mt-3"><%= projects.images.video1.desc %></p>
+      </div>
+    <% } %>
+
+    
+
+  </div>
+<% } %>
+
+<% if (projects.images.video3.link || projects.images.video4.link) { %>
+  <div class="grid grid-cols-2 gap-3 ml-0 lg:ml-20 mb-8 mt-8 mx-auto">
+    
+    <% if (projects.images.video3.link) { %>
+      <div>
+        <video loop muted autoplay class="rounded-2xl">
+          <source src="<%= projects.images.video3.link %>">
+        </video>
+        <p class="text-xl font-normal mb-1  ml-3 mt-3"><%= projects.images.video3.desc %></p>
+      </div>
+    <% } %>
+
+    <% if (projects.images.video4.link) { %>
+      <div>
+        <video loop muted autoplay class="rounded-2xl">
+          <source src="<%= projects.images.video4.link %>">
+        </video>
+        <p class="text-xl font-normal mb-1  ml-3 mt-3"><%= projects.images.video4.desc %></p>
+      </div>
+    <% } %>
+
+  </div>
+<% } %>
+         
+
+<% if (projects.images.video1.link || projects.images.video2.link) { %>
+  <div class="grid grid-cols-1 gap-3 mb-8 mt-4 mx-auto hidden">
+
+     <% if (projects.images.video2.link) { %>
+      <div>
+      <video loop muted autoplay class="rounded-2xl">
+        <source src="<%= projects.images.video2.link %>">
+      </video>
+        <p class="text-lg font-normal mb-1  ml-3 mt-3"><%= projects.images.video2.desc %></p>
+      </div>
+    <% } %>
+  </div>
+<% } %>
 
 <% if (projects.images.thumb2 || projects.images.thumb3) { %>
   <div class="grid grid-cols-2 gap-3 mb-8 hidden">

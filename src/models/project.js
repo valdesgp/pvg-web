@@ -13,6 +13,9 @@ const projectSchema = new mongoose.Schema({
     thumb5: String,
     thumb6: String,
     thumb7: String,
+    thumb8: String,
+    thumb9: String,
+    thumb10: String,
     video1: {
         link: String,
         desc: String

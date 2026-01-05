@@ -223,26 +223,6 @@
 <% if (projects.images.thumb4 || projects.images.thumb5) { %>
   <div class="grid grid-cols-2 gap-3 mb-8">
 
-    <% if (projects.images.thumb4) { %>
-      <a target="_blank" rel="noopener noreferrer">
-        <img
-          class="rounded-2xl items-end w-full object-cover"
-          src="<%= projects.images.thumb4 %>"
-          loading="lazy"
-        >
-      </a>
-    <% } %>
-
-    <% if (projects.images.thumb5) { %>
-      <a target="_blank" rel="noopener noreferrer">
-        <img
-          class="rounded-2xl items-end w-full object-cover"
-          src="<%= projects.images.thumb5 %>"
-          loading="lazy"
-        >
-      </a>
-    <% } %>
-
         <% if (projects.images.thumb6) { %>
       <a target="_blank" rel="noopener noreferrer">
         <img
@@ -281,7 +261,25 @@
         >
       </a>
     <% } %>
+    <% if (projects.images.thumb4) { %>
+      <a target="_blank" rel="noopener noreferrer">
+        <img
+          class="rounded-2xl items-end w-full object-cover"
+          src="<%= projects.images.thumb4 %>"
+          loading="lazy"
+        >
+      </a>
+    <% } %>
 
+    <% if (projects.images.thumb5) { %>
+      <a target="_blank" rel="noopener noreferrer">
+        <img
+          class="rounded-2xl items-end w-full object-cover"
+          src="<%= projects.images.thumb5 %>"
+          loading="lazy"
+        >
+      </a>
+    <% } %>
 
   </div>
 <% } %>
@@ -301,23 +299,6 @@
                   <p class="mb-6 ml-6"><%= projects.info.desc7 %></p>
               </div>
                   
-              <% if (projects.images.video1.link || projects.images.video2.link) { %>
-  <div class="grid grid-cols-1 gap-3 mb-8 mt-6 mx-auto">
-
-    <% if (projects.images.video1.link) { %>
-      <div>
-        <video loop muted autoplay class="rounded-2xl">
-          <source src="<%= projects.images.video1.link %>">
-        </video>
-        <p class="text-xl font-normal mb-1 ml-3 mt-3"><%= projects.images.video1.desc %></p>
-      </div>
-    <% } %>
-
-    
-
-  </div>
-<% } %>
-
 <% if (projects.images.video3.link || projects.images.video4.link) { %>
   <div class="grid grid-cols-2 gap-3 ml-0 lg:ml-20 mb-8 mt-8 mx-auto">
     
@@ -338,6 +319,24 @@
         <p class="text-xl font-normal mb-1  ml-3 mt-3"><%= projects.images.video4.desc %></p>
       </div>
     <% } %>
+
+  </div>
+<% } %>
+
+
+              <% if (projects.images.video1.link || projects.images.video2.link) { %>
+  <div class="grid grid-cols-1 gap-3 mb-8 mt-6 mx-auto">
+
+    <% if (projects.images.video1.link) { %>
+      <div>
+        <video loop muted autoplay class="rounded-2xl">
+          <source src="<%= projects.images.video1.link %>">
+        </video>
+        <p class="text-xl font-normal mb-1 ml-3 mt-3"><%= projects.images.video1.desc %></p>
+      </div>
+    <% } %>
+
+    
 
   </div>
 <% } %>
@@ -416,17 +415,12 @@
                 </li>
               </ul>
               
-              
               <div class="flex items-center justify-between px-10 mt-2 border-b select-none md:mt-4"></div>
               
             </th>
           </tr>
         </table>
       </body>
-
-
-
-
 
               </div>
               </div>

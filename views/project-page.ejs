@@ -220,7 +220,7 @@
                   <p class="mb-4 ml-6"><%= projects.info.desc4 %></p>
             </div>
 
-<% if (projects.images.thumb4 || projects.images.thumb5) { %>
+<% if (projects.images.thumb6 || projects.images.thumb7) { %>
   <div class="grid grid-cols-2 gap-3 mb-8">
 
         <% if (projects.images.thumb6) { %>
@@ -261,6 +261,17 @@
         >
       </a>
     <% } %>
+
+  </div>
+<% } %>
+
+
+
+
+<% if (projects.images.thumb4 || projects.images.thumb5) { %>
+  <div class="grid grid-cols-1 gap-3 mb-8">
+
+  
     <% if (projects.images.thumb4) { %>
       <a target="_blank" rel="noopener noreferrer">
         <img
@@ -283,6 +294,11 @@
 
   </div>
 <% } %>
+
+
+
+
+
 
                   <div class="mb-1 mt-2">
                     <a>
@@ -357,7 +373,7 @@
 <% } %>
 
 <% if (projects.images.thumb2 || projects.images.thumb3) { %>
-  <div class="grid grid-cols-2 gap-3 mb-8 hidden">
+  <div class="grid grid-cols-1 gap-3 mb-8">
 
     <% if (projects.images.thumb2) { %>
       <a target="_blank" rel="noopener noreferrer">

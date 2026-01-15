@@ -4,13 +4,20 @@ const projectSchema = new mongoose.Schema({
   original_id: Number,
   name: String,
   company: String,
+  client: String,
   sector: String,
   images: {
     thumb1: String,
     thumb2: String,
     thumb3: String,
-    thumb4: String,
-    thumb5: String,
+    thumb4: {
+        link: String,
+        desc: String
+    },
+    thumb5: {
+        link: String,
+        desc: String
+    },
     thumb6: {
         link: String,
         desc: String

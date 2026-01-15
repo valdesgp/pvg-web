@@ -104,12 +104,13 @@
                 </div>
                 <li class="list-none">
                   <a target="_blank" rel="noopener noreferrer">
-                    <img class="rounded-2xl items-end w-full object-cover"
+                    <img class="rounded-2xl mt-10 items-end w-full object-cover"
                          src="<%= projects.images.thumb1 %>"
                          loading="lazy"
-                         alt="superhero profile image"> 
+                         alt="Project Banner"> 
                   </a>
-                                    <div class="mt-4 mb-2 flex space-x-3 text-center mx-auto text-base lg:text-2xl sm:text-base md:text-base">
+                  
+                   <div class="mt-16 mb-2 flex space-x-3 text-center mx-auto text-base lg:text-2xl sm:text-base md:text-base">
                     <a href="<%= projects.links.demo %>"
                        target="_blank"
                        rel="noopener noreferrer"
@@ -294,7 +295,7 @@
           src="<%= projects.images.thumb9.link %>"
           loading="lazy"
         >
-                        <p class="text-xl font-normal mb-1  ml-3 mt-3"><%= projects.images.thumb9.desc %></p>
+        <p class="text-xl font-normal mb-1  ml-3 mt-3"><%= projects.images.thumb9.desc %></p>
       </a>
     <% } %>
 
@@ -302,27 +303,29 @@
 <% } %>
 
 
-<% if (projects.images.thumb4 || projects.images.thumb5) { %>
+<% if (projects.images.thumb4.link || projects.images.thumb5.link) { %>
   <div class="grid grid-cols-1 gap-3 mb-8">
 
   
-    <% if (projects.images.thumb4) { %>
+    <% if (projects.images.thumb4.link) { %>
       <a target="_blank" rel="noopener noreferrer">
         <img
           class="rounded-2xl items-end w-full object-cover"
-          src="<%= projects.images.thumb4 %>"
+          src="<%= projects.images.thumb4.link %>"
           loading="lazy"
         >
+        <p class="text-xl font-normal mb-8  ml-3 mt-3"><%= projects.images.thumb4.desc %></p>
       </a>
     <% } %>
 
-    <% if (projects.images.thumb5) { %>
+    <% if (projects.images.thumb5.link) { %>
       <a target="_blank" rel="noopener noreferrer">
         <img
           class="rounded-2xl items-end w-full object-cover"
-          src="<%= projects.images.thumb5 %>"
+          src="<%= projects.images.thumb5.link %>"
           loading="lazy"
         >
+        <p class="text-xl font-normal mb-1  ml-3 mt-3"><%= projects.images.thumb4.desc %></p>
       </a>
     <% } %>
 

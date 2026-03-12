@@ -203,8 +203,8 @@ router.get('/projects/:page?', async (req, res, next) => {
 
   
   // Route for about page.
-  router.get('/case-studies', async (req, res) => {
-    res.render("case-studies.ejs")
+  router.get('/casestudies', async (req, res) => {
+    res.render("casestudies.ejs")
   })
 
   // Route for contact page.

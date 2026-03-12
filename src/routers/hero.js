@@ -196,69 +196,15 @@ router.get('/projects/:page?', async (req, res, next) => {
 
 
 
-
-router.get('/gallery', async (req, res, next) => {
-  try {
-    let perPage = req.query.perPage || 6;
-    const page = parseInt(req.query.page) || 1;
-    const columns = req.query.columns || 2; // Get columns from query
-
-    if (perPage === 'all') {
-      const projects = await Project.find({}).sort({ original_id: 1 });
-      const count = projects.reduce((sum, project) => sum + Object.keys(project.gallery).length, 0);
-
-      return res.render('gallery.ejs', {
-        projects,
-        current: 1,
-        pages: 1,
-        perPage: 'all',
-        count,
-        columns // Pass columns to template
-      });
-    } else {
-      perPage = parseInt(perPage);
-    }
-
-    const projects = await Project.find({}).sort({ original_id: 1 });
-
-    let allImages = [];
-    projects.forEach(project => {
-      Object.values(project.gallery).forEach(img => {
-        if (img && img.link) {
-          allImages.push({
-            link: img.link,
-            project: img.project || '',
-            date: img.date || '',
-            desc: img.desc || ''
-          });
-        }
-      });
-    });
-
-    const count = allImages.length;
-    const start = (page - 1) * perPage;
-    const end = start + perPage;
-    const paginatedImages = allImages.slice(start, end);
-
-    res.render('gallery.ejs', {
-      projects: paginatedImages,
-      current: page,
-      pages: Math.ceil(count / perPage),
-      perPage,
-      count,
-      columns // Pass columns to template
-    });
-  } catch (err) {
-    next(err);
-  }
-});
-
-
-
-
   // Route for about page.
   router.get('/about', async (req, res) => {
     res.render("index.ejs")
+  })
+
+  
+  // Route for about page.
+  router.get('/case-studies', async (req, res) => {
+    res.render("case-studies.ejs")
   })
 
   // Route for contact page.

@@ -876,6 +876,15 @@ animation: bounces 2s ease infinite .6s, color-change 4.4s infinite;
   transform: rotate(8deg);
 }
 
+.hover-grow {
+  transform:scale(1);
+  transition: transform 0.3s;
+}
+
+.hover-grow:hover {
+  transform:scale(1.2);
+}
+
 .hover-slide {
   transform: translateX(0px);
   transition: transform 0.3s;

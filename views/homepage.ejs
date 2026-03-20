@@ -129,13 +129,19 @@
   <div class="border-b border-gray-300 mt-4 mb-2"></div>
 
   <!-- Pagination Include -->
-  <%- include('pagination-featured.ejs') %>
-
-  <div class="text-right mt-12">
-        <a href="/projects" class="underline text-blue-600 text-xl">
-      Visit <i>My Work</i> Page
-    </a>
+  <div class="w-full max-w-4xl mt-3">
+    <iframe 
+      src="https://www.behance.net/embed/project/245085291?ilo0=1"
+      class="w-full border-0"
+      style="height: 620px;"
+      scrolling="no"
+      allowfullscreen
+      allow="clipboard-write"
+      loading="lazy"
+      referrerpolicy="strict-origin-when-cross-origin">
+    </iframe>
   </div>
+</div>
 
   
 <!-- Header Divider -->
@@ -253,16 +259,34 @@
                   <!-- Header Row -->
                   <div class="flex justify-between items-center ml-3">
                     <p style="font-size: 32px;" class="font-light">Featured Case Studies</p>
-                    <a href="/projects" class="underline text-blue-600" style="font-size: 20px;">Visit <i>My Work </i> Page</a> 
+
                   </div>
+
 
                   <!-- Bottom Border -->
                   <th class="rounded-t-xl">
                     <div class="lg:flex hidden items-center justify-between mb-2 -mr-5 lg:mr-0 border-b select-none"></div>
                   </th>
 
-                  <!-- Pagination Include -->
-                  <%- include('pagination-featured.ejs') %>
+ 
+
+                    <div class="w-full flex justify-center">
+  <div class="w-full max-w-4xl mt-3">
+    <iframe 
+      src="https://www.behance.net/embed/project/245085291?ilo0=1"
+      class="w-full border-0"
+      style="height: 620px;"
+      scrolling="no"
+      allowfullscreen
+      allow="clipboard-write"
+      loading="lazy"
+      referrerpolicy="strict-origin-when-cross-origin">
+    </iframe>
+  </div>
+</div>
+                  <!-- Pagination Include
+                   include('pagination-featured.ejs') %>
+                   -->
 
                               <!-- Include pagination file -->
  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10">

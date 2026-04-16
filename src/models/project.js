@@ -7,50 +7,23 @@ const projectSchema = new mongoose.Schema({
   client: String,
   sector: String,
   images: {
-    thumb1: String,
-    thumb2: String,
-    thumb3: String,
+    thumb: String,
+    thumb1: {
+        link: String,
+        desc: String
+    },
+    thumb2: {
+        link: String,
+        desc: String
+    },
+    thumb3: {
+        link: String,
+        desc: String
+    },
     thumb4: {
         link: String,
         desc: String
     },
-    thumb5: {
-        link: String,
-        desc: String
-    },
-    thumb6: {
-        link: String,
-        desc: String
-    },
-    thumb7: {
-        link: String,
-        desc: String
-    },
-    thumb8: {
-        link: String,
-        desc: String
-    },
-    thumb9: {
-        link: String,
-        desc: String
-    },
-    thumb10: String,
-    video1: {
-        link: String,
-        desc: String
-    },
-    video2: {
-        link: String,
-        desc: String
-    },
-    video3: {
-        link: String,
-        desc: String
-    },
-    video4: {
-        link: String,
-        desc: String
-    }
   },
   lang: {
     a: String,
@@ -69,22 +42,11 @@ const projectSchema = new mongoose.Schema({
   },
   info: {
     about: String,
-    about2: String,
-    about3: String,
     challenge: String,
-    desc: String,
     desc1: String,
     desc2: String,
     desc3: String,
     desc4: String,
-    desc5: String,
-    desc6: String,
-    desc7: String
-  },
-  attribs: {
-    types: String,
-    typesb: String,
-    link: String
   },
   role: {
     rolename: String,
@@ -94,6 +56,11 @@ const projectSchema = new mongoose.Schema({
     duration: String,
     period: String,
     timeframe: String
+  },
+    stack: {
+    dev: String,
+    design: String,
+    SEO: String
   },
  
 }, {

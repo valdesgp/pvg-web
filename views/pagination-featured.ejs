@@ -21,9 +21,8 @@
               </div>
             </th>
             <th>
-              <!-- Appearance -->
+              <!-- Appearance
               <ul class="grid grid-cols-1 gap-0 font-normal">
-                <!-- Tools -->
                 <div class="flex flex-wrap items-center gap-2 text-gray-800 mt-3 mb-6">
                   <% Object.values(projects[i].lang).forEach(function(tool) { %>
                     <% if (tool) { %>
@@ -33,29 +32,24 @@
                     <% } %>
                   <% }) %>
                 </div>
+                 -->
 
                 
                 
                 <li class="list-none">
                   <a target="_blank" rel="noopener noreferrer">
                     <img class="rounded-2xl items-end w-full object-cover"
-                         src="<%= projects[i].images.thumb1 %>"
+                         src="<%= projects[i].images.thumb %>"
                          loading="lazy"
                          alt="superhero profile image"> 
                   </a>
                 </li>
 
-                <div class="grid grid-cols-2 gap-4 mt-4 text-lg">
+                <div class="grid grid-cols-1 gap-4 mt-4 text-lg">
                   <!-- Role & Responsibilities -->
                   <div>
-                    <p class="font-normal mb-2">Role:</p>
+                    <p class="font-normal mb-2">Role: </p>
                     <p class="mb-2 italic font-light"><%= projects[i].role.rolename %></p>
-                  </div>
-
-                  <!-- Timeline & Duration -->
-                  <div>
-                    <p class="font-normal mb-2">Timeframe:</p>
-                    <p class="mb-2 font-light"><%= projects[i].timeline.timeframe %></p>
                   </div>
                 </div>
                 

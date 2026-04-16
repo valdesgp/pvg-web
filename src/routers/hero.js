@@ -4,11 +4,9 @@ const { db } = require('../models/project');
 const router = new express.Router()
 
 // models
-const Comment = require(__basedir + '/models/comment')
 const Project = require(__basedir + '/models/project')
 
 const DEFAULT_HEROES_PER_PAGE = 10
-const DEFAULT_COMMENTS_PER_PAGE = 3
 
 /**
  * Some API endpoints in this application are sorted and paginated. Here, we will go over

@@ -1023,11 +1023,15 @@ padding-bottom: 6px;
 }
 
 .connect-button-c {
-  background-color: #2b3137; /* LinkedIn Blue */
+  background-color: #2b3137;
   color: white;
   border: none;
   cursor: pointer;
-  width: 56%; /* Make the button full-width */
+  width: 56%;
+}
+
+.connect-button-c.full-width {
+  width: 100%;
 }
 
 .connect-button-c:hover {

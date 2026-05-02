@@ -182,9 +182,7 @@ h2 {
   font-weight: 900;
 }
 
-.shadow-img {
-  box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.52)
-}
+
 
 .dropdown-bar {
     position: absolute;
@@ -576,10 +574,14 @@ h2 {
   transition: 0.8s;
   background-color: rgba(130, 130, 130, 0.193);
 }
+
+
 .glass-nav{
-  background-color: rgb(214, 214, 214);
+  background-color: rgb(255, 255, 255);
   font-size: 24px;
 }
+
+
 .glass-nav-b{
   background-color: rgba(255, 255, 255, 0.327);
   backdrop-filter: blur(10px);
@@ -828,6 +830,7 @@ animation: bounces 2s ease infinite .6s, color-change 4.4s infinite;
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
   border-radius: 10px;
+  filter: drop-shadow(1px 0 0 #2D2D2D) drop-shadow(-1px 0 0 #2D2D2D) drop-shadow(0 1px 0 #2D2D2D) drop-shadow(0 -1px 0 #2D2D2D);
 }
 .talkbubble:before {
   content: "";
@@ -838,7 +841,7 @@ animation: bounces 2s ease infinite .6s, color-change 4.4s infinite;
   height: 0;
   border-top: 13px solid transparent;
   border-left: 20px solid rgb(255, 255, 255);
-  border-bottom: 10px solid transparent
+  border-bottom: 10px solid transparent;
 }
 
 .talkbubble-b {
@@ -854,6 +857,7 @@ animation: bounces 2s ease infinite .6s, color-change 4.4s infinite;
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
   border-radius: 10px;
+  filter: drop-shadow(1px 0 0 #2D2D2D) drop-shadow(-1px 0 0 #2D2D2D) drop-shadow(0 1px 0 #2D2D2D) drop-shadow(0 -1px 0 #2D2D2D);
 }
 .talkbubble-b:before {
   content: "";
@@ -923,8 +927,8 @@ animation: bounces 2s ease infinite .6s, color-change 4.4s infinite;
   background: conic-gradient(
     transparent 0%,
     transparent 20%, /* 1/5 of the ring invisible */
-    #32CD32 20%,     /* Start of the ring with green color */
-    #32CD32 100%     /* End of the ring */
+    #7e22ce 20%,     /* Start of the ring with green color */
+    #7e22ce 100%     /* End of the ring */
   ); /* Creates a ring pattern */
   animation: spin-border 5s linear infinite; /* Spin effect */
   z-index: 1; /* Ensure it stays below the profile image */
@@ -939,7 +943,7 @@ animation: bounces 2s ease infinite .6s, color-change 4.4s infinite;
   width: 90%; /* Make the white circle bigger */
   height: 90%; /* Make the white circle bigger */
   border-radius: 50%; /* Make the circle circular */
-  background-color: rgb(214, 214, 214);  /* White background */
+  background-color:  #ffffff;  /* White background */
   z-index: 2; /* Place above the animated border and below the image */
 }
 
@@ -1103,23 +1107,7 @@ padding-bottom: 6px;
 
 body {
   color: #2D2D2D; 
-  /* 
-  background: rgb(21, 21, 21) url('https://i.postimg.cc/p2Wjy2Tf/GRAINY-HUE-GRADIENT.png');
-  BG IMAGE */
-  background-color: rgb(214, 214, 214); 
-   /*
-  background: rgb(21, 21, 21) url('https://i.postimg.cc/B6zdRtyM/image-2024-03-18-185814125.jpg') no-repeat center center fixed;
-  */
-     /*
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  -o-user-select: none;
-  user-select: none;  
-  */
-  background-size: cover;
-  
+  background-color: #fafafa;
 }
 
 .border-b{
@@ -1137,23 +1125,9 @@ body {
   font-size: 27px;
   font-weight: lighter;
   border-radius: 10px;
-  backdrop-filter: blur(22px);
-  -webkit-backdrop-filter: blur(22px)
+
 }
-  /* 
-.glass-bg{
-  background-color: rgba(125, 125, 125, 0.5);
-  font-size: 27px;
-  font-weight: lighter;
-  text-shadow: 1px 0px 10px rgba(0, 0, 0, 0.342);
-  border-radius: 10px;
-  backdrop-filter: blur(22px);
-  -webkit-backdrop-filter: blur(22px);
-  border-width: 2px;
-  border-style: outset;
-  border-color: rgba(140, 140, 140, 0.078);
-}
-*/
+
 
 .homepage-text{
   font-size: 40px;
@@ -1176,7 +1150,7 @@ body {
 }
 
 .year-button {
-  padding: 3px 2px;
+  padding: 2px 2px;
   margin: 3px; 
   border-radius: 6px;
   color: #161616;
@@ -1210,11 +1184,11 @@ body {
 
 .navbar-message {
   background: linear-gradient(90deg, 
-    rgba(68, 0, 145, 0.657), 
-    rgba(68, 0, 145, 0.657), 
-    rgba(119, 0, 255, 0.657), 
-    rgba(68, 0, 145, 0.657), 
-    rgba(68, 0, 145, 0.657));
+    rgba(126, 34, 206, 0.85), 
+    rgba(126, 34, 206, 0.85), 
+    rgba(168, 85, 247, 0.85), 
+    rgba(126, 34, 206, 0.85), 
+    rgba(126, 34, 206, 0.85));
   background-size: 200% 100%;
   animation: lightSlide 4s infinite linear;
   font-size: 18px;

@@ -6,6 +6,106 @@
       
       <!-- Navbar -->
       <%- include('navbar.ejs') %> 
+       <!-- Navbar Desktop -->
+<nav class=" font-main block fixed top-0 w-full z-40 glass-nav">
+  <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-20">
+      <div class="flex items-center">
+        <div class="cursor-default flex items-start">
+          <a href="/" class="talkbubble hover-grow"> PVG </a>
+
+          <a href="mailto:hello@valdesgpatricio.com" class="lg:flex md:hidden sm:hidden hidden items-center ml-10 space-x-2 hover-slide px-3 py-1 font-light text-xl rounded-md">
+            <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="currentColor" class="bi bi-envelope-fill mt-1" viewBox="0 0 16 16">
+              <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414zM0 4.697v7.104l5.803-3.558zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586zm3.436-.586L16 11.801V4.697z"/>
+            </svg>
+            <span>hello@valdesgpatricio.com</span>
+          </a>
+        
+          <div class="-mr-2 hidden">
+        <button class="inline-flex items-center justify-center p-2 rounded-md hover:text-white hover:bg-gray-700">
+          <svg class="block w-6 h-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+
+        </div>
+      </div>
+      <!-- Navbar Desktop-->
+      <div class="flex items-center ml-auto md:flex">
+        
+        <button id="menu-btn" class="block lg:hidden sm:block text-right float-right md:flex p-2 focus:outline-none hover:bg-gray-500 rounded-md">
+          <svg class="block w-12 h-12" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+
+        <div class="hidden lg:flex md:hidden sm:hidden font-normal">
+
+        <a href="/" class=" px-3 py-2 ml-6 hover-grow rounded-md"> 
+          Home
+        </a>
+
+        <a href="/projects" class=" px-3 py-2 ml-6 hover-grow rounded-md"> 
+          My Work
+        </a>
+        
+        <a href="/about" class=" px-3 py-2 ml-6 hover-grow rounded-md"> 
+          About Me
+        </a>
+<!--
+        <a href="/contact" class=" px-3 py-2 ml-6 font-light hover-tilt rounded-md"> 
+          Contact
+        </a>
+-->
+        </div>
+      </div>
+      
+      <div class="-mr-2 hidden">
+        <button class="inline-flex items-center justify-center p-2 rounded-md hover:text-white hover:bg-gray-700">
+          <svg class="block w-6 h-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+
+    </div>
+  </div>
+</nav>
+
+<!-- NAVBAR MOBILE -->
+<div class="glass-nav-mobile mx-auto max-w-7xl lg:hidden md:block sm:block">
+  <div class="flex items-center justify-between">
+    <div class="flex text-gray-800 items-center font-semibold ml-auto md:flex text-4xl">
+
+      <div id="menu-dropbar" class="ml-24 mr-10 text-right float-right mobile-navbar-hide sidebar">
+        <a href="/">Home</a>
+        <a href="/projects">My Work</a>
+        <a href="/about">About</a>
+        <!--
+        <a href="/contact">Contact</a>
+        -->
+      </div>
+    </div>
+
+
+  </div>
+</div>
+
+
+<div class="relative font-main sm:hidden md:hidden lg:block block w-full mt-20 -mb-20 z-0 navbar-message">
+  <a href="/contact" class="absolute inset-0 w-full h-full"></a>
+  <div class="max-w-7xl">
+    <div class="flex h-7">
+        <span class="font-light mx-auto float-right text-center text-white">
+          OPEN FOR WORK!
+        </span>
+    </div>
+  </div>
+</div>
+
+
+
       
       <!-- Header (Path) -->
       <div class="flex flex-col mt-20 md:flex-row md:justify-between">
@@ -54,7 +154,7 @@
     </h1>
 
     <p style="font-size: 50px; line-height: 1.3;" class="font-light text-gray-700 mt-4">
-      a <span class="text-purple-700 italic font-light">Web Developer & UI/UX Designer</span>
+      a <span class="text-purple-700 font-normal">Web Developer & UI/UX Designer</span>
     </p>
 
     <!-- Value Proposition - Code Block Style -->
@@ -361,15 +461,4 @@
       <%- include('footer.ejs') %>
     </div>
   </div>
-
-  <a href="/contact">
-    <div id="msg-btn" class="message-button sm:hidden md:hidden lg:block hidden">
-      <svg xmlns="http://www.w3.org/2000/svg" width="88" height="88" fill="currentColor"
-           class="cursor-pointer bi bi-chat-dots-fill -my-1.5 -mx-1"
-           viewBox="0 0 16 16">
-        <path d="M16 8c0 3.866-3.582 7-8 7a9.06 9.06 0 0 1-2.347-.306c-.584.296-1.925.864-4.181 1.234-.2.032-.352-.176-.273-.362.354-.836.674-1.95.77-2.966C.744 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7zM5 8a1 1 0 1 0-2 0 1 1 0 0 0 2 0zm4 0a1 1 0 1 0-2 0 1 1 0 0 0 2 0zm3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
-      </svg>
-    </div>
-  </a>
-
 </body>

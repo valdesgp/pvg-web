@@ -3,458 +3,278 @@
 <body>
   <div>
     <div class="overflow-x-hidden">
-      
-      <!-- Navbar -->
-      <%- include('navbar.ejs') %> 
-       <!-- Navbar Desktop -->
-<nav class=" font-main block fixed top-0 w-full z-40 glass-nav">
-  <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
-    <div class="flex items-center justify-between h-20">
-      <div class="flex items-center">
-        <div class="cursor-default flex items-start">
-          <a href="/" class="talkbubble hover-grow"> PVG </a>
 
-          <a href="mailto:hello@valdesgpatricio.com" class="lg:flex md:hidden sm:hidden hidden items-center ml-10 space-x-2 hover-slide px-3 py-1 font-light text-xl rounded-md">
-            <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="currentColor" class="bi bi-envelope-fill mt-1" viewBox="0 0 16 16">
-              <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414zM0 4.697v7.104l5.803-3.558zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586zm3.436-.586L16 11.801V4.697z"/>
-            </svg>
-            <span>hello@valdesgpatricio.com</span>
-          </a>
-        
-          <div class="-mr-2 hidden">
-        <button class="inline-flex items-center justify-center p-2 rounded-md hover:text-white hover:bg-gray-700">
-          <svg class="block w-6 h-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-        </button>
-      </div>
-
-        </div>
-      </div>
-      <!-- Navbar Desktop-->
-      <div class="flex items-center ml-auto md:flex">
-        
-        <button id="menu-btn" class="block lg:hidden sm:block text-right float-right md:flex p-2 focus:outline-none hover:bg-gray-500 rounded-md">
-          <svg class="block w-12 h-12" stroke="currentColor" fill="none" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-        </button>
-
-        <div class="hidden lg:flex md:hidden sm:hidden font-normal">
-
-        <a href="/" class="px-3 py-2 ml-6 hover-grow rounded-md relative nav-active">
-           Home
-        </a>
-
-        <a href="/projects" class=" px-3 py-2 ml-6 hover-grow rounded-md"> 
-          My Work
-        </a>
-        
-        <a href="/about" class=" px-3 py-2 ml-6 hover-grow rounded-md"> 
-          About Me
-        </a>
-<!--
-        <a href="/contact" class=" px-3 py-2 ml-6 font-light hover-tilt rounded-md"> 
-          Contact
-        </a>
--->
-        </div>
-      </div>
-      
-      <div class="-mr-2 hidden">
-        <button class="inline-flex items-center justify-center p-2 rounded-md hover:text-white hover:bg-gray-700">
-          <svg class="block w-6 h-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-        </button>
-      </div>
-
-    </div>
-  </div>
-</nav>
-
-<!-- NAVBAR MOBILE -->
-<div class="glass-nav-mobile mx-auto max-w-7xl lg:hidden md:block sm:block">
-  <div class="flex items-center justify-between">
-    <div class="flex text-gray-800 items-center font-semibold ml-auto md:flex text-4xl">
-
-      <div id="menu-dropbar" class="ml-24 mr-10 text-right float-right mobile-navbar-hide sidebar">
-        <a href="/">Home</a>
-        <a href="/projects">My Work</a>
-        <a href="/about">About</a>
-        <!--
-        <a href="/contact">Contact</a>
-        -->
-      </div>
-    </div>
-
-
-  </div>
-</div>
-
-
-<div class="relative font-main sm:hidden md:hidden lg:block block w-full mt-20 -mb-20 z-0 navbar-message">
-  <a href="/contact" class="absolute inset-0 w-full h-full"></a>
-  <div class="max-w-7xl">
-    <div class="flex h-7">
-        <span class="font-light mx-auto float-right text-center text-white">
-          OPEN FOR WORK!
-        </span>
-    </div>
-  </div>
-</div>
-
-
-
-      
-      <!-- Header (Path) -->
-      <div class="flex flex-col mt-20 md:flex-row md:justify-between">
-        <div class="flex ml-3 mt-3 items-center">
-          <!-- Home Icon -->
-          <span>
-            <svg class="w-4 h-4 mt-1 mr-2 fill-current" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-              <path fill-rule="evenodd" d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 110-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 011-1h8zM5 12.25v3.25a.25.25 0 00.4.2l1.45-1.087a.25.25 0 01.3 0L8.6 15.7a.25.25 0 00.4-.2v-3.25a.25.25 0 00-.25-.25h-3.5a.25.25 0 00-.25.25z"></path>
-            </svg>
-          </span>
-
-          <!-- Breadcrumb Links -->
-          <a href="/" class="text-xl font-medium text-blue-700 cursor-pointer hover:underline">PVG</a>
-          <span class="mx-1 text-xl font-medium">/</span>
-          <div class="text-xl font-semibold text-blue-700 cursor-pointer hover:underline">Home</div>
-        </div>
-      </div>
-
-      <!-- Divider -->
-      <div class="flex items-center justify-between px-10 mt-6 -mx-10 border-b select-none md:mt-4"></div>
-      
-      <!-- Main Container -->
-      <div class="container pb-1 mx-auto mt-4">
-
-        <!-- Main Content Wrapper -->
-        <div class="flex">
-
-          <!-- Main Section -->
-          <div class="w-full mr-4 lg:w-3/4 md:w-full glass-bg">
-            
-<!-- Desktop Header -->
-<div class="font-main mb-8 hidden md:hidden mt-16 lg:block">
-  <div class="flex flex-col text-left max-w-3xl">
-
-    <!-- Pill: Open for work -->
-    <div class="mb-4">
-      <span class="inline-flex items-center gap-2 text-green-700 text-sm font-medium border border-green-600 rounded-full py-1 px-3">
-        <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
-        Open for work
-      </span>
-    </div>
-
-    <!-- Header Text -->
-    <h1 style="font-size: 96px; line-height: 1.05;" class="font-bold text-gray-900 tracking-tight">
-      Hi, I'm Patricio <span class="inline-block">👋</span>
-    </h1>
-
-    <p style="font-size: 50px; line-height: 1.3;" class="font-light text-gray-700 mt-4">
-      a <span class="text-purple-700 font-normal">Web Developer & UI/UX Designer</span>
-    </p>
-
-    <!-- Value Proposition - Code Block Style -->
-    <div class="mt-6 bg-gray-900 rounded-xl px-6 py-5 max-w-2xl shadow-lg">
-      <div class="flex items-center gap-2 mb-3">
-        <span class="w-3 h-3 rounded-full bg-red-400"></span>
-        <span class="w-3 h-3 rounded-full bg-yellow-400"></span>
-        <span class="w-3 h-3 rounded-full bg-green-400"></span>
-      </div>
-      <p style="font-family: 'Courier New', monospace; font-size: 18px; line-height: 1.6;" class="text-gray-100">
-        <span class="text-gray-500">// About me</span><br>
-        <span class="text-purple-400">const</span> <span class="text-blue-300">patricio</span> <span class="text-gray-400">=</span> <span class="text-green-300">"I design and build modern, accessible interfaces that feel obvious to use and effortless to ship."</span><span class="text-gray-400">;</span>
-      </p>
-    </div>
-
-  </div>
-</div>
-
-
-
-
-
-
-<!-- Mobile Header -->
-<div class="font-main mb-10 mt-8 block px-4 lg:hidden">
-  <div class="container-bulb">
-    <!-- Profile Picture -->
-    <div class="profile-pic-container mt-2 mx-auto flex justify-center">
-      <img
-        src="/public/imgs/profile-illustration.webp"
-        alt="profile image"
-        class="profile-pic w-36 sm:w-40 md:w-44 rounded-full object-contain"
-      >
-    </div>
-  </div>
-
-  <!-- Mobile Header Text -->
-  <div class="text-center mt-6">
-    <p class="text-4xl sm:text-5xl font-normal">Hi, I’m Patricio 👋</p>
-    <p class="text-lg sm:text-xl font-normal -mt-1">
-      a <i>Web Developer & UI/UX Designer</i>
-    </p>
-  </div>
-
-
-
-  <!-- Header Divider -->
-  <div class="border-b border-gray-300 mt-10"></div>
-
-  <!-- “Who I’ve Worked With” Section -->
-  <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center mt-3 px-2">
-        <p class="text-2xl sm:text-3xl font-light text-center sm:text-left">
-      Clients & Collaborations
-    </p>
-  </div>
-
-  <div class="border-b border-gray-300 mt-4"></div>
-
-<div class="grid grid-cols-2 gap-1 mt-4 justify-center items-center opacity-75">
-     <!-- EF Logo -->
-  <div class="rounded-2xl flex text-center sm:text-left">
-    <a target="_blank" rel="noopener noreferrer">
-      <img src="/public/imgs/ef_logo_solid.webp" alt="Empowered Futures Logo">
-    </a>
-  </div>
-  <!-- TD Logo -->
-  <div class="rounded-2xl flex text-center sm:text-left">
-    <a target="_blank" rel="noopener noreferrer">
-      <img src="/public/imgs/td_logo_solid.webp" alt="Telus Digital Logo">
-    </a>
-  </div>
-  <!-- EMYA Logo -->
-  <div class="rounded-2xl flex text-center sm:text-left">
-    <a target="_blank" rel="noopener noreferrer">
-      <img src="/public/imgs/emya_logo_solid.webp" alt="EMYA Logo">
-    </a>
-  </div>
-  <!-- LaWash Logo -->
-  <div class="rounded-2xl flex text-center sm:text-left">
-    <a target="_blank" rel="noopener noreferrer">
-      <img src="/public/imgs/lawash_logo_solid.webp" alt="LaWash Logo">
-    </a>
-  </div>
-</div>
-
-  <!-- Header Divider -->
-<div class="border-b border-gray-300 mt-2"></div>
-
-
-  <!-- “Featured Projects” Section -->
-  <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center mt-3 px-2">
-    <p class="text-2xl sm:text-3xl font-light text-center sm:text-left">
-      Featured Case Studies
-    </p>
-  </div>
-
-  <div class="border-b border-gray-300 mt-4 mb-2"></div>
-
-  <div class="w-full flex justify-center ml-2">
-  <div class="w-full max-w-4xl mt-3">
-    <iframe 
-      src="https://www.behance.net/embed/project/245085291?ilo0=1"
-      class="w-full border-0"
-      style="height: 250px;"
-      scrolling="no"
-      allowfullscreen
-      allow="clipboard-write"
-      loading="lazy"
-      referrerpolicy="strict-origin-when-cross-origin">
-    </iframe>
-  </div>
-  
-</div>
-
-  <div class="w-full flex justify-center ml-2">
-  <div class="w-full max-w-4xl mt-5">
-    <iframe 
-      src="https://www.behance.net/embed/project/246162081?ilo0=1"
-      class="w-full border-0"
-      style="height: 250px;"
-      scrolling="no"
-      allowfullscreen
-      allow="clipboard-write"
-      loading="lazy"
-      referrerpolicy="strict-origin-when-cross-origin">
-    </iframe>
-  </div>
-  
-</div>
-  
-<!-- Header Divider -->
-<div class="border-b border-gray-300 mt-10"></div>
-
-<!-- LinkedIn Section -->
-<div class="flex flex-col justify-between items-center mt-6 px-4">
-
-  <!-- LinkedIn Profile Card -->
-  <div class=" rounded-xl p-4 flex flex-col sm:items-center sm:justify-between w-full max-w-md mx-auto sm:mx-0">
-    
-    <!-- Profile Info -->
-    <div class="flex items-center text-center sm:text-left">
-      <!-- Profile Picture -->
-      <img
-        src="/public/imgs/profile-linkedin.webp"
-        alt="LinkedIn Profile Picture"
-        class="w-20 h-20 sm:w-24 sm:h-24 rounded-full object-cover flex-shrink-0 mx-auto sm:mx-0"
-      >
-
-      <!-- Text Info -->
-      <div class="ml-0 sm:ml-6 mt-4 sm:mt-0">
-        <p class="text-lg sm:text-xl font-normal">Patricio Valdes</p>
-        <p class="text-base sm:text-lg font-light">UI/UX Designer</p>
-        <p class="text-base sm:text-lg font-light italic">Toronto, ON, CA</p>
-      </div>
-    </div>
-
-    <!-- Connect Button -->
-    <div class="mt-5 flex justify-center sm:justify-end">
-      <a
-        href="https://www.linkedin.com/in/valdesgpatricio"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="connect-button flex items-center justify-center bg-blue-700 hover:bg-blue-800 transition text-white rounded-md px-5 py-2"
-      >
-        Connect
-        <!-- Icon -->
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="ml-2" viewBox="0 0 16 16">
-          <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 
-          1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 
-          12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 
-          0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 
-          0-1.359.54-1.359 1.248 0 .694.521 
-          1.248 1.327 1.248h.016zm4.908 
-          8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 
-          1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 
-          0-1.845.7-2.165 1.193v.025h-.016a5.54 
-          5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 
-          0 7.225 0 7.225h2.4z"/>
-        </svg>
-      </a>
-    </div>
-  </div>
-</div>
-
-<!-- Header Divider -->
-<div class="border-b border-gray-300 mt-10"></div>
-
-
-
-</div>
-
-            <!-- Featured Projects (Desktop) -->
-            <div class="font-main hidden md:hidden mt-12 lg:block">
-              <div class="flex items-center">
-
-                <!-- Featured Projects Block -->
-                <div class="float-left">
-
-                  <!-- Header Row -->
-                  <div class="flex justify-between items-center ml-3">
-                    <p style="font-size: 32px;" class="font-light">Featured Case Studies</p>
-
-                  </div>
-
-
-                  <!-- Bottom Border -->
-                  <th class="rounded-t-xl">
-                    <div class="lg:flex hidden items-center justify-between mb-2 -mr-5 lg:mr-0 border-b select-none"></div>
-                  </th>
-
- 
-
-  <div class="w-full flex justify-center">
-  <%- include('pagination-featured.ejs') %>
-</div>
-
-                <!-- Header Row -->
-                  <div class="flex justify-between items-center mt-16 ml-3">
-                    <p style="font-size: 32px;" class="font-light">Clients & Collaborations</p>
-                   <!--  <a href="/about" class="underline text-blue-600" style="font-size: 32px;">Visit About Page</a> -->
-                  </div>
-
-                  <!-- Bottom Border -->
-                  <th class="rounded-t-xl">
-                    <div class="lg:flex hidden items-center justify-between -mr-5 lg:mr-0 border-b select-none"></div>
-                  </th>
-
-<div class="grid grid-cols-4 gap-10 mt-10 justify-center items-center opacity-75">
-  <!-- TD Logo -->
-  <div class="rounded-2xl flex text-center sm:text-left">
-    <a target="_blank" rel="noopener noreferrer">
-      <img src="/public/imgs/td_logo_solid.webp" alt="Telus Digital Logo">
-    </a>
-  </div>
-     <!-- EF Logo -->
-  <div class="rounded-2xl flex text-center sm:text-left">
-    <a target="_blank" rel="noopener noreferrer">
-      <img src="/public/imgs/ef_logo_solid.webp" alt="Empowered Futures Logo">
-    </a>
-  </div>
-    <!-- EMYA Logo -->
-  <div class="rounded-2xl flex text-center sm:text-left">
-    <a target="_blank" rel="noopener noreferrer">
-      <img src="/public/imgs/emya_logo_solid.webp" alt="EMYA Logo">
-    </a>
-  </div>
-  <!-- LaWash Logo -->
-  <div class="rounded-2xl flex text-center sm:text-left">
-    <a target="_blank" rel="noopener noreferrer">
-      <img src="/public/imgs/lawash_logo_solid.webp" alt="LaWash Logo">
-    </a>
-  </div>
-
-
-</div>
-
-
-                              <!-- Include pagination file -->
- <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10">
-  <% homepageImages.forEach(function(img) { %>
-    <div class="rounded-xl overflow-hidden gallery-box-shadow">
-      <img src="<%= img.link %>" 
-           alt="<%= img.desc || 'image' %>" 
-           class="w-full h-auto object-cover" />
-
-      <% if (img.desc) { %>
-        <div class="px-4 py-2 text-lg font-light">
-          <%= img.desc %>
-        </div>
-      <% } %>
-
-      <% if (img.project || img.date) { %>
-        <div class="px-4 pb-3 flex justify-between text-base font-light">
-          <span><%= img.project %></span>
-          <span class="italic"><%= img.date %></span>
-        </div>
-      <% } %>
-    </div>
-  <% }) %>
-</div>
-                  <!-- Spacer -->
-                  <p class="text-sms mt-4"><b></b></p>
+      <!-- Navbar scripts -->
+      <%- include('navbar.ejs') %>
+
+      <!-- Primary Navigation: Desktop -->
+      <nav class="font-main block fixed top-0 w-full z-40 glass-nav" aria-label="Primary navigation">
+        <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+          <div class="flex items-center justify-between h-20">
+
+            <!-- Logo and email link -->
+            <div class="flex items-center">
+              <div class="cursor-default flex items-start">
+                <a href="/" class="talkbubble hover-grow" aria-label="PVG - Home"> PVG </a>
+                <a href="mailto:hello@valdesgpatricio.com" class="lg:flex md:hidden sm:hidden hidden items-center ml-10 space-x-2 hover-slide px-3 py-1 font-light text-xl rounded-md">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="currentColor" class="bi bi-envelope-fill mt-1" viewBox="0 0 16 16" aria-hidden="true">
+                    <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414zM0 4.697v7.104l5.803-3.558zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586zm3.436-.586L16 11.801V4.697z"/>
+                  </svg>
+                  <span>hello@valdesgpatricio.com</span>
+                </a>
+                <div class="-mr-2 hidden">
+                  <button class="inline-flex items-center justify-center p-2 rounded-md hover:text-white hover:bg-gray-700">
+                    <svg class="block w-6 h-6" stroke="currentColor" fill="none" viewBox="0 0 24 24" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                  </button>
                 </div>
               </div>
             </div>
 
-          </div>
+            <!-- Desktop nav links and mobile hamburger -->
+            <div class="flex items-center ml-auto md:flex">
+              <button id="menu-btn" class="block lg:hidden sm:block text-right float-right md:flex p-2 focus:outline-none hover:bg-gray-500 rounded-md" aria-label="Toggle mobile menu">
+                <svg class="block w-12 h-12" stroke="currentColor" fill="none" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+              </button>
 
-          <!-- Sidebar / About Section -->
-          <div class="hidden lg:block md:hidden sm:hidden ml-4 lg:w-1/4">
-            <div class="glass-bg">
-              <%- include('sidebar.ejs') %>
+              <!-- Desktop navigation links -->
+              <div class="hidden lg:flex md:hidden sm:hidden font-normal">
+                <a href="/" class="px-3 py-2 ml-6 hover-grow rounded-md relative nav-active">Home</a>
+                <a href="/projects" class="px-3 py-2 ml-6 hover-grow rounded-md">My Work</a>
+                <a href="/about" class="px-3 py-2 ml-6 hover-grow rounded-md">About Me</a>
+                <!--
+                <a href="/contact" class="px-3 py-2 ml-6 font-light hover-tilt rounded-md">Contact</a>
+                -->
+              </div>
             </div>
-          </div>
 
+            <!-- Hidden duplicate button (not used) -->
+            <div class="-mr-2 hidden">
+              <button class="inline-flex items-center justify-center p-2 rounded-md hover:text-white hover:bg-gray-700">
+                <svg class="block w-6 h-6" stroke="currentColor" fill="none" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+              </button>
+            </div>
+
+          </div>
+        </div>
+      </nav>
+
+      <!-- Mobile Navigation Sidebar -->
+      <div class="glass-nav-mobile mx-auto max-w-7xl lg:hidden md:block sm:block">
+        <div class="flex items-center justify-between">
+          <div class="flex text-gray-800 items-center font-semibold ml-auto md:flex text-4xl">
+            <nav id="menu-dropbar" aria-label="Mobile navigation" class="ml-24 mr-10 text-right float-right mobile-navbar-hide sidebar">
+              <a href="/">Home</a>
+              <a href="/projects">My Work</a>
+              <a href="/about">About</a>
+              <!--
+              <a href="/contact">Contact</a>
+              -->
+            </nav>
+          </div>
         </div>
       </div>
 
+      <!-- Announcement banner: Open for work -->
+      <div class="relative font-main sm:hidden md:hidden lg:block block w-full mt-20 -mb-20 z-0 navbar-message" aria-label="Announcement: Open for work">
+        <a href="/contact" class="absolute inset-0 w-full h-full"></a>
+        <div class="max-w-7xl">
+          <div class="flex h-7">
+            <span class="font-light mx-auto float-right text-center text-white">
+              OPEN FOR WORK!
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main page content -->
+      <main>
+
+        <!-- Breadcrumb navigation -->
+        <nav aria-label="Breadcrumb" class="flex flex-col mt-20 md:flex-row md:justify-between">
+          <div class="flex ml-3 mt-3 items-center">
+            <span>
+              <svg class="w-4 h-4 mt-1 mr-2 fill-current" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+                <path fill-rule="evenodd" d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 110-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 011-1h8zM5 12.25v3.25a.25.25 0 00.4.2l1.45-1.087a.25.25 0 01.3 0L8.6 15.7a.25.25 0 00.4-.2v-3.25a.25.25 0 00-.25-.25h-3.5a.25.25 0 00-.25.25z"></path>
+              </svg>
+            </span>
+            <a href="/" class="text-xl font-medium text-blue-700 cursor-pointer hover:underline">PVG</a>
+            <span class="mx-1 text-xl font-medium">/</span>
+            <span class="text-xl font-semibold text-blue-700 cursor-pointer hover:underline" aria-current="page">Home</span>
+          </div>
+        </nav>
+
+        <!-- Section divider -->
+        <div class="flex items-center justify-between px-10 mt-6 -mx-10 border-b select-none md:mt-4"></div>
+
+        <!-- Content layout: Main content + Profile sidebar -->
+        <div class="container pb-1 mx-auto mt-4">
+          <div class="flex">
+
+            <!-- Main content -->
+            <section class="w-full mr-4 lg:w-3/4 md:w-full glass-bg" aria-label="Homepage content">
+
+              <!-- Desktop hero section -->
+              <section class="font-main mb-8 mt-16 lg:block" aria-label="Desktop hero">
+                <div class="flex flex-col text-left max-w-3xl">
+
+                  <!-- Open for work pill -->
+                  <div class="mb-4 lg:ml-0 ml-5 sm:ml-5 md:ml-5">
+                    <span class="inline-flex items-center gap-2 text-green-700 text-sm font-medium border border-green-600 rounded-full py-1 px-3">
+                      <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse" aria-hidden="true"></span>
+                      Open for work
+                    </span>
+                  </div>
+
+                  <!-- Hero heading | Desktop -->
+                  <h1 style="font-size: 96px; line-height: 1.05;" class="font-bold hidden sm:hidden md:hidden lg:block text-gray-900 tracking-tight">
+                    Hi, I'm Patricio <span class="inline-block" aria-hidden="true">👋</span>
+                  </h1>
+
+                  <!-- Hero heading | Mobile -->
+                  <h1 style="font-size: 47px; line-height: 1.05;" class="font-bold mx-auto block sm:block md:block lg:hidden text-gray-900 tracking-tight">
+                    Hi, I'm Patricio <span class="inline-block" aria-hidden="true">👋</span>
+                  </h1>
+
+                  <!-- Hero subheading | Desktop -->
+                  <p style="font-size: 50px; line-height: 1.3;" class="font-light hidden sm:hidden md:hidden lg:block text-gray-700 mt-4">
+                    a <span class="text-purple-700 font-normal">Web Developer & UI/UX Designer</span>
+                  </p>
+
+                  <!-- Hero subheading | Mobile -->
+                  <p style="font-size: 27px; line-height: 1.3;" class="font-light mx-auto block sm:block md:block lg:hidden text-gray-700 mt-4">
+                    a <span class="text-purple-700 font-normal">Web Developer & UI/UX Designer</span>
+                  </p>
+
+                  <!-- Code block style value proposition -->
+                  <div class="mt-6 bg-gray-900 rounded-xl px-6 py-5 max-w-2xl shadow-lg mx-auto lg:mx-0 sm:mx-auto md:mx-auto ml-3 lg:ml-0 sm:ml-3" aria-label="About statement">
+                    <div class="flex items-center gap-2 mb-3" aria-hidden="true">
+                      <span class="w-3 h-3 rounded-full bg-red-400"></span>
+                      <span class="w-3 h-3 rounded-full bg-yellow-400"></span>
+                      <span class="w-3 h-3 rounded-full bg-green-400"></span>
+                    </div>
+                    <p style="font-family: 'Courier New', monospace; font-size: 18px; line-height: 1.6;" class="text-gray-100">
+                      <span class="text-gray-500">// About me</span><br>
+                      <span class="text-purple-400">const</span> <span class="text-blue-300">patricio</span> <span class="text-gray-400">=</span> <span class="text-green-300">"I design and build modern, accessible interfaces that feel obvious to use and effortless to ship."</span><span class="text-gray-400">;</span>
+                    </p>
+                  </div>
+
+                </div>
+              </section>
+
+ 
+
+              <!-- Featured projects section (desktop) -->
+              <section class="font-main mt-12 lg:block" aria-label="Featured case studies">
+                <div class="flex items-center">
+                  <div class="float-left">
+
+                    <!-- Featured case studies heading -->
+                    <div class="flex justify-between items-center ml-3">
+                      <p style="font-size: 32px;" class="font-light">Featured Case Studies</p>
+                    </div>
+
+                    <!-- Section divider -->
+                    <th class="rounded-t-xl">
+                      <div class="flex items-center justify-between mb-2 -mr-5 lg:mr-0 border-b select-none"></div>
+                    </th>
+
+                    <!-- Paginated featured projects -->
+                    <div class="w-full flex justify-center">
+                      <%- include('pagination-featured.ejs') %>
+                    </div>
+
+                    <!-- Clients and collaborations heading -->
+                    <div class="flex justify-between items-center mt-16 ml-3">
+                      <p style="font-size: 32px;" class="font-light">Clients & Collaborations</p>
+                      <!-- <a href="/about" class="underline text-blue-600" style="font-size: 32px;">Visit About Page</a> -->
+                    </div>
+
+                    <!-- Section divider -->
+                    <th class="rounded-t-xl">
+                      <div class="flex items-center justify-between -mr-5 lg:mr-0 border-b select-none"></div>
+                    </th>
+
+                    <!-- Client logos grid -->
+                    <div class="grid grid-cols-2 lg:grid-cols-4 gap-10 mt-10 justify-center items-center opacity-75">
+                      <!-- Telus Digital logo -->
+                      <div class="rounded-2xl flex text-center sm:text-left">
+                        <a target="_blank" rel="noopener noreferrer">
+                          <img src="/public/imgs/td_logo_solid.webp" alt="Telus Digital Logo">
+                        </a>
+                      </div>
+                      <!-- Empowered Futures logo -->
+                      <div class="rounded-2xl flex text-center sm:text-left">
+                        <a target="_blank" rel="noopener noreferrer">
+                          <img src="/public/imgs/ef_logo_solid.webp" alt="Empowered Futures Logo">
+                        </a>
+                      </div>
+                      <!-- EMYA logo -->
+                      <div class="rounded-2xl flex text-center sm:text-left">
+                        <a target="_blank" rel="noopener noreferrer">
+                          <img src="/public/imgs/emya_logo_solid.webp" alt="EMYA Logo">
+                        </a>
+                      </div>
+                      <!-- LaWash logo -->
+                      <div class="rounded-2xl flex text-center sm:text-left">
+                        <a target="_blank" rel="noopener noreferrer">
+                          <img src="/public/imgs/lawash_logo_solid.webp" alt="LaWash Logo">
+                        </a>
+                      </div>
+                    </div>
+
+                    <!-- Portfolio gallery images grid -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10">
+                      <% homepageImages.forEach(function(img) { %>
+                        <article class="rounded-xl overflow-hidden gallery-box-shadow" aria-label="<%= img.desc || 'Portfolio image' %>">
+                          <img
+                            src="<%= img.link %>"
+                            alt="<%= img.desc || 'Portfolio image' %>"
+                            class="w-full h-auto object-cover"
+                          />
+                          <% if (img.desc) { %>
+                            <div class="px-4 py-2 text-lg font-light"><%= img.desc %></div>
+                          <% } %>
+                          <% if (img.project || img.date) { %>
+                            <div class="px-4 pb-3 flex justify-between text-base font-light">
+                              <span><%= img.project %></span>
+                              <span class="italic"><%= img.date %></span>
+                            </div>
+                          <% } %>
+                        </article>
+                      <% }) %>
+                    </div>
+
+                    <p class="text-sms mt-4"><b></b></p>
+                  </div>
+                </div>
+              </section>
+              <!-- End featured projects section -->
+
+            </section>
+            <!-- End main content -->
+
+            <!-- Profile sidebar -->
+            <aside class="hidden lg:block md:hidden sm:hidden ml-4 lg:w-1/4" aria-label="Profile sidebar">
+              <div class="glass-bg">
+                <%- include('sidebar.ejs') %>
+              </div>
+            </aside>
+
+          </div>
+        </div>
+
+      </main>
+
       <!-- Footer -->
       <%- include('footer.ejs') %>
+
     </div>
   </div>
 </body>
+</html>

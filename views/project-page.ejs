@@ -1,324 +1,284 @@
-
-
-
 <%- include('head.ejs') %>
 
-
 <body>
-    <div>
-        <div class="overflow-x-hidden">
-    
-        <!-- NAVBAR -->
-        <%- include('navbar.ejs') %> 
-    
-        <!--HEADER (Path)-->
-        <div class="flex flex-col mt-20  md:flex-row md:justify-between ">
-            <div class="flex ml-3 mt-3 items-center">
-              <span>
-                <svg class="w-4 h-4 mt-1 mr-2 fill-current" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 110-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 011-1h8zM5 12.25v3.25a.25.25 0 00.4.2l1.45-1.087a.25.25 0 01.3 0L8.6 15.7a.25.25 0 00.4-.2v-3.25a.25.25 0 00-.25-.25h-3.5a.25.25 0 00-.25.25z"></path>
-                </svg>
-              </span>
-              <a href="/" class="text-xl font-medium text-blue-700 cursor-pointer hover:underline">PVG</a>
-              <span class="mx-1 text-xl font-medium">/</span>
-              <a href="/projects" class="text-xl font-medium text-blue-700 cursor-pointer hover:underline">My Work</a>
-              <span class="mx-1 text-xl font-medium">/</span>
-              <div class="text-xl font-semibold text-blue-700 cursor-pointer hover:underline"> <%= projects.name %> </div>
-            </div>
-          </div>
-          
-          <div class="flex items-center justify-between mt-6 -mx-10 border-b select-none md:mt-4">
-        </div>
-    
-
-        <div class="container pb-1 mx-auto">
-
-        <div class="w-full mt-5 ml-2">         
-
-        </div>  
-
-            <!-- MAIN CONTENT-->
-            <div class="md:flex">
-              
-              <div class="w-full mr-4 lg:w-3/4 md:w-full glass-bg ">
-              
-          <div class="grid grid-cols-3 "> 
-
-          <a href="/projects">
-          <div class="text-left float-left rounded-2xl gallery-box-shadow p-4 pt-2 pb-2">
-            <div class="flex items-center">
-             <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-arrow-90deg-left" viewBox="0 0 16 16">
-               <path fill-rule="evenodd" d="M1.146 4.854a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 4H12.5A2.5 2.5 0 0 1 15 6.5v8a.5.5 0 0 1-1 0v-8A1.5 1.5 0 0 0 12.5 5H2.707l3.147 3.146a.5.5 0 1 1-.708.708z"/>
-             </svg>
-              </span>
-              <p class="font-light text-3xl ml-2 whitespace-nowrap">
-                Return
-              </p>
-            </div>
-          </div>
-          </a>
-
-          
-</div>
-
-
-  <div class="border-b border-gray-300 mt-4"></div>
-                <div class="md:flex md:flex-row-reverse items-center mt-4">
-    <!--SIDE BAR // MAIN CONTENT-->
-
-  <body>
-
-        <table class="rounded-xl w-full text-sm text-left mb-2">
-          <tr class="font-semibold grid grid-cols-1 list-inside">
-            <th class="content flex">
-
-
-              <div class="w-full flex flex-col mt-2">
-  <a class="font-semibold text-3xl my-auto whitespace-nowrap w-full">
-    <%= projects.name %>
-  </a>
-</div>         
-
-            </th>
-            <th>
-              
-              <!-- Appearance -->
-              <ul class="grid grid-cols-1 mr-2 gap-0 font-normal">
-                <!-- Tools -->
-                <div class=" flex flex-wrap items-center gap-2 text-gray-800 mt-3 mb-4">
-                                           <% Object.values(projects.lang).forEach(function(tool) { %>
-                         <% if (tool) { %>
-                          <span class="font-main px-2 py-1 text-sm md:text-base font-normal bg-orange-400 rounded-md">
-                         <%= tool %>
-                         </span>
-                         <% } %>
-                    <% }) %>
-                </div>
-                <li class="list-none">
-                  <a target="_blank" rel="noopener noreferrer">
-                    <img class="rounded-2xl mt-1 items-end w-full object-cover"
-                         src="<%= projects.images.thumb %>"
-                         loading="lazy"
-                         alt="Project Banner"> 
-                  </a>
-                  
-
-
-<div class="mt-10 mb-2 flex space-x-3 text-center mx-auto text-base lg:text-2xl sm:text-base md:text-base">
-  <% if (projects.links.demo && projects.links.repo) { %>
-    <!-- Both exist: show normal side-by-side buttons -->
-    <a href="<%= projects.links.demo %>"
-       target="_blank"
-       rel="noopener noreferrer"
-       class="connect-button-c flex items-center justify-center text-white rounded px-4 py-2">
-      Visit Site
-      <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor"
-           class="bi bi-globe ml-2 mt-1" viewBox="0 0 16 16">
-        <path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m7.5-6.923c-.67.204-1.335.82-1.887 1.855A8 8 0 0 0 5.145 4H7.5zM4.09 4a9.3 9.3 0 0 1 .64-1.539 7 7 0 0 1 .597-.933A7.03 7.03 0 0 0 2.255 4zm-.582 3.5c.03-.877.138-1.718.312-2.5H1.674a7 7 0 0 0-.656 2.5zM4.847 5a12.5 12.5 0 0 0-.338 2.5H7.5V5zM8.5 5v2.5h2.99a12.5 12.5 0 0 0-.337-2.5zM4.51 8.5a12.5 12.5 0 0 0 .337 2.5H7.5V8.5zm3.99 0V11h2.653c.187-.765.306-1.608.338-2.5zM5.145 12q.208.58.468 1.068c.552 1.035 1.218 1.65 1.887 1.855V12zm.182 2.472a7 7 0 0 1-.597-.933A9.3 9.3 0 0 1 4.09 12H2.255a7 7 0 0 0 3.072 2.472M3.82 11a13.7 13.7 0 0 1-.312-2.5h-2.49c.062.89.291 1.733.656 2.5zm6.853 3.472A7 7 0 0 0 13.745 12H11.91a9.3 9.3 0 0 1-.64 1.539 7 7 0 0 1-.597.933M8.5 12v2.923c.67-.204 1.335-.82 1.887-1.855q.26-.487.468-1.068zm3.68-1h2.146c.365-.767.594-1.61.656-2.5h-2.49a13.7 13.7 0 0 1-.312 2.5m2.802-3.5a7 7 0 0 0-.656-2.5H12.18c.174.782.282 1.623.312 2.5zM11.27 2.461c.247.464.462.98.64 1.539h1.835a7 7 0 0 0-3.072-2.472c.218.284.418.598.597.933M10.855 4a8 8 0 0 0-.468-1.068C9.835 1.897 9.17 1.282 8.5 1.077V4z"/>
-      </svg>
-    </a>
-    <a href="<%= projects.links.repo %>"
-       target="_blank"
-       rel="noopener noreferrer"
-       class="connect-button-c flex items-center justify-center text-white rounded px-4 py-2">
-      Github Repo
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-           class="ml-2 mt-1" viewBox="0 0 16 16">
-        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
-      </svg>
-    </a>
-
-  <% } else if (projects.links.demo) { %>
-    <!-- Only demo: single wide button -->
-    <a href="<%= projects.links.demo %>"
-       target="_blank"
-       rel="noopener noreferrer"
-       class="connect-button-c full-width flex items-center justify-center text-white rounded px-8 py-3 text-xl lg:text-3xl">
-      Visit Site
-      <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor"
-           class="bi bi-globe ml-3 mt-1" viewBox="0 0 16 16">
-        <path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m7.5-6.923c-.67.204-1.335.82-1.887 1.855A8 8 0 0 0 5.145 4H7.5zM4.09 4a9.3 9.3 0 0 1 .64-1.539 7 7 0 0 1 .597-.933A7.03 7.03 0 0 0 2.255 4zm-.582 3.5c.03-.877.138-1.718.312-2.5H1.674a7 7 0 0 0-.656 2.5zM4.847 5a12.5 12.5 0 0 0-.338 2.5H7.5V5zM8.5 5v2.5h2.99a12.5 12.5 0 0 0-.337-2.5zM4.51 8.5a12.5 12.5 0 0 0 .337 2.5H7.5V8.5zm3.99 0V11h2.653c.187-.765.306-1.608.338-2.5zM5.145 12q.208.58.468 1.068c.552 1.035 1.218 1.65 1.887 1.855V12zm.182 2.472a7 7 0 0 1-.597-.933A9.3 9.3 0 0 1 4.09 12H2.255a7 7 0 0 0 3.072 2.472M3.82 11a13.7 13.7 0 0 1-.312-2.5h-2.49c.062.89.291 1.733.656 2.5zm6.853 3.472A7 7 0 0 0 13.745 12H11.91a9.3 9.3 0 0 1-.64 1.539 7 7 0 0 1-.597.933M8.5 12v2.923c.67-.204 1.335-.82 1.887-1.855q.26-.487.468-1.068zm3.68-1h2.146c.365-.767.594-1.61.656-2.5h-2.49a13.7 13.7 0 0 1-.312 2.5m2.802-3.5a7 7 0 0 0-.656-2.5H12.18c.174.782.282 1.623.312 2.5zM11.27 2.461c.247.464.462.98.64 1.539h1.835a7 7 0 0 0-3.072-2.472c.218.284.418.598.597.933M10.855 4a8 8 0 0 0-.468-1.068C9.835 1.897 9.17 1.282 8.5 1.077V4z"/>
-      </svg>
-    </a>
-
-  <% } else if (projects.links.repo) { %>
-    <!-- Only repo: single wide button -->
-    <a href="<%= projects.links.repo %>"
-       target="_blank"
-       rel="noopener noreferrer"
-       class="connect-button-c full-width flex items-center justify-center text-white rounded px-8 py-3 text-xl lg:text-3xl">
-      Github Repo
-      <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor"
-           class="ml-3 mt-1" viewBox="0 0 16 16">
-        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
-      </svg>
-    </a>
-  <% } %>
-</div>
-
-
-
-
-                </li>
-                
-
-<% if (projects.sector) { %>
-<div class="ml-16 mr-16 mt-10">
-  
-  <div class="grid grid-cols-2 py-2">
-    <p class="text-xl font-semibold">Client</p>
-    <p class="text-xl whitespace-nowrap">
-      <%= projects.company %>
-    </p>
-  </div>
-
-  <div class="border-b border-gray-300"></div>
-
-  <div class="grid grid-cols-2 py-2">
-    <p class="text-xl font-semibold">Sector</p>
-    <p class="text-xl whitespace-nowrap">
-      <%= projects.sector %>
-    </p>
-  </div>
-
-  <div class="border-b border-gray-300"></div>
-
-  <div class="grid grid-cols-2 py-2">
-    <p class="text-xl font-semibold">Challenge</p>
-    <p class="text-xl ">
-      <%= projects.info.challenge %>
-    </p>
-  </div>
-
-  <div class="border-b border-gray-300"></div>
-
-  <div class="grid grid-cols-2 py-2">
-    <p class="text-xl font-semibold">My Role</p>
-    <p class="text-xl">
-      <%= projects.role.rolename %>
-    </p>
-  </div>
-
-  <div class="border-b border-gray-300"></div>
-
-    <div class="grid grid-cols-2 py-2">
-    <p class="text-xl font-semibold">Timeframe</p>
-    <p class="text-xl">
-      <%= projects.timeline.timeframe %>
-    </p>
-  </div>
-
-  <div class="border-b border-gray-300"></div>
-
-</div>
-<% } %>
-
-                  <div class="mb-1 ml-2 mt-10">
-                    <a>
-                       <p class="text-2xl mr-16 font-semibold">Overview </p>
-                    </a>
-                  </div>
-                    <div class="border-b border-gray-300 mb-3"></div>
-                  
-                  <p class="text-xl font-normal  ml-6">
-                    <%= projects.info.about %>
-                  </p>
-
-<% if (projects.stack.dev) { %>
   <div>
-                      <div class="mb-1 ml-2 mt-6">
-                    <a>
-                       <p class="text-2xl mr-16 font-semibold">Tools </p>
-                    </a>
-                  </div>
-                    <div class="border-b border-gray-300 mb-3"></div>
-                  <p class="text-xl font-semibold mt-4 ml-8">Dev Stack:</p>
-                  <p class="font-normal italic text-xl mt-2 ml-10"> <%= projects.stack.dev %></p>
+    <div class="overflow-x-hidden">
 
-                  <p class="text-xl font-semibold mt-3 ml-8">Design:</p>
-                  <p class="font-normal italic text-xl mt-2 ml-10"> <%= projects.stack.design %></p>
+      <!-- Navbar scripts -->
+      <%- include('navbar.ejs') %>
 
-                  <p class="text-xl font-semibold mt-3 ml-8">Analytics /SEO:</p>
-                  <p class="font-normal italic text-xl mt-2 ml-10"> <%= projects.stack.SEO %></p>
-  </div>
-<% } %>
-
-
-                  
-                  <div class="mb-1 ml-2 mt-6">
-                    <a>
-                       <p class="text-2xl mr-16 font-semibold">Behance Links </p>
-                    </a>
-                  </div>
-                    <div class="border-b border-gray-300 mb-3"></div>
-                  <div>
-                    <%- projects.images.thumb1.desc %>
-                  </div>
-                  <div>
-                    <%- projects.images.thumb2.desc %>
-                  </div>
-                  <div>
-                    <%- projects.images.thumb3.desc %>
-                  </div>
-                  <div>
-                    <%- projects.images.thumb4.desc %>
-                  </div>
-            
-<% if (projects.images.thumb1.link || projects.images.thumb2.link) { %>
-  <div class="grid grid-cols-2 gap-3 mb-8">
-
-        <% if (projects.images.thumb1.link) { %>
-      <a target="_blank" rel="noopener noreferrer">
-        <img
-          class="rounded-2xl items-end w-full object-cover"
-          src="<%= projects.images.thumb1.link %>"
-          loading="lazy"
-        >
-                <p class="text-xl font-normal mb-1  ml-3 mt-3"><%= projects.images.thumb1.desc %></p>
-      </a>
-    <% } %>
-
-        <% if (projects.images.thumb2.link) { %>
-      <a target="_blank" rel="noopener noreferrer">
-        <img
-          class="rounded-2xl items-end w-full object-cover"
-          src="<%= projects.images.thumb2.link %>"
-          loading="lazy"
-        >
-        <p class="text-xl font-normal mb-1  ml-3 mt-3"><%= projects.images.thumb2.desc %></p>
-      </a>
-    <% } %>
-
-
-  </div>
-<% } %>
-                  
-
-
-
-              </ul>
-              
-              <div class="flex items-center justify-between px-10 mt-2 border-b select-none md:mt-4"></div>
-              
-            </th>
-          </tr>
-        </table>
-      </body>
-
-              </div>
-              </div>
-    
-            <!--SIDE BAR // ABOUT-->
-            <div class="ml-4 -mt-1 lg:w-1/4">
-              <div class="hidden lg:block glass-bg ">
-                  <%- include('sidebar.ejs') %>
-                </div>
-              </div>
-    
-              </div>
-            </div>
-    
-        <!--Footer (Path) -->
-        <%- include('footer.ejs') %>
+      <!-- Breadcrumb navigation -->
+      <nav aria-label="Breadcrumb" class="flex flex-col mt-20 md:flex-row md:justify-between">
+        <div class="flex ml-3 mt-3 items-center">
+          <span>
+            <svg class="w-4 h-4 mt-1 mr-2 fill-current" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+              <path fill-rule="evenodd" d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 110-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 011-1h8zM5 12.25v3.25a.25.25 0 00.4.2l1.45-1.087a.25.25 0 01.3 0L8.6 15.7a.25.25 0 00.4-.2v-3.25a.25.25 0 00-.25-.25h-3.5a.25.25 0 00-.25.25z"></path>
+            </svg>
+          </span>
+          <a href="/" class="text-xl font-medium text-blue-700 cursor-pointer hover:underline">PVG</a>
+          <span class="mx-1 text-xl font-medium">/</span>
+          <a href="/projects" class="text-xl font-medium text-blue-700 cursor-pointer hover:underline">My Work</a>
+          <span class="mx-1 text-xl font-medium">/</span>
+          <span class="text-xl font-semibold text-blue-700 cursor-pointer hover:underline" aria-current="page"> <%= projects.name %> </span>
         </div>
+      </nav>
+
+      <!-- Section divider -->
+      <div class="flex items-center justify-between mt-6 -mx-10 border-b select-none md:mt-4"></div>
+
+      <!-- Main page content -->
+      <main class="container pb-1 mx-auto">
+
+        <div class="w-full mt-5 ml-2"></div>
+
+        <div class="md:flex">
+
+          <!-- Project detail content -->
+          <section class="w-full mr-4 lg:w-3/4 md:w-full glass-bg" aria-label="Project details">
+
+            <!-- Return to projects button -->
+            <div class="grid grid-cols-3">
+              <a href="/projects">
+                <div class="text-left float-left rounded-2xl gallery-box-shadow p-4 pt-2 pb-2">
+                  <div class="flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-arrow-90deg-left" viewBox="0 0 16 16" aria-hidden="true">
+                      <path fill-rule="evenodd" d="M1.146 4.854a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 4H12.5A2.5 2.5 0 0 1 15 6.5v8a.5.5 0 0 1-1 0v-8A1.5 1.5 0 0 0 12.5 5H2.707l3.147 3.146a.5.5 0 1 1-.708.708z"/>
+                    </svg>
+                    <p class="font-light text-3xl ml-2 whitespace-nowrap">Return</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            <!-- Divider -->
+            <div class="border-b border-gray-300 mt-4"></div>
+
+            <div class="md:flex md:flex-row-reverse items-center mt-4">
+
+              <!-- Project detail table -->
+              <article class="w-full" aria-label="<%= projects.name %> project details">
+                <table class="rounded-xl w-full text-sm text-left mb-2">
+                  <tr class="font-semibold grid grid-cols-1 list-inside">
+
+                    <!-- Project name -->
+                    <th class="content flex">
+                      <div class="w-full flex flex-col mt-2">
+                        <a class="font-semibold text-3xl my-auto whitespace-nowrap w-full">
+                          <%= projects.name %>
+                        </a>
+                      </div>
+                    </th>
+
+                    <th>
+                      <ul class="grid grid-cols-1 mr-2 gap-0 font-normal">
+
+                        <!-- Tool/technology tags -->
+                        <div class="flex flex-wrap items-center gap-2 text-gray-800 mt-3 mb-4">
+                          <% Object.values(projects.lang).forEach(function(tool) { %>
+                            <% if (tool) { %>
+                              <span class="font-main px-2 py-1 text-sm md:text-base font-normal bg-orange-400 rounded-md">
+                                <%= tool %>
+                              </span>
+                            <% } %>
+                          <% }) %>
+                        </div>
+
+                        <!-- Project thumbnail image -->
+                        <li class="list-none">
+                          <a target="_blank" rel="noopener noreferrer">
+                            <img
+                              class="rounded-2xl mt-1 items-end w-full object-cover"
+                              src="<%= projects.images.thumb %>"
+                              loading="lazy"
+                              alt="<%= projects.name %> project banner">
+                          </a>
+
+                          <!-- Project action buttons: Visit Site / GitHub Repo -->
+                          <div class="mt-10 mb-2 flex space-x-3 text-center mx-auto text-base lg:text-2xl sm:text-base md:text-base">
+                            <% if (projects.links.demo && projects.links.repo) { %>
+                              <!-- Both links available -->
+                              <a href="<%= projects.links.demo %>"
+                                 target="_blank"
+                                 rel="noopener noreferrer"
+                                 class="connect-button-c flex items-center justify-center text-white rounded px-4 py-2">
+                                Visit Site
+                                <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor"
+                                     class="bi bi-globe ml-2 mt-1" viewBox="0 0 16 16" aria-hidden="true">
+                                  <path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m7.5-6.923c-.67.204-1.335.82-1.887 1.855A8 8 0 0 0 5.145 4H7.5zM4.09 4a9.3 9.3 0 0 1 .64-1.539 7 7 0 0 1 .597-.933A7.03 7.03 0 0 0 2.255 4zm-.582 3.5c.03-.877.138-1.718.312-2.5H1.674a7 7 0 0 0-.656 2.5zM4.847 5a12.5 12.5 0 0 0-.338 2.5H7.5V5zM8.5 5v2.5h2.99a12.5 12.5 0 0 0-.337-2.5zM4.51 8.5a12.5 12.5 0 0 0 .337 2.5H7.5V8.5zm3.99 0V11h2.653c.187-.765.306-1.608.338-2.5zM5.145 12q.208.58.468 1.068c.552 1.035 1.218 1.65 1.887 1.855V12zm.182 2.472a7 7 0 0 1-.597-.933A9.3 9.3 0 0 1 4.09 12H2.255a7 7 0 0 0 3.072 2.472M3.82 11a13.7 13.7 0 0 1-.312-2.5h-2.49c.062.89.291 1.733.656 2.5zm6.853 3.472A7 7 0 0 0 13.745 12H11.91a9.3 9.3 0 0 1-.64 1.539 7 7 0 0 1-.597.933M8.5 12v2.923c.67-.204 1.335-.82 1.887-1.855q.26-.487.468-1.068zm3.68-1h2.146c.365-.767.594-1.61.656-2.5h-2.49a13.7 13.7 0 0 1-.312 2.5m2.802-3.5a7 7 0 0 0-.656-2.5H12.18c.174.782.282 1.623.312 2.5zM11.27 2.461c.247.464.462.98.64 1.539h1.835a7 7 0 0 0-3.072-2.472c.218.284.418.598.597.933M10.855 4a8 8 0 0 0-.468-1.068C9.835 1.897 9.17 1.282 8.5 1.077V4z"/>
+                                </svg>
+                              </a>
+                              <a href="<%= projects.links.repo %>"
+                                 target="_blank"
+                                 rel="noopener noreferrer"
+                                 class="connect-button-c flex items-center justify-center text-white rounded px-4 py-2">
+                                Github Repo
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                                     class="ml-2 mt-1" viewBox="0 0 16 16" aria-hidden="true">
+                                  <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+                                </svg>
+                              </a>
+
+                            <% } else if (projects.links.demo) { %>
+                              <!-- Demo link only -->
+                              <a href="<%= projects.links.demo %>"
+                                 target="_blank"
+                                 rel="noopener noreferrer"
+                                 class="connect-button-c full-width flex items-center justify-center text-white rounded px-8 py-3 text-xl lg:text-3xl">
+                                Visit Site
+                                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor"
+                                     class="bi bi-globe ml-3 mt-1" viewBox="0 0 16 16" aria-hidden="true">
+                                  <path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m7.5-6.923c-.67.204-1.335.82-1.887 1.855A8 8 0 0 0 5.145 4H7.5zM4.09 4a9.3 9.3 0 0 1 .64-1.539 7 7 0 0 1 .597-.933A7.03 7.03 0 0 0 2.255 4zm-.582 3.5c.03-.877.138-1.718.312-2.5H1.674a7 7 0 0 0-.656 2.5zM4.847 5a12.5 12.5 0 0 0-.338 2.5H7.5V5zM8.5 5v2.5h2.99a12.5 12.5 0 0 0-.337-2.5zM4.51 8.5a12.5 12.5 0 0 0 .337 2.5H7.5V8.5zm3.99 0V11h2.653c.187-.765.306-1.608.338-2.5zM5.145 12q.208.58.468 1.068c.552 1.035 1.218 1.65 1.887 1.855V12zm.182 2.472a7 7 0 0 1-.597-.933A9.3 9.3 0 0 1 4.09 12H2.255a7 7 0 0 0 3.072 2.472M3.82 11a13.7 13.7 0 0 1-.312-2.5h-2.49c.062.89.291 1.733.656 2.5zm6.853 3.472A7 7 0 0 0 13.745 12H11.91a9.3 9.3 0 0 1-.64 1.539 7 7 0 0 1-.597.933M8.5 12v2.923c.67-.204 1.335-.82 1.887-1.855q.26-.487.468-1.068zm3.68-1h2.146c.365-.767.594-1.61.656-2.5h-2.49a13.7 13.7 0 0 1-.312 2.5m2.802-3.5a7 7 0 0 0-.656-2.5H12.18c.174.782.282 1.623.312 2.5zM11.27 2.461c.247.464.462.98.64 1.539h1.835a7 7 0 0 0-3.072-2.472c.218.284.418.598.597.933M10.855 4a8 8 0 0 0-.468-1.068C9.835 1.897 9.17 1.282 8.5 1.077V4z"/>
+                                </svg>
+                              </a>
+
+                            <% } else if (projects.links.repo) { %>
+                              <!-- Repo link only -->
+                              <a href="<%= projects.links.repo %>"
+                                 target="_blank"
+                                 rel="noopener noreferrer"
+                                 class="connect-button-c full-width flex items-center justify-center text-white rounded px-8 py-3 text-xl lg:text-3xl">
+                                Github Repo
+                                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor"
+                                     class="ml-3 mt-1" viewBox="0 0 16 16" aria-hidden="true">
+                                  <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+                                </svg>
+                              </a>
+                            <% } %>
+                          </div>
+
+                        </li>
+
+                        <!-- Project metadata table -->
+                        <% if (projects.sector) { %>
+                          <div class="ml-16 mr-16 mt-10">
+                            <div class="grid grid-cols-2 py-2">
+                              <p class="text-xl font-semibold">Client</p>
+                              <p class="text-xl whitespace-nowrap"><%= projects.company %></p>
+                            </div>
+                            <div class="border-b border-gray-300"></div>
+
+                            <div class="grid grid-cols-2 py-2">
+                              <p class="text-xl font-semibold">Sector</p>
+                              <p class="text-xl whitespace-nowrap"><%= projects.sector %></p>
+                            </div>
+                            <div class="border-b border-gray-300"></div>
+
+                            <div class="grid grid-cols-2 py-2">
+                              <p class="text-xl font-semibold">Challenge</p>
+                              <p class="text-xl"><%= projects.info.challenge %></p>
+                            </div>
+                            <div class="border-b border-gray-300"></div>
+
+                            <div class="grid grid-cols-2 py-2">
+                              <p class="text-xl font-semibold">My Role</p>
+                              <p class="text-xl"><%= projects.role.rolename %></p>
+                            </div>
+                            <div class="border-b border-gray-300"></div>
+
+                            <div class="grid grid-cols-2 py-2">
+                              <p class="text-xl font-semibold">Timeframe</p>
+                              <p class="text-xl"><%= projects.timeline.timeframe %></p>
+                            </div>
+                            <div class="border-b border-gray-300"></div>
+                          </div>
+                        <% } %>
+
+                        <!-- Project overview -->
+                        <div class="mb-1 ml-2 mt-10">
+                          <p class="text-2xl mr-16 font-semibold">Overview</p>
+                        </div>
+                        <div class="border-b border-gray-300 mb-3"></div>
+                        <p class="text-xl font-normal ml-6">
+                          <%= projects.info.about %>
+                        </p>
+
+                        <!-- Tools section -->
+                        <% if (projects.stack.dev) { %>
+                          <div>
+                            <div class="mb-1 ml-2 mt-6">
+                              <p class="text-2xl mr-16 font-semibold">Tools</p>
+                            </div>
+                            <div class="border-b border-gray-300 mb-3"></div>
+                            <p class="text-xl font-semibold mt-4 ml-8">Dev Stack:</p>
+                            <p class="font-normal italic text-xl mt-2 ml-10"><%= projects.stack.dev %></p>
+                            <p class="text-xl font-semibold mt-3 ml-8">Design:</p>
+                            <p class="font-normal italic text-xl mt-2 ml-10"><%= projects.stack.design %></p>
+                            <p class="text-xl font-semibold mt-3 ml-8">Analytics / SEO:</p>
+                            <p class="font-normal italic text-xl mt-2 ml-10"><%= projects.stack.SEO %></p>
+                          </div>
+                        <% } %>
+
+                        <!-- Behance embed links / descriptions -->
+                        <div class="mb-1 ml-2 mt-6">
+                          <p class="text-2xl mr-16 font-semibold">Behance Links</p>
+                        </div>
+                        <div class="border-b border-gray-300 mb-3"></div>
+                        <div><%- projects.images.thumb1.desc %></div>
+                        <div><%- projects.images.thumb2.desc %></div>
+                        <div><%- projects.images.thumb3.desc %></div>
+                        <div><%- projects.images.thumb4.desc %></div>
+
+                        <!-- Project gallery images -->
+                        <% if (projects.images.thumb1.link || projects.images.thumb2.link) { %>
+                          <div class="grid grid-cols-2 gap-3 mb-8">
+
+                            <% if (projects.images.thumb1.link) { %>
+                              <a target="_blank" rel="noopener noreferrer">
+                                <img
+                                  class="rounded-2xl items-end w-full object-cover"
+                                  src="<%= projects.images.thumb1.link %>"
+                                  loading="lazy"
+                                  alt="<%= projects.images.thumb1.desc || 'Project image 1' %>"
+                                >
+                                <p class="text-xl font-normal mb-1 ml-3 mt-3"><%= projects.images.thumb1.desc %></p>
+                              </a>
+                            <% } %>
+
+                            <% if (projects.images.thumb2.link) { %>
+                              <a target="_blank" rel="noopener noreferrer">
+                                <img
+                                  class="rounded-2xl items-end w-full object-cover"
+                                  src="<%= projects.images.thumb2.link %>"
+                                  loading="lazy"
+                                  alt="<%= projects.images.thumb2.desc || 'Project image 2' %>"
+                                >
+                                <p class="text-xl font-normal mb-1 ml-3 mt-3"><%= projects.images.thumb2.desc %></p>
+                              </a>
+                            <% } %>
+
+                          </div>
+                        <% } %>
+
+                      </ul>
+                    </th>
+
+                    <!-- Bottom divider -->
+                    <th>
+                      <div class="flex items-center justify-between px-10 mt-2 border-b select-none md:mt-4"></div>
+                    </th>
+
+                  </tr>
+                </table>
+              </article>
+
+            </div>
+          </section>
+
+          <!-- Profile sidebar -->
+          <aside class="ml-4 -mt-1 lg:w-1/4" aria-label="Profile sidebar">
+            <div class="hidden lg:block glass-bg">
+              <%- include('sidebar.ejs') %>
+            </div>
+          </aside>
+
+        </div>
+
+      </main>
+
+      <!-- Footer -->
+      <%- include('footer.ejs') %>
+
     </div>
-    </body>
+  </div>
+</body>
+</html>

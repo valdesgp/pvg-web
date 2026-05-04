@@ -1,30 +1,24 @@
-
 <%- include('head.ejs') %>
 
+<!-- Mobile Menu Toggle Script -->
 <script>
-$(document).ready(function() {
-  // Toggle menu on button click
-  $('#menu-btn').click(function(e) {
-    e.stopPropagation(); // Prevent the click event from bubbling up to document
-    $('#menu-dropbar').toggleClass('mobile-navbar-hide'); // Toggle visibility of the sidebar
-  });
+  $(document).ready(function () {
+    // Toggle mobile sidebar on hamburger button click
+    $('#menu-btn').click(function (e) {
+      e.stopPropagation();
+      $('#menu-dropbar').toggleClass('mobile-navbar-hide');
+    });
 
-  // Close the menu if you click outside of it
-  $(document).click(function(e) {
-    if (!$(e.target).closest('#menu-dropbar').length && !$(e.target).closest('#menu-btn').length) {
-      $('#menu-dropbar').addClass('mobile-navbar-hide'); // Close the menu
-    }
-  });
+    // Close sidebar when clicking anywhere outside of it
+    $(document).click(function (e) {
+      if (!$(e.target).closest('#menu-dropbar').length && !$(e.target).closest('#menu-btn').length) {
+        $('#menu-dropbar').addClass('mobile-navbar-hide');
+      }
+    });
 
-  // Prevent the sidebar from closing when clicked inside it
-  $('#menu-dropbar').click(function(e) {
-    e.stopPropagation(); // Prevent event from bubbling up to the document
+    // Prevent the sidebar from closing when clicking inside it
+    $('#menu-dropbar').click(function (e) {
+      e.stopPropagation();
+    });
   });
-});
-
-  
 </script>
-
-
-
-            

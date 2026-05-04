@@ -1,178 +1,169 @@
-<!-- Main Table Container -->
- <div class="gallery-box-shadow rounded-2xl p-5 mr-4 lg:mr-0 ">
-<table class="w-full text-sm text-left p-1 mb-2 ">
+<!-- Profile Sidebar: profile picture, LinkedIn card, GitHub stats -->
+<div class="gallery-box-shadow rounded-2xl p-5 mr-4 lg:mr-0" role="complementary" aria-label="Profile sidebar">
+  <table class="w-full text-sm text-left p-1 mb-2">
 
-  <!-- Header Row: Title and Profile -->
-  <tr class="font-semibold grid grid-cols-1 list-inside">
+    <!-- Header Row: Profile layout container -->
+    <tr class="font-semibold grid grid-cols-1 list-inside">
 
-    <!-- Empty Header Cell (used for layout spacing) -->
-    <th class="rounded-t-xl">
-      <div class="flex items-center justify-between mt-2 mr-2 border-b select-none "></div>
-    </th>
+      <!-- Top border divider -->
+      <th class="rounded-t-xl">
+        <div class="flex items-center justify-between mt-2 mr-2 border-b select-none"></div>
+      </th>
 
+      <!-- Profile picture -->
+      <th class="profile-pic-container mt-2 mx-auto">
+        <img src="/public/imgs/profile-illustration.webp" alt="Patricio Valdes Garcia profile illustration" class="profile-pic">
+      </th>
 
-    <!-- Profile Picture Container -->
-    <th class="profile-pic-container mt-2 mx-auto">
-      <img src="/public/imgs/profile-illustration.webp" alt="profile image" class="profile-pic">
-    </th>
+      <!-- Name and occupation -->
+      <th>
+        <div>
+          <p style="font-size: 25px;" class="text-center">Patricio Valdes Garcia</p>
+          <p style="font-size: 18px;" class="font-normal mt-3 text-center">Web Developer</p>
+          <p style="font-size: 18px;" class="font-normal -mt-1 text-center">&</p>
+          <p style="font-size: 18px;" class="font-normal -mt-1 text-center">UI/UX Designer</p>
+        </div>
+      </th>
 
-    <th>
-      <div>
-        <!-- Name and Occupation Info -->
-        <p style="font-size: 25px;" class="text-center">Patricio Valdes Garcia</p>
-                                <p style="font-size: 18px;" class="font-normal mt-3 text-center">Web Developer</p>
-                <p style="font-size: 18px;" class="font-normal -mt-1 text-center">&</p>
-        <p style="font-size: 18px;" class="font-normal -mt-1 text-center">UI/UX Designer</p>
-         <!--
-        <p class="text-sm font-light text-center"> <span class="underline">#UI</span> <span class="underline">#UX</span>  <span class="underline">#UserInterface</span> <span class="underline">#UserExperience</span> 
-          <span class="underline">#Designer</span> <span class="underline">#Developer</span> <span class="underline">#Wireframing</span>
-          <span class="underline">#Prototyping</span>  <span class="underline">#WebDesign</span>
-        </p>
-        -->
-      </div>
-    </th>
+      <!-- Divider -->
+      <th>
+        <div class="flex items-center justify-between mt-2 mr-2 border-b select-none"></div>
+      </th>
 
-    <!-- Empty Header Cell (used for layout spacing) -->
-    <th>
-      <div class="flex items-center justify-between mt-2 mr-2 border-b select-none "></div>
-    </th>
+      <!-- LinkedIn profile card -->
+      <table class="mb-5">
+        <tr>
+          <th colspan="2" class="profile-header">
+            <!-- LinkedIn profile picture -->
+            <img class="linkedin-profile-pic" src="/public/imgs/profile-linkedin.webp" alt="Patricio Valdes LinkedIn profile picture">
+            <div class="ml-8">
+              <p class="text-base">Patricio Valdes</p>
+              <p class="text-base font-light"></p>
+              <p class="text-base font-light italic">Toronto, ON, CA</p>
+            </div>
+          </th>
+        </tr>
 
-    <!-- Linkedin Profile Section -->
-    <table class="mb-5">
-      <tr>
-        <th colspan="2" class="profile-header">
-          <!-- Linkedin Profile Picture -->
-          <img class="linkedin-profile-pic" src="/public/imgs/profile-linkedin.webp" alt="Profile Picture">
-          <div class="ml-8">
-            <!-- Name and Occupation Info -->
-            <p class="text-base">Patricio Valdes</p>
-            <p class="text-base font-light"></p>
-            <p class="text-base font-light italic">Toronto, ON, CA</p>
-          </div>
+        <!-- LinkedIn connect button -->
+        <tr class="profile-card">
+          <td colspan="2">
+            <a href="https://www.linkedin.com/in/valdesgpatricio" target="_blank" rel="noopener noreferrer" class="connect-button flex items-center justify-center mb-2 bg-blue-700 text-white rounded">
+              Connect
+              <svg xmlns="http://www.w3.org/2000/svg" width="23" fill="currentColor" height="23" class="ml-2 mt-1" viewBox="0 0 16 16" aria-hidden="true">
+                <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/>
+              </svg>
+            </a>
+          </td>
+        </tr>
+      </table>
+
+      <!-- Divider -->
+      <th>
+        <div class="flex items-center justify-between mt-2 mr-2 border-b select-none"></div>
+      </th>
+
+      <!-- GitHub stats section -->
+      <table class="w-full" aria-label="GitHub contribution statistics">
+
+        <!-- Year selector buttons -->
+        <tr>
+          <th class="text-center mt-3 mb-4 grid grid-cols-3">
+            <a class="year-button active" onclick="showSlide('2026')">2026</a>
+            <a class="year-button" onclick="showSlide('2025')">2025</a>
+            <a class="year-button" onclick="showSlide('2024')">2024</a>
+            <a class="year-button" onclick="showSlide('2023')">2023</a>
+            <a class="year-button" onclick="showSlide('2022')">2022</a>
+            <a class="year-button" onclick="showSlide('2021')">2021</a>
+          </th>
+        </tr>
+
+        <!-- Contributions label -->
+        <tr>
+          <p class="text-xl ml-1 mt-3 font-thin"><b>GitHub Contributions:</b></p>
+        </tr>
+
+        <!-- Year slides: each shows a contribution graph for the selected year -->
+        <tr id="slide-2026" class="slide">
+          <th colspan="2">
+            <img src="/public/imgs/gitstats-26.webp" alt="GitHub contributions graph for 2026">
+            <p class="text-lg ml-1 mt-2 font-thin">2026: <i>155 Contributions</i></p>
+          </th>
+        </tr>
+        <tr id="slide-2025" class="slide hidden">
+          <th colspan="2">
+            <img src="/public/imgs/gitstats-25.webp" alt="GitHub contributions graph for 2025">
+            <p class="text-lg ml-1 mt-2 font-thin">2025: <i>259 Contributions</i></p>
+          </th>
+        </tr>
+        <tr id="slide-2024" class="slide hidden">
+          <th colspan="2">
+            <img src="/public/imgs/gitstats-24.webp" alt="GitHub contributions graph for 2024">
+            <p class="text-lg ml-1 mt-2 font-thin">2024: <i>223 Contributions</i></p>
+          </th>
+        </tr>
+        <tr id="slide-2023" class="slide hidden">
+          <th colspan="2">
+            <img src="/public/imgs/gitstats-23.webp" alt="GitHub contributions graph for 2023">
+            <p class="text-lg ml-1 mt-2 font-thin">2023: <i>65 Contributions</i></p>
+          </th>
+        </tr>
+        <tr id="slide-2022" class="slide hidden">
+          <th colspan="2">
+            <img src="/public/imgs/gitstats-22.webp" alt="GitHub contributions graph for 2022">
+            <p class="text-lg ml-1 mt-2 font-thin">2022: <i>117 Contributions</i></p>
+          </th>
+        </tr>
+        <tr id="slide-2021" class="slide hidden">
+          <th colspan="2">
+            <img src="/public/imgs/gitstats-21.webp" alt="GitHub contributions graph for 2021">
+            <p class="text-lg ml-1 mt-2 font-thin">2021: <i>109 Contributions</i></p>
+          </th>
+        </tr>
+
+        <!-- Total contributions summary -->
+        <th colspan="2">
+          <p class="text-lg ml-1 -mt-1 font-thin">Total Contributions: <i>723</i></p>
         </th>
-      </tr>
+      </table>
 
-      <tr class="profile-card">
-        <td colspan="2">
-          <!-- Connect Button linking to LinkedIn -->
-          <a href="https://www.linkedin.com/in/valdesgpatricio" target="_blank" rel="noopener noreferrer" class="connect-button flex items-center justify-center mb-2 bg-blue-700 text-white rounded ">
-            Connect
-            <!-- Icon in the button -->
-            <svg xmlns="http://www.w3.org/2000/svg" width="23" fill="currentColor" height="23" class="ml-2 mt-1" viewBox="0 0 16 16">
-              <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/>
-            </svg>
-          </a>
-        </td>
-      </tr>
-    </table>
-
-    <!-- Empty Header Cell (used for layout spacing) -->
-    <th>
-      <div class="flex items-center justify-between mt-2 mr-2 border-b select-none "></div>
-    </th>
-
-    <!-- GitHub Stats Section -->
-    <table class="w-full">
-
-      <!-- Year Buttons to switch between years -->
-      <tr>
-        <th class="text-center mt-3 mb-4 grid grid-cols-3">
-          <a class="year-button active" onclick="showSlide('2026')">2026</a>
-          <a class="year-button" onclick="showSlide('2025')">2025</a>
-          <a class="year-button" onclick="showSlide('2024')">2024</a>
-          <a class="year-button" onclick="showSlide('2023')">2023</a>
-          <a class="year-button" onclick="showSlide('2022')">2022</a>
-          <a class="year-button" onclick="showSlide('2021')">2021</a>
-        </th>
-      </tr>
-
-      <!-- Display Total GitHub Contributions -->
-      <tr>
-        <p class="text-xl ml-1 mt-3 font-thin"><b>GitHub Contributions:</b></p>
-      </tr>
-
-     <!-- Year-Specific Slides with Contribution Stats -->
-    <tr id="slide-2026" class="slide">
+      <!-- Last update note -->
       <th colspan="2">
-        <img src="/public/imgs/gitstats-26.webp" alt="git-stats-2026">
-        <p class="text-lg ml-1 mt-2 font-thin">2026: <i>155 Contributions</i></p>
+        <p class="text-sm ml-1 text-center mb-3 font-thin">(Last Update: <i>11/10/25)</i></p>
+      </th>
+
+      <!-- GitHub visit button -->
+      <td colspan="2">
+        <a href="https://github.com/valdesgp" target="_blank" rel="noopener noreferrer" class="connect-button-b flex items-center justify-center bg-blue-700 text-white rounded">
+          Visit
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" fill="currentColor" height="24" class="ml-2 mt-1" viewBox="0 0 16 16" aria-hidden="true">
+            <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A7.95 7.95 0 008 16c4.42 0 8-3.58 8-8s-3.58-8-8-8z"/>
+          </svg>
+        </a>
+      </td>
+
+      <!-- Bottom divider -->
+      <th class="rounded-t-xl">
+        <div class="flex items-center justify-between mt-4 mr-2 border-b select-none"></div>
       </th>
     </tr>
-     <tr id="slide-2025" class="slide hidden">
-      <th colspan="2">
-        <img src="/public/imgs/gitstats-25.webp" alt="git-stats-2025">
-        <p class="text-lg ml-1 mt-2 font-thin">2025: <i>259 Contributions</i></p>
-      </th>
-    </tr>
-    <tr id="slide-2024" class="slide hidden">
-      <th colspan="2">
-        <img src="/public/imgs/gitstats-24.webp" alt="git-stats-2024">
-        <p class="text-lg ml-1 mt-2 font-thin">2024: <i>223 Contributions</i></p>
-      </th>
-    </tr>
-    <tr id="slide-2023" class="slide hidden">
-      <th colspan="2">
-        <img src="/public/imgs/gitstats-23.webp" alt="git-stats-2023">
-        <p class="text-lg ml-1 mt-2 font-thin">2023: <i>65 Contributions</i></p>
-      </th>
-    </tr>
-    <tr id="slide-2022" class="slide hidden">
-      <th colspan="2">
-        <img src="/public/imgs/gitstats-22.webp" alt="git-stats-2022">
-        <p class="text-lg ml-1 mt-2 font-thin">2022: <i>117 Contributions</i></p>
-      </th>
-    </tr>
-    <tr id="slide-2021" class="slide hidden">
-      <th colspan="2">
-        <img src="/public/imgs/gitstats-21.webp" alt="git-stats-2021">
-        <p class="text-lg ml-1 mt-2 font-thin">2021: <i>109 Contributions</i></p>
-      </th>
-    </tr>
-    
-    <th colspan="2">
-      <p class="text-lg ml-1 -mt-1 font-thin">Total Contributions: <i>723</i></p>
-    </th>
-    </table>
-    <th colspan="2">
-      <p class="text-sm ml-1 text-center mb-3 font-thin">(Last Update: <i>11/10/25)</i></p>
-    </th>
-    <!-- GitHub Connect Button -->
-    <td colspan="2">
-      <a href="https://github.com/valdesgp" target="_blank"  rel="noopener noreferrer" class="connect-button-b flex items-center justify-center bg-blue-700 text-white rounded ">
-        Visit
-        <!-- GitHub Icon in Button -->
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" fill="currentColor" height="24" class="ml-2 mt-1" viewBox="0 0 16 16">
-          <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A7.95 7.95 0 008 16c4.42 0 8-3.58 8-8s-3.58-8-8-8z"/>
-        </svg>
-      </a>
-    </td>
-
-    <!-- Empty Header Cell (used for layout spacing) -->
-    <th class="rounded-t-xl">
-      <div class="flex items-center justify-between mt-4 mr-2 border-b select-none "></div>
-    </th>
-  </tr>
-</table>
+  </table>
 </div>
 
+<!-- Year slide toggle script -->
 <script>
   function showSlide(year) {
-  // Hide all slides
-  const slides = document.querySelectorAll('.slide');
-  slides.forEach(slide => slide.classList.add('hidden'));
-  
-  // Show the selected slide
-  document.getElementById(`slide-${year}`).classList.remove('hidden');
+    // Hide all year slides
+    const slides = document.querySelectorAll('.slide');
+    slides.forEach(slide => slide.classList.add('hidden'));
 
-  // Remove active class from all buttons
-  const buttons = document.querySelectorAll('.year-button');
-  buttons.forEach(button => button.classList.remove('active'));
+    // Show the selected year slide
+    document.getElementById(`slide-${year}`).classList.remove('hidden');
 
-  // Add active class to the selected button
-  document.querySelector(`.year-button[onclick="showSlide('${year}')"]`).classList.add('active');
-}
+    // Remove active state from all year buttons
+    const buttons = document.querySelectorAll('.year-button');
+    buttons.forEach(button => button.classList.remove('active'));
 
+    // Set active state on the clicked button
+    document.querySelector(`.year-button[onclick="showSlide('${year}')"]`).classList.add('active');
+  }
 </script>
-
-
-

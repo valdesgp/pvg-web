@@ -42,8 +42,8 @@
 
         <div class="hidden lg:flex md:hidden sm:hidden font-normal">
 
-        <a href="/" class=" px-3 py-2 ml-6 hover-grow rounded-md"> 
-          Home
+        <a href="/" class="px-3 py-2 ml-6 hover-grow rounded-md relative nav-active">
+           Home
         </a>
 
         <a href="/projects" class=" px-3 py-2 ml-6 hover-grow rounded-md"> 
@@ -353,11 +353,26 @@
                 <!-- Featured Projects Block -->
                 <div class="float-left">
 
-
-
-
                   <!-- Header Row -->
-                  <div class="flex justify-between items-center mt-3 ml-3">
+                  <div class="flex justify-between items-center ml-3">
+                    <p style="font-size: 32px;" class="font-light">Featured Case Studies</p>
+
+                  </div>
+
+
+                  <!-- Bottom Border -->
+                  <th class="rounded-t-xl">
+                    <div class="lg:flex hidden items-center justify-between mb-2 -mr-5 lg:mr-0 border-b select-none"></div>
+                  </th>
+
+ 
+
+  <div class="w-full flex justify-center">
+  <%- include('pagination-featured.ejs') %>
+</div>
+
+                <!-- Header Row -->
+                  <div class="flex justify-between items-center mt-16 ml-3">
                     <p style="font-size: 32px;" class="font-light">Clients & Collaborations</p>
                    <!--  <a href="/about" class="underline text-blue-600" style="font-size: 32px;">Visit About Page</a> -->
                   </div>
@@ -394,25 +409,6 @@
   </div>
 
 
-</div>
-
-
-                  <!-- Header Row -->
-                  <div class="flex justify-between items-center ml-3">
-                    <p style="font-size: 32px;" class="font-light">Featured Case Studies</p>
-
-                  </div>
-
-
-                  <!-- Bottom Border -->
-                  <th class="rounded-t-xl">
-                    <div class="lg:flex hidden items-center justify-between mb-2 -mr-5 lg:mr-0 border-b select-none"></div>
-                  </th>
-
- 
-
-  <div class="w-full flex justify-center">
-  <%- include('pagination-featured.ejs') %>
 </div>
 
 

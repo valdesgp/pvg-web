@@ -14,7 +14,12 @@ const util = require(__basedir + '/helpers/util')
 const config = require(__basedir + '/config')
 const {
   PORT: port,
+  SITE_PASSWORD: sitePassword,
+  SESSION_SECRET: sessionSecret,
 } = config
+
+const session = require('express-session')
+const { requireAuth } = require(__basedir + '/helpers/auth')
 
 // connect to the database
 require(__basedir + '/helpers/mongoose')
@@ -34,11 +39,40 @@ const app = express()
 
 // Parse incoming json
 app.use(express.json({ limit: '50mb' }))
+app.use(express.urlencoded({ extended: true }))
 // CORS
 const cors = require('cors')
 const Project = require('./models/project')
 app.use(cors())
 
+// Sessions (used for password-gating the site)
+app.use(session({
+  secret: sessionSecret,
+  resave: false,
+  saveUninitialized: false,
+  cookie: { maxAge: 1000 * 60 * 60 * 24 * 7 } // 1 week
+}))
+
+// Login routes (must stay outside the auth gate)
+app.get('/login', (req, res) => {
+  if (req.session.authenticated) return res.redirect('/')
+  res.render('login.ejs')
+})
+
+app.post('/login', (req, res) => {
+  if (req.body.password === sitePassword) {
+    req.session.authenticated = true
+    return res.redirect('/')
+  }
+  res.render('login.ejs', { error: 'Incorrect password. Try again.' })
+})
+
+app.post('/logout', (req, res) => {
+  req.session.destroy(() => res.redirect('/login'))
+})
+
+// Gate everything below this line behind the password
+app.use(requireAuth)
 
 // Routers
 const projectRouter = require(__basedir + '/routers/hero')

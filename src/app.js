@@ -53,18 +53,31 @@ app.use(session({
   cookie: { maxAge: 1000 * 60 * 60 * 24 * 7 } // 1 week
 }))
 
+// Routers
+const projectRouter = require(__basedir + '/routers/hero')
+
 // Login routes (must stay outside the auth gate)
-app.get('/login', (req, res) => {
+app.get('/login', async (req, res, next) => {
   if (req.session.authenticated) return res.redirect('/')
-  res.render('login.ejs')
+  try {
+    const homepageData = await projectRouter.getHomepageData()
+    res.render('login.ejs', homepageData)
+  } catch (err) {
+    next(err)
+  }
 })
 
-app.post('/login', (req, res) => {
-  if (req.body.password === sitePassword) {
-    req.session.authenticated = true
-    return res.redirect('/')
+app.post('/login', async (req, res, next) => {
+  try {
+    const homepageData = await projectRouter.getHomepageData()
+    if (req.body.password === sitePassword) {
+      req.session.authenticated = true
+      return res.redirect('/')
+    }
+    res.render('login.ejs', { ...homepageData, error: 'Incorrect password. Try again.' })
+  } catch (err) {
+    next(err)
   }
-  res.render('login.ejs', { error: 'Incorrect password. Try again.' })
 })
 
 app.post('/logout', (req, res) => {
@@ -74,8 +87,6 @@ app.post('/logout', (req, res) => {
 // Gate everything below this line behind the password
 app.use(requireAuth)
 
-// Routers
-const projectRouter = require(__basedir + '/routers/hero')
 app.use(projectRouter)
 
 

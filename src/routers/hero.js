@@ -77,36 +77,41 @@ router.get('/heroes/:id', async (req, res) => {
 })
 
 
-router.get('/', async (req, res, next) => {
-  try {
-    const allProjects = await Project.find({}).sort({ original_id: 1 });
+async function getHomepageData() {
+  const allProjects = await Project.find({}).sort({ original_id: 1 });
 
-    let homepageImages = [];
+  let homepageImages = [];
 
-    for (const project of allProjects) {
-      if (!project.gallery) continue;
+  for (const project of allProjects) {
+    if (!project.gallery) continue;
 
-      for (const img of Object.values(project.gallery)) {
-        if (img && img.link) {
-          homepageImages.push({
-            link: img.link,
-            project: img.project || "",
-            date: img.date || "",
-            desc: img.desc || ""
-          });
-          if (homepageImages.length === 2) break;
-        }
+    for (const img of Object.values(project.gallery)) {
+      if (img && img.link) {
+        homepageImages.push({
+          link: img.link,
+          project: img.project || "",
+          date: img.date || "",
+          desc: img.desc || ""
+        });
+        if (homepageImages.length === 2) break;
       }
-
-      if (homepageImages.length === 2) break;
     }
 
-    res.render('homepage.ejs', {
-      projects: allProjects.slice(0, 2),
-      homepageImages,
-      current: 1,
-      pages: 1,
-    });
+    if (homepageImages.length === 2) break;
+  }
+
+  return {
+    projects: allProjects.slice(0, 2),
+    homepageImages,
+    current: 1,
+    pages: 1,
+  };
+}
+
+router.get('/', async (req, res, next) => {
+  try {
+    const homepageData = await getHomepageData();
+    res.render('homepage.ejs', homepageData);
   } catch (err) {
     next(err);
   }
@@ -213,3 +218,4 @@ router.get('/projects/:page?', async (req, res, next) => {
 
 
 module.exports = router
+module.exports.getHomepageData = getHomepageData

@@ -40,23 +40,29 @@
         </svg>
       </div>
       <p class="login-title font-main">Request access</p>
-      <p class="login-subtitle">Tell me a bit about yourself and I'll send you the password.</p>
 
-      <form id="request-access-form">
+      <!-- Contact form (Web3Forms) -->
+      <form class="font-normal text-xl mb-8" action="https://api.web3forms.com/submit" method="POST">
         <input type="hidden" name="access_key" value="04401235-5250-464d-bf29-9d938d309924">
-        <input type="hidden" name="subject" value="Portfolio Access Request">
 
-        <input class="glass-nav-b rounded-md border-solid border-2" type="text" name="name" placeholder="Name" required>
-        <input class="glass-nav-b rounded-md border-solid border-2" type="email" name="email" placeholder="Email Address" required>
-        <textarea class="glass-nav-b rounded-md border-solid border-2" name="message" placeholder="Why would you like access?" required></textarea>
+        <p class="text-left mb-1">Name: </p>
+        <input class="p-2 glass-nav-b rounded-md border-solid border-2" type="text" name="email" placeholder="Name" required>
 
-        <button class="submitform" type="submit">Send Request</button>
-        <div id="request-error" class="login-error" hidden></div>
+        <p class="text-left mt-2 mb-1">Email: </p>
+        <input class="p-2 glass-nav-b rounded-md border-solid border-2" type="email" name="email" placeholder="Email Address" required>
+
+        <p class="text-left mt-2 mb-1">Message:</p>
+        <textarea class="p-2 glass-nav-b pb-20 rounded-md border-solid border-2 resize-none" name="message" placeholder="Your Message..." required></textarea>
+        <input type="hidden" name="redirect" value="https://web3forms.com/success">
+        <br>
+        <!-- Submit button -->
+        <button class="submitform" type="submit">
+          Submit Form
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="mt-2 mr-2 float-right bi bi-send-fill" viewBox="0 0 16 16" aria-hidden="true">
+            <path d="M15.964.686a.5.5 0 0 0-.65-.65L.767 5.855H.766l-.452.18a.5.5 0 0 0-.082.887l.41.26.001.002 4.995 3.178 3.178 4.995.002.002.26.41a.5.5 0 0 0 .886-.083l6-15Zm-1.833 1.89L6.637 10.07l-.215-.338a.5.5 0 0 0-.154-.154l-.338-.215 7.494-7.494 1.178-.471-.47 1.178Z"/>
+          </svg>
+        </button>
       </form>
-
-      <div id="request-success" class="login-success" hidden>
-        Thanks! Your request has been sent — I'll follow up by email with access.
-      </div>
 
       <button type="button" id="show-password-panel" class="login-link">Back to password login</button>
     </div>
@@ -176,38 +182,6 @@
     document.getElementById('show-password-panel').addEventListener('click', function () {
       document.getElementById('request-panel').hidden = true;
       document.getElementById('password-panel').hidden = false;
-    });
-
-    document.getElementById('request-access-form').addEventListener('submit', async function (e) {
-      e.preventDefault();
-      const form = e.target;
-      const errorEl = document.getElementById('request-error');
-      const submitBtn = form.querySelector('button[type="submit"]');
-
-      errorEl.hidden = true;
-      submitBtn.disabled = true;
-      submitBtn.textContent = 'Sending...';
-
-      try {
-        const response = await fetch('https://api.web3forms.com/submit', {
-          method: 'POST',
-          headers: { Accept: 'application/json' },
-          body: new FormData(form)
-        });
-        const result = await response.json();
-
-        if (result.success) {
-          form.hidden = true;
-          document.getElementById('request-success').hidden = false;
-        } else {
-          throw new Error(result.message || 'Something went wrong.');
-        }
-      } catch (err) {
-        submitBtn.disabled = false;
-        submitBtn.textContent = 'Send Request';
-        errorEl.textContent = 'Could not send your request. Please try again or email hello@valdesgpatricio.com directly.';
-        errorEl.hidden = false;
-      }
     });
   </script>
 </body>
